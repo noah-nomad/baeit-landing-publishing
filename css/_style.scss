@@ -1,0 +1,56 @@
+@import "common";
+
+//클릭효과
+//
+//::after 사용을 최소화하기 위해 클릭 시 배경색 변경으로 수정
+//@include click_btn_bg(원래 배경색, 어두워지는 정도값, light: 배경색 밝아짐);
+@mixin click_btn_bg($color: #fff, $amount: 5%, $if: null) {
+  @if $if == null {
+    &:active {
+      background-color: darken($color, $amount);
+    }
+  }
+  @else {
+    &:active {
+      background-color: lighten($color, $amount);
+    }
+  }
+}
+/*텍스트 타입*/
+%txt-type {
+  .small {
+    font-size: 0.857142em;
+  }
+  .black {
+    color: $grey-90;
+  }
+  .color {
+    color: $color-primary;
+  }
+  .light_color {
+    color: $color-primary-light-30;
+  }
+  .grey {
+    color: $grey-60;
+  }
+  .light_grey {
+    color: $grey-40;
+  }
+  .error {
+    color: $color-error;
+  }
+  .bold {
+    font-weight: $bold;
+  }
+}
+/*가로 스크롤 영역*/
+.horizon {
+  overflow-x: auto;
+  overflow-y: visible;
+  margin-bottom: -30*$unit; //그림자 보이도록
+  & > * {
+    margin-bottom: 30*$unit; //그림자 보이도록
+    padding: 0 $main-space;
+    width: max-content;
+  }
+}

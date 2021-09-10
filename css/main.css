@@ -1,0 +1,365 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../font/SpoqaHanSansNeo-Thin.woff");
+}
+@font-face {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../font/SpoqaHanSansNeo-Light.woff");
+}
+@font-face {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/SpoqaHanSansNeo-Regular.woff");
+}
+@font-face {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../font/SpoqaHanSansNeo-Medium.woff");
+}
+@font-face {
+  font-family: Spoqa Han Sans Neo;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../font/SpoqaHanSansNeo-Bold.woff");
+}
+html {
+  font-family: Spoqa Han Sans Neo, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+  box-sizing: border-box;
+  letter-spacing: -0.01em;
+  word-break: break-all;
+  color: #212121;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (min-width: 376px) {
+  html {
+    font-size: 68.75%;
+  }
+}
+body {
+  font-size: 1.4rem;
+  background-repeat: no-repeat;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  box-sizing: inherit;
+  letter-spacing: inherit;
+  word-break: inherit;
+  color: inherit;
+  background-repeat: inherit;
+}
+
+button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:focus {
+  outline: none;
+}
+
+dl, ul, ol, li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+:placeholder-shown {
+  text-overflow: ellipsis;
+}
+
+*[role=button] {
+  cursor: pointer;
+}
+
+input, textarea, select, *[role=button] {
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+input:disabled, textarea:disabled, select:disabled, *[role=button]:disabled {
+  opacity: 1;
+}
+
+label, textarea {
+  display: block;
+}
+
+input[type=checkbox], input[type=radio] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+}
+.checkbox label, .radio label {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input::-ms-clear {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+fieldset {
+  border: 0;
+}
+
+/*텍스트 타입*/
+/*가로 스크롤 영역*/
+.horizon {
+  overflow-x: auto;
+  overflow-y: visible;
+  margin-bottom: -3rem;
+}
+.horizon > * {
+  margin-bottom: 3rem;
+  padding: 0 2.4rem;
+  width: max-content;
+}
+
+.test {
+  z-index: 1;
+  position: absolute;
+  width: 20%;
+  height: 400px;
+}
+.test.primary {
+  top: 30px;
+  left: 30px;
+  background-color: #00B28F;
+}
+.test.primary.on + .secondary {
+  transition: 1s;
+  top: 30px;
+  left: 30px;
+}
+.test.secondary {
+  top: 120px;
+  left: 120px;
+  background-color: #FFDE3D;
+}
+.test.on {
+  top: 120px;
+  left: 120px;
+  transition: 1s;
+  z-index: 2;
+}
+.test_btn {
+  width: 20%;
+  height: 30px;
+  border-radius: 6px;
+  background-color: #00B28F;
+  color: #fff;
+  font-weight: 700;
+}
+
+/*----------유튜브--------------------------------------------------------------------------------*/
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video-wrap iframe,
+.video-wrap object,
+.video-wrap embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*----------약관텍스트--------------------------------------------------------------------------------*/
+.ol_li {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+.ol_li::before {
+  flex: 0 0 auto;
+  content: "";
+  display: none;
+  counter-increment: custom-number;
+  margin-right: 0.5rem;
+  vertical-align: top;
+}
+.ol_txt {
+  flex: 1;
+}
+
+.ol.dot .ol_li::before {
+  content: "∙ ";
+  display: inline-block;
+}
+.ol.dot_big .ol_li::before {
+  content: "• ";
+  display: inline-block;
+}
+.ol.nb_dot .ol_li::before {
+  content: counter(custom-number) ".";
+  display: inline-block;
+}
+.ol.nb_bracket .ol_li::before {
+  content: counter(custom-number) ")";
+  display: inline-block;
+}
+.ol.nb_circle .ol_li::before {
+  display: inline-block;
+}
+.ol.nb_circle .ol_li:nth-child(1)::before {
+  content: "①";
+}
+.ol.nb_circle .ol_li:nth-child(2)::before {
+  content: "②";
+}
+.ol.nb_circle .ol_li:nth-child(3)::before {
+  content: "③";
+}
+.ol.nb_circle .ol_li:nth-child(4)::before {
+  content: "④";
+}
+.ol.nb_circle .ol_li:nth-child(5)::before {
+  content: "⑤";
+}
+.ol.nb_circle .ol_li:nth-child(6)::before {
+  content: "⑥";
+}
+.ol.nb_circle .ol_li:nth-child(7)::before {
+  content: "⑦";
+}
+.ol.nb_circle .ol_li:nth-child(8)::before {
+  content: "⑧";
+}
+.ol.nb_circle .ol_li:nth-child(9)::before {
+  content: "⑨";
+}
+.ol.nb_circle .ol_li:nth-child(10)::before {
+  content: "⑩";
+}
+.ol.nb_circle .ol_li:nth-child(11)::before {
+  content: "⑪";
+}
+.ol.nb_circle .ol_li:nth-child(12)::before {
+  content: "⑫";
+}
+.ol.nb_circle .ol_li:nth-child(13)::before {
+  content: "⑬";
+}
+.ol.nb_circle .ol_li:nth-child(14)::before {
+  content: "⑭";
+}
+.ol.nb_circle .ol_li:nth-child(15)::before {
+  content: "⑮";
+}
+.ol.dot_hangul .ol_li::before {
+  display: inline-block;
+}
+.ol.dot_hangul .ol_li:nth-child(1)::before {
+  content: "가.";
+}
+.ol.dot_hangul .ol_li:nth-child(2)::before {
+  content: "나.";
+}
+.ol.dot_hangul .ol_li:nth-child(3)::before {
+  content: "다.";
+}
+.ol.dot_hangul .ol_li:nth-child(4)::before {
+  content: "라.";
+}
+.ol.dot_hangul .ol_li:nth-child(5)::before {
+  content: "마.";
+}
+.ol.dot_hangul .ol_li:nth-child(6)::before {
+  content: "바.";
+}
+.ol.dot_hangul .ol_li:nth-child(7)::before {
+  content: "사.";
+}
+.ol.dot_hangul .ol_li:nth-child(8)::before {
+  content: "아.";
+}
+.ol.dot_hangul .ol_li:nth-child(9)::before {
+  content: "자.";
+}
+.ol.dot_hangul .ol_li:nth-child(10)::before {
+  content: "차.";
+}
+.ol.dot_hangul .ol_li:nth-child(11)::before {
+  content: "카.";
+}
+.ol.dot_hangul .ol_li:nth-child(12)::before {
+  content: "타.";
+}
+.ol.dot_hangul .ol_li:nth-child(13)::before {
+  content: "파.";
+}
+.ol.dot_hangul .ol_li:nth-child(14)::before {
+  content: "하.";
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,119 @@
+@import "layout";
+
+/*----------유튜브--------------------------------------------------------------------------------*/
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+// ★html 태그 처리★
+//
+// <div class="video-wrap">
+//   <iframe src="유튜브url"
+//           frameborder="0"
+//           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+//           allowfullscreen></iframe>
+// </div>
+
+
+
+/*----------약관텍스트--------------------------------------------------------------------------------*/
+.ol {
+  &_li {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    &::before {
+      flex: 0 0 auto;
+      content: '';
+      display: none;
+      counter-increment: custom-number;
+      margin-right: 5*$unit;
+      vertical-align: top;
+    }
+    @at-root .ol_txt {
+      flex: 1;
+    }
+  }
+  &.dot {
+    .ol_li {
+      &::before {
+        content: '∙ ';
+        display: inline-block;
+      }
+    }
+  }
+  &.dot_big {
+    .ol_li {
+      &::before {
+        content: '• ';
+        display: inline-block;
+      }
+    }
+  }
+  &.nb_dot {
+    .ol_li {
+      &::before {
+        content: counter(custom-number) '.';
+        display: inline-block;
+      }
+    }
+  }
+  &.nb_bracket {
+    .ol_li {
+      &::before {
+        content: counter(custom-number) ')';
+        display: inline-block;
+      }
+    }
+  }
+  &.nb_circle {
+    .ol_li {
+      &::before {display: inline-block;}
+      &:nth-child(1) {&::before {content: "①";}}
+      &:nth-child(2) {&::before {content: "②";}}
+      &:nth-child(3) {&::before {content: "③";}}
+      &:nth-child(4) {&::before {content: "④";}}
+      &:nth-child(5) {&::before {content: "⑤";}}
+      &:nth-child(6) {&::before {content: "⑥";}}
+      &:nth-child(7) {&::before {content: "⑦";}}
+      &:nth-child(8) {&::before {content: "⑧";}}
+      &:nth-child(9) {&::before {content: "⑨";}}
+      &:nth-child(10) {&::before {content: "⑩";}}
+      &:nth-child(11) {&::before {content: "⑪";}}
+      &:nth-child(12) {&::before {content: "⑫";}}
+      &:nth-child(13) {&::before {content: "⑬";}}
+      &:nth-child(14) {&::before {content: "⑭";}}
+      &:nth-child(15) {&::before {content: "⑮";}}
+    }
+  }
+  &.dot_hangul {
+    .ol_li {
+      &::before {display: inline-block;}
+      &:nth-child(1) {&::before {content: "가.";}}
+      &:nth-child(2) {&::before {content: "나.";}}
+      &:nth-child(3) {&::before {content: "다.";}}
+      &:nth-child(4) {&::before {content: "라.";}}
+      &:nth-child(5) {&::before {content: "마.";}}
+      &:nth-child(6) {&::before {content: "바.";}}
+      &:nth-child(7) {&::before {content: "사.";}}
+      &:nth-child(8) {&::before {content: "아.";}}
+      &:nth-child(9) {&::before {content: "자.";}}
+      &:nth-child(10) {&::before {content: "차.";}}
+      &:nth-child(11) {&::before {content: "카.";}}
+      &:nth-child(12) {&::before {content: "타.";}}
+      &:nth-child(13) {&::before {content: "파.";}}
+      &:nth-child(14) {&::before {content: "하.";}}
+    }
+  }
+}
