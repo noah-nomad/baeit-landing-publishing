@@ -3,11 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main.css">
+    <script>
+        function setToggle($el) {
+            $el.classList.toggle('on');
+        }
+    </script>
     <title>배움을 잇다, 배잇</title>
 </head>
 <body>
-<div id="a" class="test primary"></div>
+<!--<div id="a" class="test primary"></div>
 <div id="b" class="test secondary"></div>
-<button class="test_btn type1" onclick="getElementById('a').classList.toggle('on')">테스트</button>
+<button class="test_btn type1" onclick="getElementById('a').classList.toggle('on')">테스트</button>-->
+<header class="header">
+    <div class="header__inner">
+        <h1 class="logo"><a href="#"><span class="blind">배잇</span></a></h1>
+        <nav class="header__gnb">
+            <button class="on" onclick="setToggle(this)">브랜드</button>
+            <button onclick="setToggle(this)">쌤</button>
+        </nav>
+        <div class="header__snb">
+            <button>회사소개</button>
+            <button class="cta">앱 다운로드<i class="download"></i></button>
+        </div>
+    </div>
+</header>
+<main class="main brand">
+    <div class="main__inner">
+        <section class="visual">
+            <div class="visual__inner">
+                <h1 class="visual__ttl-box">
+                    <img src="img/brand_main_ttl1.svg" alt="동네에서 마주친">
+                    <img src="img/brand_main_ttl2.svg" alt="내가 원하던 배움">
+                </h1>
+                <div class="visual__txt-box">
+                    <p>배움은 생각보다 가까이에 있어요<br>내가 배우고 싶은 대로, <em>동네 배움 앱</em></p>
+                    <img src="img/logo_app.svg" alt="배잇">
+                </div>
+                <div class="visual__img-box"><!--주의-->
+                    <div class="cafe">
+                        <div class="person type1"></div>
+                        <div class="person type2"></div>
+                        <div class="tree type1"></div>
+                        <div class="tree type2"></div>
+                    </div>
+                    <div class="villa">
+                        <div class="top"></div>
+                        <div class="person type3">
+                            <div class="body">
+                                <div class="arm"></div>
+                            </div>
+                            <div class="balustrade type1"></div>
+                            <div class="body hide">
+                                <div class="arm"></div>
+                                <div class="bubble"></div>
+                            </div>
+                        </div>
+                        <div class="mid"></div>
+                        <div class="person type4">
+                            <div class="body">
+                                <div class="bubble"></div>
+                            </div>
+                            <div class="balustrade type2"></div>
+                        </div>
+                        <div class="btm"></div>
+                        <div class="tree type1"></div>
+                    </div>
+                    <div class="cloud type1"></div>
+                    <div class="cloud type2"></div>
+                </div>
+            </div>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+    </div>
+</main>
+<footer></footer>
 </body>
 </html>
