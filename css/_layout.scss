@@ -52,6 +52,7 @@
   z-index: 10;
   @include position(fixed, 0, 0, 0);
   padding: 20*$unit;
+
   &__inner {
     display: flex;
     align-items: center;
@@ -61,11 +62,13 @@
     box-shadow: 12*$unit 24*$unit 30*$unit rgba(0, 0, 0, 0.04);
     background-color: #fff;
   }
+
   &__gnb {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+
     button {
       position: relative;
       width: auto;
@@ -73,26 +76,31 @@
       font-size: 20*$unit;
       font-weight: $medium;
       color: $gray-40;
+
       &:not(:last-child):after {
-        @include position-center(y, absolute, 50%, null, 0);
+        @include position-center(y, absolute, 50%, null, -2px);
         content: "";
         display: block;
         width: 2px;
         height: 0.8em;
         background-color: $gray-20;
       }
+
       &.on {
         font-weight: $bold;
         color: $color-primary;
       }
+
       @include hover_effect() {
         font-weight: $bold;
         color: $color-primary;
       }
     }
   }
+
   &__snb {
     display: flex;
+
     button {
       width: auto;
       height: 48*$unit;
@@ -102,15 +110,18 @@
       font-size: 15*$unit;
       font-weight: $medium;
       color: $gray-50;
+
       & + * {
         margin-left: 16*$unit;
       }
+
       @include hover_effect {
         border-color: $color-primary;
         color: $color-primary;
       }
       @include click_btn_bg();
     }
+
     .cta {
       border: 0;
       background-color: $color-primary;
@@ -120,41 +131,52 @@
         background-color: $color-accent;
       }
       @include click_btn_bg($color-accent);
-      i {
+
+      .i_download {
         background-image: url("../img/i_download_w.svg");
       }
     }
   }
+
   .logo {
     width: 60*$unit;
   }
 }
+
 .main {
-  &__inner {}
+  &__inner {
+  }
 }
-.visual {
+
+.brand-visual {
   background: linear-gradient(to bottom, $color-primary-light-60 93.75%, $color-secondary-light-40 93.75%);
+  overflow: hidden;
+
   &__inner {
     position: relative;
     @extend %content-area;
+
     &:after {
       content: "";
       display: block;
       clear: both;
     }
   }
-  &__ttl-box {
+
+  &__ttl {
     z-index: 1;
     @include position(absolute, 0, 0, 0);
     padding: 19.814814% 54*$unit 0;
     font-size: 1vw;
+
     img {
       width: auto;
       height: 8em;
       max-height: 76*$unit;
     }
   }
-  &__txt-box {
+
+  &__txt {
     z-index: 1;
     @include position(absolute, 0, 0, 0);
     display: flex;
@@ -162,27 +184,36 @@
     padding: 38.333333% 54*$unit 0;
     font-size: 18*$unit;
     color: $gray-60;
+
     img {
-      width: 52*$unit;
-      height: 52*$unit;
-      margin-left: 12*$unit;
+      width: 52/18*1em;
+      height: 52/18*1em;
+      margin-left: 12/18*1em;
     }
+
     em {
       font-weight: $bold;
       color: $color-primary;
     }
+
+    @media (max-width: 1080px) {
+      & {
+        font-size: 1.666666vw;
+      }
+    }
   }
+
   &__img-box {
     $main-den: 1080;
     position: relative;
-    float: left;
-    width: 100%;
     padding-top: 960/$main-den*100%;
+
     & * {
       position: absolute;
       background-repeat: no-repeat;
       background-size: contain;
     }
+
     .cafe {
       $cafe-den: 403;
       left: 17/$main-den*100%;
@@ -190,6 +221,7 @@
       width: 403/$main-den*100%;
       padding-top: 309/$main-den*100%;
       background-image: url("../img/brand_visual_cafe.svg");
+
       .person {
         &.type1 {
           right: -161/$cafe-den*100%;
@@ -199,6 +231,7 @@
           background-image: url("../img/brand_visual_person1.svg");
           animation: 2s ease-out 0s infinite alternate person-type1;
         }
+
         &.type2 {
           right: 120/$cafe-den*100%;
           bottom: -10/$cafe-den*100%;
@@ -208,6 +241,7 @@
           animation: 2s ease-out 0s infinite alternate person-type2;
         }
       }
+
       .tree {
         &.type1 {
           right: 531/$cafe-den*100%;
@@ -216,6 +250,7 @@
           padding-top: 200/$cafe-den*100%;
           background-image: url("../img/brand_visual_tree1.svg");
         }
+
         &.type2 {
           right: 423/$cafe-den*100%;
           bottom: 0;
@@ -225,30 +260,35 @@
         }
       }
     }
+
     .villa {
       $villa-den: 532;
       right: -42/$main-den*100%;
       bottom: 50/$main-den*100%;
       width: 532/$main-den*100%;
       padding-top: 455/$main-den*100%;
+
       .top {
         bottom: 0;
         width: 100%;
         padding-top: 455/$villa-den*100%;
         background-image: url("../img/brand_visual_villa1.svg");
       }
+
       .mid {
         bottom: 0;
         width: 100%;
         padding-top: 299/$villa-den*100%;
         background-image: url("../img/brand_visual_villa2.svg");
       }
+
       .btm {
         bottom: 0;
         width: 100%;
         padding-top: 175/$villa-den*100%;
         background-image: url("../img/brand_visual_villa3.svg");
       }
+
       .person {
         &.type3 {
           $per3-den: 115;
@@ -257,6 +297,7 @@
           width: 115/$villa-den*100%;
           margin-top: 43/$villa-den*100%;
           padding-top: 146/$villa-den*100%;
+
           .body {
             @include position(absolute);
             display: block;
@@ -264,11 +305,13 @@
             height: 100%;
             background-image: url("../img/brand_visual_person3.svg");
             animation: 1s ease-out 1s infinite alternate person-type3;
+
             &.hide {
               z-index: 2;
               background-image: none;
             }
           }
+
           .balustrade {
             z-index: 1;
             top: 0;
@@ -278,6 +321,7 @@
             padding-top: 33/$per3-den*100%;
             background-image: url("../img/brand_visual_balustrade1.svg");
           }
+
           .arm {
             top: 0;
             right: 98/$per3-den*100%;
@@ -286,6 +330,7 @@
             margin-top: 55/$per3-den*100%;
             background-image: url("../img/brand_visual_person3_arm.svg");
           }
+
           .bubble {
             top: 0;
             right: 11/$per3-den*100%;
@@ -295,6 +340,7 @@
             background-image: url("../img/brand_visual_person3_bubble.svg");
           }
         }
+
         &.type4 {
           $per4-den: 165;
           top: 0;
@@ -302,6 +348,7 @@
           width: 165/$villa-den*100%;
           margin-top: 159/$villa-den*100%;
           padding-top: 129/$villa-den*100%;
+
           .body {
             @include position(absolute);
             display: block;
@@ -310,6 +357,7 @@
             background-image: url("../img/brand_visual_person4.svg");
             animation: 1s ease-out 1s infinite alternate-reverse person-type3;
           }
+
           .balustrade {
             z-index: 1;
             top: 0;
@@ -319,6 +367,7 @@
             padding-top: 30/$per4-den*100%;
             background-image: url("../img/brand_visual_balustrade2.svg");
           }
+
           .bubble {
             top: 0;
             left: -4/$per4-den*100%;
@@ -329,6 +378,7 @@
           }
         }
       }
+
       .tree {
         &.type1 {
           left: 562/$villa-den*100%;
@@ -339,6 +389,7 @@
         }
       }
     }
+
     .cloud {
       &.type1 {
         top: 320/$main-den*100%;
@@ -348,6 +399,7 @@
         background-image: url("../img/brand_visual_cloud1.svg");
         animation: 6s linear 0s infinite running cloud;
       }
+
       &.type2 {
         top: 580/$main-den*100%;
         left: 570/$main-den*100%;
@@ -359,6 +411,7 @@
     }
   }
 }
+
 @keyframes cloud {
   0% {
     opacity: 0.3;
@@ -373,6 +426,7 @@
     transform: translate(-300*$unit, 0);
   }
 }
+
 @keyframes person-type1 {
   0% {
     opacity: 0.8;
@@ -383,6 +437,7 @@
     transform: translate(-30%, 0);
   }
 }
+
 @keyframes person-type2 {
   0% {
     transform: translate(0, 0);
@@ -391,11 +446,28 @@
     transform: translate(30%, 0);
   }
 }
+
 @keyframes person-type3 {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(-10deg);
+  }
+}
+
+.intro-request {
+  &__ttl {}
+  &__txt {}
+  &__img-box {
+  }
+  &__item {
+    width: 28.148148vw;
+    max-width: 304*$unit;
+  }
+  &__img {
+    width: 152.631578%;
+    padding-top: 194.7368421%;
+    transform: translate(-8.620689%, -2.659574%);
   }
 }

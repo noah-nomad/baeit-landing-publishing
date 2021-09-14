@@ -9,13 +9,13 @@
     &:active {
       background-color: darken($color, $amount);
     }
-  }
-  @else {
+  } @else {
     &:active {
       background-color: lighten($color, $amount);
     }
   }
 }
+
 //호버효과
 @mixin hover_effect {
   @media (hover: hover) {
@@ -24,6 +24,7 @@
     }
   }
 }
+
 /*텍스트 타입*/
 %txt-type {
 }
@@ -51,11 +52,76 @@ button {
   position: relative;
   background-image: url("../img/logo_basic.svg");
   background-size: 100% auto;
+
   & > * {
     display: block;
     padding-top: 50%;
   }
+
   &.on-primary {
     background-image: url("../img/logo_onprimary.svg");
+  }
+}
+
+.mockup {
+  $mockup-size: 1;
+  position: relative;
+  width: 360*$unit/$mockup-size;
+  height: 640*$unit/$mockup-size;
+  border: 2px solid $gray-20;
+  border-radius: 10*$unit;
+  font-size: 1*$unit/$mockup-size;
+  overflow: hidden;
+
+  img {
+    width: auto;
+    height: 100%;
+  }
+
+  &__header {
+    z-index: 1;
+    @include position(absolute, 24em);
+    display: flex;
+    height: 60em;
+  }
+
+  &__name {
+    margin: 0 10em 0 20em;
+    height: inherit;
+  }
+
+  &__meter {
+    height: inherit;
+  }
+
+  &__bg {
+    @include position(absolute, 0, 0, 0, 0);
+  }
+
+  &__count {
+    @include position(absolute, 84em, 20em);
+    height: 48em;
+  }
+
+  &__card {
+    @include position(absolute, 132em, 0, 0, 60em);
+    padding: 0 20em;
+    overflow: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20em;
+    }
+  }
+
+  &__nav {
+    z-index: 1;
+    @include position(absolute, null, 0, 0, 0);
+    height: 60em;
+    background-size: cover;
+    @at-root .dong-ne & {
+      background-image: url("../img/moc_nav1.png");
+    }
   }
 }
