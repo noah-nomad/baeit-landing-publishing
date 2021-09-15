@@ -4,7 +4,7 @@
 //
 //::after 사용을 최소화하기 위해 클릭 시 배경색 변경으로 수정
 //@include click_btn_bg(원래 배경색, 어두워지는 정도값, light: 배경색 밝아짐);
-@mixin click_btn_bg($color: #fff, $amount: 2%, $if: null) {
+@mixin click-btn_bg($color: #fff, $amount: 2%, $if: null) {
   @if $if == null {
     &:active {
       background-color: darken($color, $amount);
@@ -36,6 +36,10 @@
   height: 1px;
   margin: -1px;
   overflow: hidden;
+}
+
+.break-mo {
+  display: none;
 }
 
 button {
@@ -120,8 +124,11 @@ button {
     @include position(absolute, null, 0, 0, 0);
     height: 60em;
     background-size: cover;
-    @at-root .dong-ne & {
+    @at-root #mockup-dong-ne & {
       background-image: url("../img/moc_nav1.png");
+    }
+    @at-root #mockup-request & {
+      background-image: url("../img/moc_nav2.png");
     }
   }
 }

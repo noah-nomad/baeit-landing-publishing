@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main.css">
-    <script>
-        function setToggle($el) {
-            $el.classList.toggle('on');
-        }
-    </script>
     <title>배움을 잇다, 배잇</title>
 </head>
 <body>
@@ -70,18 +65,20 @@
                 </div>
             </div>
         </article>
-        <article class="intro-request">
+        <article id="intro-request" class="intro-request">
             <div class="intro-request__inner">
-                <h2 class="intro-request__ttl">내가 배우고 싶은게 있다면<br>가까운 이웃에게 요청해 보세요</h2>
-                <p class="intro-request__txt"><em>너무 사소해서</em><em>기존에 나온 커리큘럼과 너무 달라서</em>배우지 못했던 배움을<br>가까이에서 만날 수 있어요</p>
                 <div class="intro-request__img-box">
                     <div class="intro-request__item">
-                        <img class="intro-request__img" src="img/img_mockup1.png" alt="클래스요청 리스트">
-                        <img src="img/moc_request_data07.png" alt="카페에서 영어 회화 배우고 싶어요~!">
-                        <img src="img/moc_request_data08.png" alt="스크린 골프 입문자 레슨 해주실 분">
+                        <h2 class="intro-request__ttl">내가 배우고 싶은게 있다면<br>가까운 이웃에게 요청해 보세요!</h2>
+                        <img class="intro-request__img" src="img/img_mockup1.png" alt="클래스요청 리스트 예시입니다">
+                        <div class="intro-request__on-img">
+                            <img src="img/moc_request_data07.png" alt="카페에서 영어 회화 배우고 싶어요~!">
+                            <img src="img/moc_request_data08.png" alt="스크린 골프 입문자 레슨 해주실 분">
+                        </div>
                     </div>
                     <div class="intro-request__item">
-                        <img class="intro-request__img" src="img/img_mockup1.png" alt="클래스요청 상세">
+                        <p class="intro-request__txt"><em>너무 사소해서</em><br><em>기존에 나온 커리큘럼과 너무 달라서</em><br>배우지 못했던 배움을<br>가까이에서 만날 수 있어요</p>
+                        <img class="intro-request__img" src="img/img_mockup2.png" alt="클래스요청 상세내용 예시입니다">
                         <p class="blind">
                             안녕하세요 영어 회화를 공부하려고 하는데 도대체 어떻게 공부해야 할지 모르겠어요.. 영어 문법은 잘 아는데 말을 못합니다..!
                             1. 영화를 통해서 재밌고 자연스럽게 배우고 싶습니다!(한국식 영어 공부법X)
@@ -92,51 +89,131 @@
                 </div>
             </div>
         </article>
-        <article>
-            <div class="mockup dong-ne">
-                <div class="mockup__header">
-                    <div class="mockup__name">
-                        <img src="img/moc_head_name1.png" alt="해운대구 우동">
-                        <!--<img src="img/moc_head_name2.png" alt="동래구 사직동">-->
-                        <!--<img src="img/moc_head_name3.png" alt="남구 대연동">-->
-                    </div>
-                    <div class="mockup__meter">
-                        <img src="img/moc_head_700m.png" alt="도보 10분 거리에 있는">
-                        <!--<img src="img/moc_head_1400m.png" alt="도보 20분 거리에 있는">-->
-                        <!--<img src="img/moc_head_3000m.png" alt="자전거 10분 거리에 있는">-->
-                        <!--<img src="img/moc_head_8000m.png" alt="차량 20분 거리에 있는">-->
-                    </div>
+        <article class="supplier-activity">
+            <div class="supplier-activity__inner">
+                <h2 class="supplier-activity__ttl">동네에서 언제든지 쌤이 되어 <br class="break-mo">활동해볼까요?</h2>
+                <div class="supplier-activity__list">
+                    <ul class="supplier-activity__list__ul">
+                        <li class="supplier-activity__list__li">
+                            <div class="supplier-activity--money"></div>
+                            <h3>내가 가진 재능/지식으로 <br>소소하게 용돈 벌기</h3>
+                            <p>나만의 재능/노하우/생활 꿀팁 등으로 클래스를 만들어보세요</p>
+                        </li>
+                        <li class="supplier-activity__list__li">
+                            <div class="supplier-activity--mingle"></div>
+                            <h3>같은 관심사를 가진 <br>이웃과 친해지기!</h3>
+                            <p>재능/지식은 나누면 나눌수록 즐거움이 배가 된대요</p>
+                        </li>
+                        <li class="supplier-activity__list__li">
+                            <div class="supplier-activity--find"></div>
+                            <h3>더 쉽게, 더 많이 <br>나를 알려보세요!</h3>
+                            <p>배움을 기다리는 이웃을 직접 찾아볼 수 있어요</p>
+                        </li>
+                    </ul>
                 </div>
-                <img class="mockup__bg" src="img/moc_bg.png" alt="동네 클래스">
-                <div class="mockup__count">
-                    <img src="img/moc_count_1.png" alt="총 1건 입니다">
-                    <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
-                    <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
-                    <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
-                </div>
-                <div class="mockup__card">
-                    <!--우동-->
-                    <img src="img/moc_dong_data01.png" alt="기타 연주 꼼꼼히 알려드려요!">
-                    <!--<img src="img/moc_dong_data02.png" alt="(평일저녁/주말가능) 영어 회화 레슨">-->
-                    <!--<img src="img/moc_dong_data03.png" alt="우리 아이 키 성장 농구 레슨!">-->
-                    <!--<img src="img/moc_dong_data04.png" alt="(현직 개발자) 파이썬 코딩 과외">-->
-                    <!--//우동-->
+            </div>
+        </article>
+        <article class="strip-banner" style="--strip-banner-bg: #5873DC;">
+            <div class="strip-banner__inner">
+                <div class="strip-banner__txt-img"></div>
+            </div>
+        </article>
+        <article class="intro-setting">
+            <div class="intro-setting__inner">
+                <div class="intro-setting__ttl">직접 동네와 반경을<br>설정해보세요!</div>
+                <div class="mockup-wrap">
+                    <div id="mockup-dong-ne" class="mockup on">
+                        <div class="mockup__header">
+                            <div class="mockup__name">
+                                <img src="img/moc_head_name1.png" alt="해운대구 우동">
+                                <!--<img src="img/moc_head_name2.png" alt="동래구 사직동">-->
+                                <!--<img src="img/moc_head_name3.png" alt="남구 대연동">-->
+                            </div>
+                            <div class="mockup__meter">
+                                <img src="img/moc_head_700m.png" alt="도보 10분 거리에 있는">
+                                <!--<img src="img/moc_head_1400m.png" alt="도보 20분 거리에 있는">-->
+                                <!--<img src="img/moc_head_3000m.png" alt="자전거 10분 거리에 있는">-->
+                                <!--<img src="img/moc_head_8000m.png" alt="차량 20분 거리에 있는">-->
+                            </div>
+                        </div>
+                        <img class="mockup__bg" src="img/moc_bg.png" alt="동네 클래스">
+                        <div class="mockup__count">
+                            <img src="img/moc_count_1.png" alt="총 1건 입니다">
+                            <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
+                            <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
+                            <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
+                        </div>
+                        <div class="mockup__card">
+                            <!--우동-->
+                            <img src="img/moc_dong_data01.png" alt="기타 연주 꼼꼼히 알려드려요!">
+                            <!--<img src="img/moc_dong_data02.png" alt="(평일저녁/주말가능) 영어 회화 레슨">-->
+                            <!--<img src="img/moc_dong_data03.png" alt="우리 아이 키 성장 농구 레슨!">-->
+                            <!--<img src="img/moc_dong_data04.png" alt="(현직 개발자) 파이썬 코딩 과외">-->
+                            <!--//우동-->
 
-                    <!--사직동-->
-                    <!--<img src="img/moc_dong_data05.png" alt="베이킹클래스 마카롱 다쿠아즈">-->
-                    <!--<img src="img/moc_dong_data06.png" alt="오픽 1주일 전 벼락치기 과외합니다">-->
-                    <!--<img src="img/moc_dong_data07.png" alt="매일하는 거북목 교정 알려드려요~!">-->
-                    <!--<img src="img/moc_dong_data08.png" alt="카페, 블로그로 용돈 버는 법!">-->
-                    <!--//사직동-->
+                            <!--사직동-->
+                            <!--<img src="img/moc_dong_data05.png" alt="베이킹클래스 마카롱 다쿠아즈">-->
+                            <!--<img src="img/moc_dong_data06.png" alt="오픽 1주일 전 벼락치기 과외합니다">-->
+                            <!--<img src="img/moc_dong_data07.png" alt="매일하는 거북목 교정 알려드려요~!">-->
+                            <!--<img src="img/moc_dong_data08.png" alt="카페, 블로그로 용돈 버는 법!">-->
+                            <!--//사직동-->
 
-                    <!--대연동-->
-                    <!--<img src="img/moc_dong_data09.png" alt="현직 은행원의 면접 꿀팁 받아가세요!">-->
-                    <!--<img src="img/moc_dong_data10.png" alt="포토샵 보정/편집/합성 마스터하기!">-->
-                    <!--<img src="img/moc_dong_data11.png" alt="1시간만에 골프100타 깨는 비법!">-->
-                    <!--<img src="img/moc_dong_data12.png" alt="집에서 편하게 꾸준히 홈필라테스 기초">-->
-                    <!--//대연동-->
+                            <!--대연동-->
+                            <!--<img src="img/moc_dong_data09.png" alt="현직 은행원의 면접 꿀팁 받아가세요!">-->
+                            <!--<img src="img/moc_dong_data10.png" alt="포토샵 보정/편집/합성 마스터하기!">-->
+                            <!--<img src="img/moc_dong_data11.png" alt="1시간만에 골프100타 깨는 비법!">-->
+                            <!--<img src="img/moc_dong_data12.png" alt="집에서 편하게 꾸준히 홈필라테스 기초">-->
+                            <!--//대연동-->
+                        </div>
+                        <div class="mockup__nav"></div>
+                    </div>
+                    <div id="mockup-request" class="mockup">
+                        <div class="mockup__header">
+                            <div class="mockup__name">
+                                <img src="img/moc_head_name1.png" alt="해운대구 우동">
+                                <!--<img src="img/moc_head_name2.png" alt="동래구 사직동">-->
+                                <!--<img src="img/moc_head_name3.png" alt="남구 대연동">-->
+                            </div>
+                            <div class="mockup__meter">
+                                <img src="img/moc_head_700m.png" alt="도보 10분 거리에 있는">
+                                <!--<img src="img/moc_head_1400m.png" alt="도보 20분 거리에 있는">-->
+                                <!--<img src="img/moc_head_3000m.png" alt="자전거 10분 거리에 있는">-->
+                                <!--<img src="img/moc_head_8000m.png" alt="차량 20분 거리에 있는">-->
+                            </div>
+                        </div>
+                        <img class="mockup__bg" src="img/moc_bg.png" alt="동네 클래스">
+                        <div class="mockup__count">
+                            <img src="img/moc_count_1.png" alt="총 1건 입니다">
+                            <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
+                            <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
+                            <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
+                        </div>
+                        <div class="mockup__card">
+                            <!--우동-->
+                            <img src="img/moc_request_data01.png" alt="다이어트 빵/쿠키 배우고 싶어요!">
+                            <!--<img src="img/moc_request_data02.png" alt="아이패드 그림 가르쳐주실 분 있나요~">-->
+                            <!--<img src="img/moc_request_data03.png" alt="HHSK 시험 일주일 전 도와주실 분">-->
+                            <!--<img src="img/moc_request_data04.png" alt="실무에 쓸 수 있는 엑셀 알려주세요!">-->
+                            <!--//우동-->
+
+                            <!--사직동-->
+                            <!--<img src="img/moc_request_data05.png" alt="기초 영상 편집 배우고 싶습니다!"-->
+                            <!--<img src="img/moc_request_data06.png" alt="낚시 알려주실 분 있나요!">-->
+                            <!--<img src="img/moc_request_data07.png" alt="카페에서 영어 회화 배우고 싶어요~!">-->
+                            <!--<img src="img/moc_request_data08.png" alt="스크린 골프 입문자 레슨 해주실 분">-->
+                            <!--//사직동-->
+
+                            <!--대연동-->
+                            <!--<img src="img/moc_request_data09.png" alt="디즈니 최애곡 치고 싶어요!">-->
+                            <!--<img src="img/moc_request_data10.png" alt="체형 교정하고 싶어요!">-->
+                            <!--<img src="img/moc_request_data11.png" alt="선물용 베이킹, 재료는 준비했어요">-->
+                            <!--<img src="img/moc_request_data12.png" alt="라탄가방 만들고 싶어요(재료x)">-->
+                            <!--//대연동-->
+                        </div>
+                        <div class="mockup__nav"></div>
+                    </div>
+                    <button class="mockup-toggle on" onclick="mockupToggle(mockupDongNE, mockupRequest)">클래스요청 예시 보기</button>
                 </div>
-                <div class="mockup__nav"></div>
             </div>
         </article>
         <article></article>
@@ -145,4 +222,42 @@
 </main>
 <footer></footer>
 </body>
+
+<script>
+    function setToggle($el) {
+        $el.classList.toggle('on');
+    }
+
+    const mockupDongNE = document.getElementById('mockup-dong-ne');
+    const mockupRequest = document.getElementById('mockup-request');
+    function mockupToggle($el1, $el2) {
+        $el1.classList.toggle('on');
+        $el2.classList.toggle('on');
+    }
+
+    // options 설정
+    const options = {
+        threshold: 0.5
+    }
+    // IntersectionObserver 등록
+    const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.intersectionRatio > 0) {
+                entry.target.classList.add('on');
+            }
+            // else {
+            //     entry.target.classList.remove('on');
+            // }
+        })
+    }, options)
+    // 대상 선언 및 관찰 지시
+    const introRequestImg = document.querySelectorAll('.intro-request__img');
+    introRequestImg.forEach((el) => {
+        io.observe(el);
+    })
+    const introRequestOnImg = document.querySelectorAll('.intro-request__on-img');
+    introRequestOnImg.forEach((el) => {
+        io.observe(el);
+    })
+</script>
 </html>

@@ -59,23 +59,5 @@ $black: 900;
 
 //기타
 $unit: 0.1rem;
-$shadow-card: 0 6*$unit 20*$unit rgba(0, 0, 0, 0.12);
-$border-radius: 4*$unit;
-
-//사이즈
-//
-$header-height: 48*$unit; //헤더-높이
-$tab-height: 40*$unit; //탭-높이
-$main-space: 24*$unit; //메인-좌우여백
-$btm-btn-height: 54*$unit; //하단버튼-높이
-//
-$modal-space: 42*$unit; //모달-좌우여백
-$modal-header-height: 34*$unit; //모달-헤더-높이
-$modal-main-minh: 102*$unit; //모달-메인-최소높이
-$modal-main-txt-space: 10*$unit 16*$unit 30*$unit; //모달-메인-텍스트-여백
-$modal-main-txt-minh: 102*$unit; //모달-메인-텍스트-최소높이
-$modal-border-radius: 4*$unit; //모달-라운드
-//
-$form-box-height: 40*$unit; //폼리스트-박스-높이
-$check-size: 20*$unit; //체크박스-크기
-$radio-size: 20*$unit; //라디오버튼-크기
+//$shadow-card: 0 6*$unit 20*$unit rgba(0, 0, 0, 0.12);
+//$border-radius: 4*$unit;
