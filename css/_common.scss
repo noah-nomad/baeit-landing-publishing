@@ -143,7 +143,9 @@ textarea {
 fieldset {
     border: 0;
 }
-::selection {}
+::selection {
+    background-color: $color-primary-light-40;
+}
 
 /*아이콘*/
 i {

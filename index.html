@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/favicon-16.png" sizes="16x16">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="img/favicon-48.png" sizes="48x48">
+    <link rel="icon" href="img/favicon-64.png" sizes="64x64">
+    <link rel="icon" href="img/favicon-128.png" sizes="128x128">
     <title>배움을 잇다, 배잇</title>
 </head>
 <body>
@@ -10,8 +15,8 @@
     <div class="header__inner">
         <h1 class="logo"><a href="#" tabindex="1"><span class="blind">배잇</span></a></h1>
         <nav class="header__gnb">
-            <button class="on" onclick="setToggle(this)">브랜드</button>
-            <button onclick="setToggle(this)">쌤</button>
+            <button class="on" onclick="setToggle(this)">홈</button>
+            <button onclick="setToggle(this)">쌤 지원하기</button>
         </nav>
         <div class="header__snb">
             <button>회사소개</button>
@@ -120,7 +125,21 @@
         </article>
         <article class="intro-setting">
             <div class="intro-setting__inner">
-                <div class="intro-setting__ttl">직접 동네와 반경을<br>설정해보세요!</div>
+                <div class="intro-setting__txt-box">
+                    <div class="intro-setting__ttl">직접 동네와 반경을<br>설정해보세요!</div>
+                    <div class="select">
+                        <label class="blind" for="select_dong">동네 선택</label>
+                        <input type="text" role="combobox"
+                               id="select_dong" value="해운대구 우동"
+                               onclick="setToggle(document.getElementById('popup_dong'))"
+                               readonly>
+                        <ul role="listbox" id="popup_dong">
+                            <li role="option" id="selected_dong">해운대구 우동</li>
+                            <li role="option">동래구 사직동</li>
+                            <li role="option">남구 대연동</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="mockup-wrap">
                     <div id="mockup-dong-ne" class="mockup on">
                         <div class="mockup__header">
@@ -137,13 +156,13 @@
                             </div>
                         </div>
                         <img class="mockup__bg" src="img/moc_bg.png" alt="동네 클래스">
-                        <div class="mockup__count">
-                            <img src="img/moc_count_1.png" alt="총 1건 입니다">
-                            <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
-                            <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
-                            <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
-                        </div>
                         <div class="mockup__card">
+                            <div class="mockup__count">
+                                <img src="img/moc_count_1.png" alt="총 1건 입니다">
+                                <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
+                                <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
+                                <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
+                            </div>
                             <!--우동-->
                             <img src="img/moc_dong_data01.png" alt="기타 연주 꼼꼼히 알려드려요!">
                             <!--<img src="img/moc_dong_data02.png" alt="(평일저녁/주말가능) 영어 회화 레슨">-->
@@ -182,13 +201,13 @@
                             </div>
                         </div>
                         <img class="mockup__bg" src="img/moc_bg.png" alt="동네 클래스">
-                        <div class="mockup__count">
-                            <img src="img/moc_count_1.png" alt="총 1건 입니다">
-                            <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
-                            <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
-                            <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
-                        </div>
                         <div class="mockup__card">
+                            <div class="mockup__count">
+                                <img src="img/moc_count_1.png" alt="총 1건 입니다">
+                                <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
+                                <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
+                                <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
+                            </div>
                             <!--우동-->
                             <img src="img/moc_request_data01.png" alt="다이어트 빵/쿠키 배우고 싶어요!">
                             <!--<img src="img/moc_request_data02.png" alt="아이패드 그림 가르쳐주실 분 있나요~">-->

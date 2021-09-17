@@ -67,8 +67,60 @@ button {
   }
 }
 
+input {
+  padding: 0 10*$unit;
+}
+
+.select {
+  position: relative;
+  height: 48*$unit;
+  box-shadow: inset 0 0 0 1px $gray-20;
+  border-radius: 10*$unit;
+
+  input {
+    z-index: 2;
+    @include position(absolute, 2px, 2px, 2px, 2px);
+    width: calc(100% - 4px);
+    border: 0;
+    border-radius: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  ul {
+    z-index: -1;
+    @include position(absolute);
+    width: 100%;
+    height: 1px;
+    padding: 48*$unit 10*$unit 10*$unit;
+    background-color: #fff;
+    overflow: hidden;
+
+    &.on {
+      z-index: 1;
+      height: 202*$unit;
+      overflow: auto;
+      transition: height 0.5s;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10*$unit;
+    height: 48*$unit;
+    cursor: pointer;
+
+    &:active {
+      background-color: $color-primary-light-60;
+      color: $color-primary-dark-10;
+    }
+  }
+}
+
 .mockup {
   $mockup-size: 1;
+  z-index: 0;
   position: relative;
   width: 360*$unit/$mockup-size;
   height: 640*$unit/$mockup-size;
@@ -102,20 +154,30 @@ button {
     @include position(absolute, 0, 0, 0, 0);
   }
 
-  &__count {
-    @include position(absolute, 84em, 20em);
-    height: 48em;
-  }
-
   &__card {
-    @include position(absolute, 132em, 0, 0, 60em);
-    padding: 0 20em;
+    @include position(absolute, 84em, 0, 0, 60em);
+    padding: 48em 20em 0;
     overflow: auto;
 
     img {
       width: 100%;
       height: auto;
       margin-bottom: 20em;
+    }
+  }
+
+  &__count {
+    @include position(absolute, 0);
+    padding: 0 20em;
+    width: 100%;
+    height: 48em;
+    background-image: url("../img/moc_filter.png");
+    background-size: auto 100%;
+    background-position: right 20em center;
+
+    img {
+      width: auto;
+      height: 100%;
     }
   }
 

@@ -162,6 +162,10 @@ fieldset {
   border: 0;
 }
 
+::selection {
+  background-color: #C4F0E0;
+}
+
 /*아이콘*/
 i:after {
   content: "";
@@ -207,7 +211,60 @@ button i {
   background-image: url("../img/logo_onprimary.svg");
 }
 
+input {
+  padding: 0 1rem;
+}
+
+.select {
+  position: relative;
+  height: 4.8rem;
+  box-shadow: inset 0 0 0 1px #EEEEEE;
+  border-radius: 1rem;
+}
+.select input {
+  z-index: 2;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  width: calc(100% - 4px);
+  border: 0;
+  border-radius: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.select ul {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  padding: 4.8rem 1rem 1rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+.select ul.on {
+  z-index: 1;
+  height: 20.2rem;
+  overflow: auto;
+  transition: height 0.5s;
+}
+.select li {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  height: 4.8rem;
+  cursor: pointer;
+}
+.select li:active {
+  background-color: #F2F9F7;
+  color: #009377;
+}
+
 .mockup {
+  z-index: 0;
   position: relative;
   width: 36rem;
   height: 64rem;
@@ -242,25 +299,34 @@ button i {
   right: 0;
   bottom: 0;
 }
-.mockup__count {
-  position: absolute;
-  top: 84em;
-  left: 20em;
-  height: 48em;
-}
 .mockup__card {
   position: absolute;
-  top: 132em;
+  top: 84em;
   left: 0;
   right: 0;
   bottom: 60em;
-  padding: 0 20em;
+  padding: 48em 20em 0;
   overflow: auto;
 }
 .mockup__card img {
   width: 100%;
   height: auto;
   margin-bottom: 20em;
+}
+.mockup__count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20em;
+  width: 100%;
+  height: 48em;
+  background-image: url("../img/moc_filter.png");
+  background-size: auto 100%;
+  background-position: right 20em center;
+}
+.mockup__count img {
+  width: auto;
+  height: 100%;
 }
 .mockup__nav {
   z-index: 1;
@@ -847,6 +913,12 @@ button i {
   background-image: url("../img/bnr_mid-strap_txt.png");
   background-size: contain;
   background-position: center;
+}
+
+.intro-setting .select {
+  box-shadow: inset 0 0 0 2px #4CD8AE;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 /*----------유튜브--------------------------------------------------------------------------------*/

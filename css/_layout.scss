@@ -600,12 +600,14 @@
 .strip-banner {
   --strip-banner-bg: null;
   background-color: var(--strip-banner-bg);
+
   &__inner {
     @extend %content-area;
     padding: 0 54*$unit;
     background-image: url("../img/bnr_mid-strap_bg.png");
     background-size: contain;
   }
+
   &__txt-img {
     padding-top: 11.111111%;
     background-image: url("../img/bnr_mid-strap_txt.png");
@@ -617,5 +619,11 @@
 .intro-setting {
   &__inner {
     @extend %content-area;
+  }
+
+  .select {
+    box-shadow: inset 0 0 0 2px $color-primary-light-20;
+    font-size: 20*$unit;
+    font-weight: $medium;
   }
 }
