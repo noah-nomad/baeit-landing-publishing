@@ -1,17 +1,5 @@
 @import "style";
 
-%content-area {
-  max-width: 1080px;
-  min-width: 320px;
-  margin: 0 auto;
-}
-
-@mixin content-area_media {
-  @media (max-width: 1080px) {
-    @content;
-  }
-}
-
 .header {
   @extend %content-area;
   z-index: 10;
@@ -42,7 +30,7 @@
       font-weight: $medium;
       color: $gray-40;
 
-      &:not(:last-child):after {
+      &:not(:last-child):before {
         @include position-center(y, absolute, 50%, null, -2px);
         content: "";
         display: block;
@@ -120,12 +108,6 @@
   &__inner {
     position: relative;
     @extend %content-area;
-
-    &:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
   }
 
   &__ttl {
@@ -427,7 +409,7 @@
     @extend %content-area;
     padding: 8.333333% 0 calc(11.111111% + 1.851851%);
 
-    &:after {
+    &:before {
       @include position(absolute, null, 7.407407%, null, 0);
       content: "";
       display: block;
@@ -489,7 +471,7 @@
     width: 28.148148vw;
     max-width: 304*$unit;
 
-    &:after {
+    &:before {
       content: "";
       display: block;
       padding-top: 194.7368421%;
@@ -559,7 +541,6 @@
     }
 
     &__li {
-      float: left;
       width: 240*$unit;
 
       @media (max-width: 936px) {
@@ -600,12 +581,14 @@
 .strip-banner {
   --strip-banner-bg: null;
   background-color: var(--strip-banner-bg);
+  cursor: pointer;
 
   &__inner {
     @extend %content-area;
     padding: 0 54*$unit;
     background-image: url("../img/bnr_mid-strap_bg.png");
     background-size: contain;
+    background-position: center;
   }
 
   &__txt-img {
@@ -618,12 +601,266 @@
 
 .intro-setting {
   &__inner {
+    position: relative;
     @extend %content-area;
   }
 
-  .select {
-    box-shadow: inset 0 0 0 2px $color-primary-light-20;
+  &__txt-box {
+    @include position(absolute, 32%, 70*$unit);
+
+    &.on {
+      top: 27.777777%;
+      left: 54*$unit;
+      transition: 1s;
+    }
+  }
+
+  &__ttl {
+    padding-bottom: 1.5em;
+    font-size: 30*$unit;
+    font-weight: $bold;
+    @include content-area_media {
+      font-size: 2.9vw;
+    }
+  }
+
+  &__txt {
     font-size: 20*$unit;
+    @include content-area_media {
+      font-size: 1.8vw;
+    }
+
+    .line {
+      display: flex;
+      align-items: center;
+      padding-top: 0.8em;
+
+      b {
+        padding-left: 0.5em;
+      }
+    }
+
+    b {
+      font-weight: $medium;
+      color: $color-primary-dark-10;
+      vertical-align: middle;
+    }
+
+    .select {
+      width: 11em;
+      font-size: inherit;
+    }
+  }
+
+  &__mockup {
+    position: relative;
+    display: flex;
+    width: max-content;
+    margin: 0 54*$unit 0 auto;
+    padding: 14.814814% 0 17.592592%;
+
+    .mockup {
+      z-index: -1;
+      transform: translate(0, 0);
+      transition: transform 0.5s;
+
+      &:before {
+        z-index: 5;
+        content: "";
+        @include position(absolute, 0, 0, 0, 0);
+        background-color: $color-secondary;
+        opacity: 0.3;
+        transition: opacity 0.5s;
+      }
+
+      &__card {
+        overflow: hidden;
+      }
+
+      &.on {
+        z-index: 1;
+        @include position(absolute, null, null);
+        transform: translate(-40%, 30*$unit);
+        transition: transform 0.5s;
+        @include content-area_media {
+          transform: translate(-30%, 30*$unit);
+        }
+
+        &:before {
+          z-index: 0;
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
+
+        .mockup__card {
+          overflow: auto;
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    width: 8.5em;
+    height: 8.5em;
+    margin: 40% 0 0 -3.5em;
+    border-radius: 50%;
+    background-color: $color-primary;
+    background-image: url("../img/img_mouse_click.svg");
+    background-size: 3.75em auto;
+    background-position: top center;
+    font-size: 16*$unit;
+    color: #fff;
+    overflow: hidden;
+    transition: background-color 0.2s;
+    @include content-area_media {
+      font-size: 1.481481vw;
+    }
+
+    @include hover_effect {
+      background-color: darken($color-primary, 6%);
+    }
+
+    &.on {
+      background-color: $color-accent;
+      transition: background-color 0.2s;
+
+      @include hover_effect {
+        background-color: darken($color-accent, 6%);
+      }
+    }
+
+    &:before {
+      content: "클래스요청";
+      @include position-center(x, absolute);
+      top: 64%;
+      width: max-content;
+    }
+
+    &.on:before {
+      content: "동네클래스";
+    }
+  }
+
+  .mockup {
+    @include content-area_media {
+      font-size: 0.092596vw;
+    }
+  }
+}
+
+.market-banner {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -24%, rgba(0, 0, 0, 0) 64%), $color-primary;;
+
+  &__inner {
+    position: relative;
+    @extend %content-area;
+    padding: 60*$unit 54*$unit;
+  }
+
+  &__txt-box {
+    font-size: 30*$unit;
+    @include content-area_media {
+      font-size: 2.777777vw;
+    }
+  }
+
+  &__ttl {
+    margin-bottom: 1.2em;
+    color: #fff;
+  }
+
+  &__txt {
+    color: $color-primary-light-30;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 1.733333em;
+  }
+
+  img {
+    @include position(absolute, 50%, null, 0);
+    width: 490*$unit;
+    transform: translate(0, -50%);
+    @include content-area_media {
+      width: 45.370370vw;
+    }
+  }
+
+  .cta {
+    width: 8em;
+    height: 3em;
+    border-radius: 0.5em;
+    font-size: 0.666666em;
+    font-weight: $bold;
+    background-color: $color-accent-light-40;
+    color: $color-accent-dark-10;
+
+    @include hover_effect {
+      background-color: #fff;
+    }
+
+    @include click-btn_bg();
+  }
+}
+
+.footer {
+  &__inner {
+    @extend %content-area;
+    padding: 2.777777% 20*$unit 8.33333%;
+  }
+
+  &__fnb {
+    display: flex;
+    width: max-content;
+    border-radius: 8*$unit;
+    background-color: $gray-05;
+    font-size: 14*$unit;
     font-weight: $medium;
+    color: $gray-60;
+
+    button {
+      width: auto;
+      height: 2.857142em;
+      padding: 0 1.428571em;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.851851%;
+    padding: 0 4*$unit;
+    font-size: 14*$unit;
+
+    a {
+      text-decoration: underline;
+    }
+
+    dl {
+      position: relative;
+      display: flex;
+      margin-bottom: 0.714285em;
+      padding-right: 1.428571em*2;
+
+      &:not(:last-child):before {
+        @include position-center(y, absolute, 50%, null, 1.428571em);
+        content: "";
+        display: block;
+        width: 1px;
+        height: 0.8em;
+        background-color: $gray-20;
+      }
+    }
+
+    dt {
+      padding-right: 0.5em;
+      color: $gray-40;
+    }
+
+    dd {
+      color: $gray-50;
+    }
   }
 }

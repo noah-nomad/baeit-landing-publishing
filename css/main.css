@@ -176,6 +176,12 @@ i:after {
   background-position: center;
 }
 
+.footer__inner, .market-banner__inner, .intro-setting__inner, .strip-banner__inner, .supplier-activity__inner, .intro-request__inner, .brand-visual__inner, .header {
+  max-width: 1080px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
 /*텍스트 타입*/
 .blind {
   position: absolute;
@@ -188,6 +194,11 @@ i:after {
 
 .break-mo {
   display: none;
+}
+@media (max-width: 767px) {
+  .break-mo {
+    display: block;
+  }
 }
 
 button i {
@@ -218,21 +229,52 @@ input {
 .select {
   position: relative;
   height: 4.8rem;
-  box-shadow: inset 0 0 0 1px #EEEEEE;
   border-radius: 1rem;
+  background-color: #fff;
 }
-.select input {
-  z-index: 2;
-  position: absolute;
-  top: 2px;
+.select.default {
+  box-shadow: inset 0 0 0 2px #4CD8AE;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.select.default.on ul {
+  box-shadow: inset 0 0 0 2px #00B28F;
+}
+.select.default.on ul:before {
   left: 2px;
   right: 2px;
-  bottom: 2px;
-  width: calc(100% - 4px);
+}
+.select:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.8em;
+  height: inherit;
+  background-image: url("../img/i_select_a_c_down.svg");
+  background-size: 0.8em;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.select.on:before {
+  z-index: 3;
+  transform: rotate(180deg);
+}
+.select input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border: 0;
   border-radius: inherit;
+  background-color: transparent;
   font-size: inherit;
   font-weight: inherit;
+  cursor: pointer;
+}
+.select.on input {
+  z-index: 2;
 }
 .select ul {
   z-index: -1;
@@ -240,16 +282,23 @@ input {
   top: 0;
   left: 0;
   width: 100%;
-  height: 1px;
-  padding: 4.8rem 1rem 1rem;
+  padding: 5.8rem 1rem 1rem;
   background-color: #fff;
-  overflow: hidden;
+  opacity: 0;
 }
-.select ul.on {
+.select.on ul {
   z-index: 1;
-  height: 20.2rem;
-  overflow: auto;
-  transition: height 0.5s;
+  border-radius: inherit;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.select.on ul:before {
+  content: "";
+  position: absolute;
+  top: 4.8rem;
+  left: 0;
+  height: 1px;
+  background-color: #C4F0E0;
 }
 .select li {
   display: flex;
@@ -266,8 +315,8 @@ input {
 .mockup {
   z-index: 0;
   position: relative;
-  width: 36rem;
-  height: 64rem;
+  width: 360em;
+  height: 640em;
   border: 2px solid #EEEEEE;
   border-radius: 1rem;
   font-size: 0.1rem;
@@ -345,12 +394,6 @@ input {
   background-image: url("../img/moc_nav2.png");
 }
 
-.intro-setting__inner, .strip-banner__inner, .supplier-activity__inner, .intro-request__inner, .brand-visual__inner, .header {
-  max-width: 1080px;
-  min-width: 320px;
-  margin: 0 auto;
-}
-
 .header {
   z-index: 10;
   position: fixed;
@@ -382,7 +425,7 @@ input {
   font-weight: 500;
   color: #BDBDBD;
 }
-.header__gnb button:not(:last-child):after {
+.header__gnb button:not(:last-child):before {
   position: absolute;
   top: 50%;
   right: -2px;
@@ -456,11 +499,6 @@ input {
 }
 .brand-visual__inner {
   position: relative;
-}
-.brand-visual__inner:after {
-  content: "";
-  display: block;
-  clear: both;
 }
 .brand-visual__ttl {
   z-index: 2;
@@ -723,7 +761,7 @@ input {
   position: relative;
   padding: 8.333333% 0 calc(11.111111% + 1.851851%);
 }
-.intro-request__inner:after {
+.intro-request__inner:before {
   position: absolute;
   left: 7.407407%;
   bottom: 0;
@@ -790,7 +828,7 @@ input {
   width: 28.148148vw;
   max-width: 30.4rem;
 }
-.intro-request__item:after {
+.intro-request__item:before {
   content: "";
   display: block;
   padding-top: 194.7368421%;
@@ -854,7 +892,6 @@ input {
   margin-right: 5.4rem;
 }
 .supplier-activity__list__li {
-  float: left;
   width: 24rem;
 }
 @media (max-width: 936px) {
@@ -902,11 +939,13 @@ input {
 .strip-banner {
   --strip-banner-bg: null;
   background-color: var(--strip-banner-bg);
+  cursor: pointer;
 }
 .strip-banner__inner {
   padding: 0 5.4rem;
   background-image: url("../img/bnr_mid-strap_bg.png");
   background-size: contain;
+  background-position: center;
 }
 .strip-banner__txt-img {
   padding-top: 11.111111%;
@@ -915,10 +954,258 @@ input {
   background-position: center;
 }
 
-.intro-setting .select {
-  box-shadow: inset 0 0 0 2px #4CD8AE;
+.intro-setting__inner {
+  position: relative;
+}
+.intro-setting__txt-box {
+  position: absolute;
+  top: 32%;
+  left: 7rem;
+}
+.intro-setting__txt-box.on {
+  top: 27.777777%;
+  left: 5.4rem;
+  transition: 1s;
+}
+.intro-setting__ttl {
+  padding-bottom: 1.5em;
+  font-size: 3rem;
+  font-weight: 700;
+}
+@media (max-width: 1080px) {
+  .intro-setting__ttl {
+    font-size: 2.9vw;
+  }
+}
+.intro-setting__txt {
   font-size: 2rem;
+}
+@media (max-width: 1080px) {
+  .intro-setting__txt {
+    font-size: 1.8vw;
+  }
+}
+.intro-setting__txt .line {
+  display: flex;
+  align-items: center;
+  padding-top: 0.8em;
+}
+.intro-setting__txt .line b {
+  padding-left: 0.5em;
+}
+.intro-setting__txt b {
   font-weight: 500;
+  color: #009377;
+  vertical-align: middle;
+}
+.intro-setting__txt .select {
+  width: 11em;
+  font-size: inherit;
+}
+.intro-setting__mockup {
+  position: relative;
+  display: flex;
+  width: max-content;
+  margin: 0 5.4rem 0 auto;
+  padding: 14.814814% 0 17.592592%;
+}
+.intro-setting__mockup .mockup {
+  z-index: -1;
+  transform: translate(0, 0);
+  transition: transform 0.5s;
+}
+.intro-setting__mockup .mockup:before {
+  z-index: 5;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFDE3D;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+.intro-setting__mockup .mockup__card {
+  overflow: hidden;
+}
+.intro-setting__mockup .mockup.on {
+  z-index: 1;
+  position: absolute;
+  transform: translate(-40%, 3rem);
+  transition: transform 0.5s;
+}
+@media (max-width: 1080px) {
+  .intro-setting__mockup .mockup.on {
+    transform: translate(-30%, 3rem);
+  }
+}
+.intro-setting__mockup .mockup.on:before {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.intro-setting__mockup .mockup.on .mockup__card {
+  overflow: auto;
+}
+.intro-setting__toggle {
+  position: relative;
+  width: 8.5em;
+  height: 8.5em;
+  margin: 40% 0 0 -3.5em;
+  border-radius: 50%;
+  background-color: #00B28F;
+  background-image: url("../img/img_mouse_click.svg");
+  background-size: 3.75em auto;
+  background-position: top center;
+  font-size: 1.6rem;
+  color: #fff;
+  overflow: hidden;
+  transition: background-color 0.2s;
+}
+@media (max-width: 1080px) {
+  .intro-setting__toggle {
+    font-size: 1.481481vw;
+  }
+}
+@media (hover: hover) {
+  .intro-setting__toggle:hover {
+    background-color: #009376;
+  }
+}
+.intro-setting__toggle.on {
+  background-color: #5873DC;
+  transition: background-color 0.2s;
+}
+@media (hover: hover) {
+  .intro-setting__toggle.on:hover {
+    background-color: #3f5ed7;
+  }
+}
+.intro-setting__toggle:before {
+  content: "클래스요청";
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 64%;
+  width: max-content;
+}
+.intro-setting__toggle.on:before {
+  content: "동네클래스";
+}
+@media (max-width: 1080px) {
+  .intro-setting .mockup {
+    font-size: 0.092596vw;
+  }
+}
+
+.market-banner {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.1) -24%, rgba(0, 0, 0, 0) 64%), #00B28F;
+}
+.market-banner__inner {
+  position: relative;
+  padding: 6rem 5.4rem;
+}
+.market-banner__txt-box {
+  font-size: 3rem;
+}
+@media (max-width: 1080px) {
+  .market-banner__txt-box {
+    font-size: 2.777777vw;
+  }
+}
+.market-banner__ttl {
+  margin-bottom: 1.2em;
+  color: #fff;
+}
+.market-banner__txt {
+  color: #9AE2C7;
+}
+.market-banner .logo {
+  display: inline-block;
+  width: 1.733333em;
+}
+.market-banner img {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 49rem;
+  transform: translate(0, -50%);
+}
+@media (max-width: 1080px) {
+  .market-banner img {
+    width: 45.37037vw;
+  }
+}
+.market-banner .cta {
+  width: 8em;
+  height: 3em;
+  border-radius: 0.5em;
+  font-size: 0.666666em;
+  font-weight: 700;
+  background-color: #D5E2F9;
+  color: #395EC6;
+}
+@media (hover: hover) {
+  .market-banner .cta:hover {
+    background-color: #fff;
+  }
+}
+.market-banner .cta:active {
+  background-color: #fafafa;
+}
+
+.footer__inner {
+  padding: 2.777777% 2rem 8.33333%;
+}
+.footer__fnb {
+  display: flex;
+  width: max-content;
+  border-radius: 0.8rem;
+  background-color: #FAFAFA;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #757575;
+}
+.footer__fnb button {
+  width: auto;
+  height: 2.857142em;
+  padding: 0 1.428571em;
+}
+.footer__copyright {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.851851%;
+  padding: 0 0.4rem;
+  font-size: 1.4rem;
+}
+.footer__copyright a {
+  text-decoration: underline;
+}
+.footer__copyright dl {
+  position: relative;
+  display: flex;
+  margin-bottom: 0.714285em;
+  padding-right: 2.857142em;
+}
+.footer__copyright dl:not(:last-child):before {
+  position: absolute;
+  top: 50%;
+  right: 1.428571em;
+  transform: translate(0, -50%);
+  top: 50%;
+  content: "";
+  display: block;
+  width: 1px;
+  height: 0.8em;
+  background-color: #EEEEEE;
+}
+.footer__copyright dt {
+  padding-right: 0.5em;
+  color: #BDBDBD;
+}
+.footer__copyright dd {
+  color: #9E9E9E;
 }
 
 /*----------유튜브--------------------------------------------------------------------------------*/

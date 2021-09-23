@@ -1,5 +1,23 @@
 @import "common";
 
+%content-area {
+  max-width: 1080px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+@mixin content-area_media {
+  @media (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin mobile-area_media {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
 //클릭효과
 //
 //::after 사용을 최소화하기 위해 클릭 시 배경색 변경으로 수정
@@ -40,6 +58,9 @@
 
 .break-mo {
   display: none;
+  @include mobile-area_media {
+    display: block;
+  }
 }
 
 button {
@@ -72,35 +93,80 @@ input {
 }
 
 .select {
+  $select-border-default: 2px;
   position: relative;
   height: 48*$unit;
-  box-shadow: inset 0 0 0 1px $gray-20;
   border-radius: 10*$unit;
+  background-color: #fff;
+
+  &.default {
+    box-shadow: inset 0 0 0 $select-border-default $color-primary-light-20;
+    font-size: 20*$unit;
+    font-weight: $medium;
+
+    &.on {
+      ul {
+        box-shadow: inset 0 0 0 $select-border-default $color-primary;
+
+        &:before {
+          left: $select-border-default;
+          right: $select-border-default;
+        }
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    @include position(absolute, 0, null, 0);
+    width: 1.8em;
+    height: inherit;
+    background-image: url("../img/i_select_a_c_down.svg");
+    background-size: 0.8em;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &.on:before {
+    z-index: 3;
+    transform: rotate(180deg);
+  }
 
   input {
-    z-index: 2;
-    @include position(absolute, 2px, 2px, 2px, 2px);
-    width: calc(100% - 4px);
+    @include position(absolute, 0, 0, 0, 0);
     border: 0;
     border-radius: inherit;
+    background-color: transparent;
     font-size: inherit;
     font-weight: inherit;
+    cursor: pointer;
+  }
+
+  &.on input {
+    z-index: 2;
   }
 
   ul {
     z-index: -1;
     @include position(absolute);
     width: 100%;
-    height: 1px;
-    padding: 48*$unit 10*$unit 10*$unit;
+    padding: 58*$unit 10*$unit 10*$unit;
     background-color: #fff;
-    overflow: hidden;
+    opacity: 0;
 
-    &.on {
-      z-index: 1;
-      height: 202*$unit;
-      overflow: auto;
-      transition: height 0.5s;
+  }
+
+  &.on ul {
+    z-index: 1;
+    border-radius: inherit;
+    opacity: 1;
+    transition: opacity 0.2s;
+
+    &:before {
+      content: "";
+      @include position(absolute, 48*$unit);
+      height: 1px;
+      background-color: $color-primary-light-40;
     }
   }
 
@@ -122,8 +188,8 @@ input {
   $mockup-size: 1;
   z-index: 0;
   position: relative;
-  width: 360*$unit/$mockup-size;
-  height: 640*$unit/$mockup-size;
+  width: 360em/$mockup-size;
+  height: 640em/$mockup-size;
   border: 2px solid $gray-20;
   border-radius: 10*$unit;
   font-size: 1*$unit/$mockup-size;

@@ -126,21 +126,48 @@
         <article class="intro-setting">
             <div class="intro-setting__inner">
                 <div class="intro-setting__txt-box">
-                    <div class="intro-setting__ttl">직접 동네와 반경을<br>설정해보세요!</div>
-                    <div class="select">
-                        <label class="blind" for="select_dong">동네 선택</label>
-                        <input type="text" role="combobox"
-                               id="select_dong" value="해운대구 우동"
-                               onclick="setToggle(document.getElementById('popup_dong'))"
-                               readonly>
-                        <ul role="listbox" id="popup_dong">
-                            <li role="option" id="selected_dong">해운대구 우동</li>
-                            <li role="option">동래구 사직동</li>
-                            <li role="option">남구 대연동</li>
-                        </ul>
+                    <h2 class="intro-setting__ttl">직접 동네와 반경을<br>설정해보세요!</h2>
+                    <div class="intro-setting__txt">
+                        <div class="line">
+                            <div id="select_dong_wrap" class="select default">
+                                <label class="blind" for="select_dong">동네 선택</label>
+                                <input type="text" role="combobox" id="select_dong" value="해운대구 우동" readonly>
+                                <ul role="listbox" id="popup_dong">
+                                    <li role="option" id="selected_dong">해운대구 우동</li>
+                                    <li role="option">동래구 사직동</li>
+                                    <li role="option">남구 대연동</li>
+                                </ul>
+                            </div>
+                            <b>에서</b>
+                        </div>
+                        <div class="line">
+                            <div id="select_meter_wrap" class="select default">
+                                <label class="blind" for="select_meter">거리 선택</label>
+                                <input type="text" role="combobox" id="select_meter" value="도보 10분(700m)" readonly>
+                                <ul role="listbox" id="popup_meter">
+                                    <li role="option" id="selected_meter">도보 10분(700m)</li>
+                                    <li role="option">도보 20분(1.4km)</li>
+                                    <li role="option">자전거 10분(3km)</li>
+                                    <li role="option">차량 20분(8km)</li>
+                                </ul>
+                            </div>
+                            <b>거리에 있는</b>
+                        </div>
                     </div>
                 </div>
-                <div class="mockup-wrap">
+                <script>
+                    function selectDongClick() {
+                        setToggle(document.getElementById('select_dong_wrap'));
+                    }
+                    document.getElementById('select_dong').onclick = selectDongClick;
+                    document.getElementById('popup_dong').onclick = selectDongClick;
+                    function selectMeterClick() {
+                        setToggle(document.getElementById('select_meter_wrap'));
+                    }
+                    document.getElementById('select_meter').onclick = selectMeterClick;
+                    document.getElementById('popup_meter').onclick = selectMeterClick;
+                </script>
+                <div class="intro-setting__mockup">
                     <div id="mockup-dong-ne" class="mockup on">
                         <div class="mockup__header">
                             <div class="mockup__name">
@@ -231,15 +258,54 @@
                         </div>
                         <div class="mockup__nav"></div>
                     </div>
-                    <button class="mockup-toggle on" onclick="mockupToggle(mockupDongNE, mockupRequest)">클래스요청 예시 보기</button>
+                    <button class="intro-setting__toggle" onclick="mockupToggle(mockupDongNE, mockupRequest);setToggle(this)"></button>
                 </div>
             </div>
         </article>
-        <article></article>
-        <article></article>
+        <article class="market-banner">
+            <div class="market-banner__inner">
+                <div class="market-banner__txt-box">
+                    <p class="market-banner__txt">가까운 이웃과 배움을 주고받는</p>
+                    <h2 class="market-banner__ttl">동네 배움 앱 <span class="logo on-primary"><span><span class="blind">배잇</span></span></span></h2>
+                    <button class="cta">다운로드</button>
+                </div>
+                <img src="img/img_splash_mockup.png" alt="인트로 화면 이미지">
+            </div>
+        </article>
     </div>
 </main>
-<footer></footer>
+<footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__fnb">
+            <button>회사소개</button>
+            <button>이용약관</button>
+            <button>개인정보처리방침</button>
+            <button>위치기반서비스 이용약관</button>
+        </div>
+        <div class="footer__copyright">
+            <dl>
+                <dt>제휴문의</dt>
+                <dd><a href="mailto:admin@noah-nomad.com">admin@noah-nomad.com</a></dd>
+            </dl>
+            <dl>
+                <dt>대표</dt>
+                <dd>송재욱</dd>
+            </dl>
+            <dl>
+                <dt>주소</dt>
+                <dd>서울 강서구 마곡중앙6로 11, 보타닉파크타워 3차 707호</dd>
+            </dl>
+            <dl>
+                <dt>사업자번호</dt>
+                <dd>463-88-01663</dd>
+            </dl>
+            <dl>
+                <dt>통신판매업신고</dt>
+                <dd>제2020-서울강서-1006호</dd>
+            </dl>
+        </div>
+    </div>
+</footer>
 </body>
 
 <script>
@@ -276,6 +342,10 @@
     })
     const introRequestOnImg = document.querySelectorAll('.intro-request__on-img');
     introRequestOnImg.forEach((el) => {
+        io.observe(el);
+    })
+    const introSettingTxt = document.querySelectorAll('.intro-setting__txt-box');
+    introSettingTxt.forEach((el) => {
         io.observe(el);
     })
 </script>
