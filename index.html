@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/favicon-16.png" sizes="16x16">
     <link rel="icon" href="img/favicon-32.png" sizes="32x32">
@@ -20,6 +23,27 @@
         </nav>
         <div class="header__snb">
             <button>회사소개</button>
+            <button class="cta" tabindex="1">앱 다운로드<i class="i_download"></i></button>
+        </div>
+        <nav class="header__m-gnb">
+            <div id="select_gnb_wrap" class="select head">
+                <label class="blind" for="select_gnb">동네 선택</label>
+                <input type="text" role="combobox" id="select_gnb" value="홈" readonly>
+                <ul role="listbox" id="popup_gnb">
+                    <li role="option" id="selected_gnb">홈</li>
+                    <li role="option">쌤 지원하기</li>
+                    <li role="option">회사소개</li>
+                </ul>
+            </div>
+            <script>
+                function selectGnbClick() {
+                    setToggle(document.getElementById('select_gnb_wrap'));
+                }
+                document.getElementById('select_gnb').onclick = selectGnbClick;
+                document.getElementById('popup_gnb').onclick = selectGnbClick;
+            </script>
+        </nav>
+        <div class="header__m-snb">
             <button class="cta" tabindex="1">앱 다운로드<i class="i_download"></i></button>
         </div>
     </div>
@@ -176,25 +200,25 @@
                                 <!--<img src="img/moc_head_name3.png" alt="남구 대연동">-->
                             </div>
                             <div class="mockup__meter">
-                                <img src="img/moc_head_700m.png" alt="도보 10분 거리에 있는">
+                                <!--<img src="img/moc_head_700m.png" alt="도보 10분 거리에 있는">-->
                                 <!--<img src="img/moc_head_1400m.png" alt="도보 20분 거리에 있는">-->
                                 <!--<img src="img/moc_head_3000m.png" alt="자전거 10분 거리에 있는">-->
-                                <!--<img src="img/moc_head_8000m.png" alt="차량 20분 거리에 있는">-->
+                                <img src="img/moc_head_8000m.png" alt="차량 20분 거리에 있는">
                             </div>
                         </div>
                         <img class="mockup__bg" src="img/moc_bg.png" alt="동네 클래스">
                         <div class="mockup__card">
                             <div class="mockup__count">
-                                <img src="img/moc_count_1.png" alt="총 1건 입니다">
+                                <!--<img src="img/moc_count_1.png" alt="총 1건 입니다">-->
                                 <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
                                 <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
-                                <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
+                                <img src="img/moc_count_4.png" alt="총 4건 입니다">
                             </div>
                             <!--우동-->
                             <img src="img/moc_dong_data01.png" alt="기타 연주 꼼꼼히 알려드려요!">
-                            <!--<img src="img/moc_dong_data02.png" alt="(평일저녁/주말가능) 영어 회화 레슨">-->
-                            <!--<img src="img/moc_dong_data03.png" alt="우리 아이 키 성장 농구 레슨!">-->
-                            <!--<img src="img/moc_dong_data04.png" alt="(현직 개발자) 파이썬 코딩 과외">-->
+                            <img src="img/moc_dong_data02.png" alt="(평일저녁/주말가능) 영어 회화 레슨">
+                            <img src="img/moc_dong_data03.png" alt="우리 아이 키 성장 농구 레슨!">
+                            <img src="img/moc_dong_data04.png" alt="(현직 개발자) 파이썬 코딩 과외">
                             <!--//우동-->
 
                             <!--사직동-->
@@ -221,25 +245,25 @@
                                 <!--<img src="img/moc_head_name3.png" alt="남구 대연동">-->
                             </div>
                             <div class="mockup__meter">
-                                <img src="img/moc_head_700m.png" alt="도보 10분 거리에 있는">
+                                <!--<img src="img/moc_head_700m.png" alt="도보 10분 거리에 있는">-->
                                 <!--<img src="img/moc_head_1400m.png" alt="도보 20분 거리에 있는">-->
                                 <!--<img src="img/moc_head_3000m.png" alt="자전거 10분 거리에 있는">-->
-                                <!--<img src="img/moc_head_8000m.png" alt="차량 20분 거리에 있는">-->
+                                <img src="img/moc_head_8000m.png" alt="차량 20분 거리에 있는">
                             </div>
                         </div>
                         <img class="mockup__bg" src="img/moc_bg.png" alt="동네 클래스">
                         <div class="mockup__card">
                             <div class="mockup__count">
-                                <img src="img/moc_count_1.png" alt="총 1건 입니다">
+                                <!--<img src="img/moc_count_1.png" alt="총 1건 입니다">-->
                                 <!--<img src="img/moc_count_2.png" alt="총 2건 입니다">-->
                                 <!--<img src="img/moc_count_3.png" alt="총 3건 입니다">-->
-                                <!--<img src="img/moc_count_4.png" alt="총 4건 입니다">-->
+                                <img src="img/moc_count_4.png" alt="총 4건 입니다">
                             </div>
                             <!--우동-->
                             <img src="img/moc_request_data01.png" alt="다이어트 빵/쿠키 배우고 싶어요!">
-                            <!--<img src="img/moc_request_data02.png" alt="아이패드 그림 가르쳐주실 분 있나요~">-->
-                            <!--<img src="img/moc_request_data03.png" alt="HHSK 시험 일주일 전 도와주실 분">-->
-                            <!--<img src="img/moc_request_data04.png" alt="실무에 쓸 수 있는 엑셀 알려주세요!">-->
+                            <img src="img/moc_request_data02.png" alt="아이패드 그림 가르쳐주실 분 있나요~">
+                            <img src="img/moc_request_data03.png" alt="HHSK 시험 일주일 전 도와주실 분">
+                            <img src="img/moc_request_data04.png" alt="실무에 쓸 수 있는 엑셀 알려주세요!">
                             <!--//우동-->
 
                             <!--사직동-->
@@ -336,12 +360,8 @@
         })
     }, options)
     // 대상 선언 및 관찰 지시
-    const introRequestImg = document.querySelectorAll('.intro-request__img');
-    introRequestImg.forEach((el) => {
-        io.observe(el);
-    })
-    const introRequestOnImg = document.querySelectorAll('.intro-request__on-img');
-    introRequestOnImg.forEach((el) => {
+    const introImg = document.querySelectorAll('.intro-request__item');
+    introImg.forEach((el) => {
         io.observe(el);
     })
     const introSettingTxt = document.querySelectorAll('.intro-setting__txt-box');

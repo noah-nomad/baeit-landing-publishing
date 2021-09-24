@@ -5,6 +5,13 @@
   z-index: 10;
   @include position(fixed, 0, 0, 0);
   padding: 20*$unit;
+  transition: padding 0.5s;
+
+  @include mobile-area_media {
+    position: sticky;
+    padding: 0;
+    transition: padding 0.5s;
+  }
 
   &__inner {
     display: flex;
@@ -14,6 +21,14 @@
     border-radius: 94*$unit;
     box-shadow: 12*$unit 24*$unit 30*$unit rgb(86 81 195 / 4%);
     background-color: #fff;
+
+    @include mobile-area_media {
+      height: 80*$unit;
+      padding: 0 20*$unit;
+      border-radius: 0;
+      transition: 0.5s;
+      box-shadow: 0 0 12*$unit rgb(86 81 195 / 6%);
+    }
   }
 
   &__gnb {
@@ -44,10 +59,15 @@
         color: $color-primary;
       }
 
-      @include hover_effect() {
+      @include hover_effect {
         font-weight: $bold;
         color: $color-primary;
       }
+
+    }
+
+    @include mobile-area_media {
+      display: none;
     }
   }
 
@@ -86,13 +106,70 @@
       @include click_btn_bg($color-accent);
 
       .i_download {
-        background-image: url("../img/i_download_w.svg");
+        &:after {
+          background-image: url("../img/i_download_w.svg");
+        }
+      }
+    }
+
+    @include mobile-area_media {
+      display: none;
+    }
+  }
+
+  &__m-gnb {
+    flex: 1;
+    display: none;
+
+    @include mobile-area_media {
+      display: block;
+    }
+  }
+
+  &__m-snb {
+    display: none;
+
+    @include mobile-area_media {
+      display: block;
+    }
+
+    .cta {
+      height: 40*$unit;
+      padding: 0 10*$unit;
+      border-radius: 40*$unit;
+      font-size: 14*$unit;
+      color: $gray-50;
+      transform: translate(10*$unit, 0);
+
+      @include hover_effect {
+        background-color: $gray-05;
+      }
+      @include click-btn_bg($gray-05);
+
+      .i_download {
+        width: 1.333333em;
+        height: 1.333333em;
+
+        &:after {
+          background-image: url("../img/i_download_g.svg");
+        }
       }
     }
   }
 
   .logo {
     width: 60*$unit;
+
+    @include mobile-area_media {
+      width: 48*$unit;
+    }
+  }
+
+  .select {
+    width: 33.333333vw;
+    max-width: 150*$unit;
+    margin-left: 20*$unit;
+    font-size: inherit;
   }
 }
 
@@ -120,6 +197,16 @@
       width: auto;
       height: 8em;
       max-height: 76*$unit;
+
+      @include mobile-area_media {
+        height: 16.67em;
+        max-height: 112*$unit;
+        margin: 0 auto;
+      }
+    }
+
+    @include mobile-area_media {
+      padding: 16.666666% 30*$unit 0;
     }
   }
 
@@ -146,12 +233,28 @@
     @include content-area_media {
       font-size: 1.666666vw;
     }
+
+    @include mobile-area_media {
+      padding: 58% 30*$unit 0;
+      justify-content: center;
+      font-size: 3.888888vw;
+    }
   }
 
   &__img-box {
     $main-den: 1080;
     position: relative;
     padding-top: 960/$main-den*100%;
+    font-size: 1*$unit;
+
+    @include content-area_media {
+      font-size: 0.092596vw;
+    }
+
+    @include mobile-area_media {
+      font-size: 0.16819vw;
+      padding-top: 177.777777%;
+    }
 
     & * {
       position: absolute;
@@ -160,28 +263,32 @@
     }
 
     .cafe {
-      $cafe-den: 403;
-      left: 17/$main-den*100%;
-      bottom: 50/$main-den*100%;
-      width: 403/$main-den*100%;
-      padding-top: 309/$main-den*100%;
+      z-index: 2;
+      left: 17em;
+      bottom: 50em;
+      width: 403em;
+      padding-top: 309em;
       background-image: url("../img/brand_visual_cafe.svg");
+
+      @include mobile-area_media {
+        left: 50em;
+      }
 
       .person {
         &.type1 {
-          right: -161/$cafe-den*100%;
-          bottom: -10/$cafe-den*100%;
-          width: 161/$cafe-den*100%;
-          padding-top: 256/$cafe-den*100%;
+          right: -161em;
+          bottom: -10em;
+          width: 161em;
+          padding-top: 256em;
           background-image: url("../img/brand_visual_person1.svg");
           animation: 2s ease-out 0s infinite alternate person-type1;
         }
 
         &.type2 {
-          right: 120/$cafe-den*100%;
-          bottom: -10/$cafe-den*100%;
-          width: 150/$cafe-den*100%;
-          padding-top: 235/$cafe-den*100%;
+          right: 120em;
+          bottom: -10em;
+          width: 150em;
+          padding-top: 235em;
           background-image: url("../img/brand_visual_person2.svg");
           animation: 2s ease-out 0s infinite alternate person-type2;
         }
@@ -189,59 +296,66 @@
 
       .tree {
         &.type1 {
-          right: 531/$cafe-den*100%;
+          right: 531em;
           bottom: 0;
-          width: 108/$cafe-den*100%;
-          padding-top: 200/$cafe-den*100%;
+          width: 108em;
+          padding-top: 200em;
           background-image: url("../img/brand_visual_tree1.svg");
         }
 
         &.type2 {
-          right: 423/$cafe-den*100%;
+          right: 423em;
           bottom: 0;
-          width: 98/$cafe-den*100%;
-          padding-top: 102/$cafe-den*100%;
+          width: 98em;
+          padding-top: 102em;
           background-image: url("../img/brand_visual_tree2.svg");
+        }
+
+        @include mobile-area_media {
+          display: none;
         }
       }
     }
 
     .villa {
-      $villa-den: 532;
-      right: -42/$main-den*100%;
-      bottom: 50/$main-den*100%;
-      width: 532/$main-den*100%;
-      padding-top: 455/$main-den*100%;
+      z-index: 1;
+      right: -42em;
+      bottom: 51em;
+      width: 532em;
+      padding-top: 455em;
+
+      @include mobile-area_media {
+        right: 86em;
+      }
 
       .top {
         bottom: 0;
         width: 100%;
-        padding-top: 455/$villa-den*100%;
+        padding-top: 455em;
         background-image: url("../img/brand_visual_villa1.svg");
       }
 
       .mid {
         bottom: 0;
         width: 100%;
-        padding-top: 299/$villa-den*100%;
+        padding-top: 299em;
         background-image: url("../img/brand_visual_villa2.svg");
       }
 
       .btm {
         bottom: 0;
         width: 100%;
-        padding-top: 175/$villa-den*100%;
+        padding-top: 175em;
         background-image: url("../img/brand_visual_villa3.svg");
       }
 
       .person {
         &.type3 {
-          $per3-den: 115;
           top: 0;
-          left: 188/$villa-den*100%;
-          width: 115/$villa-den*100%;
-          margin-top: 43/$villa-den*100%;
-          padding-top: 146/$villa-den*100%;
+          left: 188em;
+          width: 115em;
+          margin-top: 43em;
+          padding-top: 146em;
 
           .body {
             @include position(absolute);
@@ -260,39 +374,42 @@
           .balustrade {
             z-index: 1;
             top: 0;
-            right: 8/$per3-den*100%;
-            width: 134/$per3-den*100%;
-            margin-top: 82/$per3-den*100%;
-            padding-top: 33/$per3-den*100%;
+            right: 8em;
+            width: 134em;
+            margin-top: 82em;
+            padding-top: 33em;
             background-image: url("../img/brand_visual_balustrade1.svg");
           }
 
           .arm {
             top: 0;
-            right: 98/$per3-den*100%;
-            width: 51/$per3-den*100%;
-            height: 78/$per3-den*100%;
-            margin-top: 55/$per3-den*100%;
+            right: 98em;
+            width: 51em;
+            height: 78em;
+            margin-top: 55em;
             background-image: url("../img/brand_visual_person3_arm.svg");
           }
 
           .bubble {
             top: 0;
-            right: 11/$per3-den*100%;
-            width: 52/$per3-den*100%;
-            margin-top: -63/$per3-den*100%;
-            padding-top: 50/$per3-den*100%;
+            right: 11em;
+            width: 52em;
+            margin-top: -63em;
+            padding-top: 50em;
             background-image: url("../img/brand_visual_person3_bubble.svg");
           }
         }
 
         &.type4 {
-          $per4-den: 165;
           top: 0;
-          left: 303/$villa-den*100%;
-          width: 165/$villa-den*100%;
-          margin-top: 159/$villa-den*100%;
-          padding-top: 129/$villa-den*100%;
+          left: 303em;
+          width: 165em;
+          margin-top: 159em;
+          padding-top: 129em;
+
+          @include mobile-area_media {
+            display: none;
+          }
 
           .body {
             @include position(absolute);
@@ -307,18 +424,18 @@
             z-index: 1;
             top: 0;
             left: 0;
-            width: 133/$per4-den*100%;
-            margin-top: 94/$per4-den*100%;
-            padding-top: 30/$per4-den*100%;
+            width: 133em;
+            margin-top: 94em;
+            padding-top: 30em;
             background-image: url("../img/brand_visual_balustrade2.svg");
           }
 
           .bubble {
             top: 0;
-            left: -4/$per4-den*100%;
-            width: 53/$per4-den*100%;
-            margin-top: -38/$per4-den*100%;
-            padding-top: 51/$per4-den*100%;
+            left: -4em;
+            width: 53em;
+            margin-top: -38em;
+            padding-top: 51em;
             background-image: url("../img/brand_visual_person4_bubble.svg");
           }
         }
@@ -326,30 +443,36 @@
 
       .tree {
         &.type1 {
-          left: 562/$villa-den*100%;
+          left: 562em;
           bottom: 0;
-          width: 108/$villa-den*100%;
-          padding-top: 200/$villa-den*100%;
+          width: 108em;
+          padding-top: 200em;
           background-image: url("../img/brand_visual_tree1.svg");
+        }
+
+        @include mobile-area_media {
+          display: none;
         }
       }
     }
 
     .cloud {
+      z-index: 0;
+
       &.type1 {
-        top: 320/$main-den*100%;
-        right: -40/$main-den*100%;
-        width: 169/$main-den*100%;
-        height: 92/$main-den*100%;
+        top: 300em;
+        right: -40em;
+        width: 169em;
+        height: 92em;
         background-image: url("../img/brand_visual_cloud1.svg");
         animation: 13s linear 0s infinite running cloud;
       }
 
       &.type2 {
-        top: 580/$main-den*100%;
-        left: 570/$main-den*100%;
-        width: 114/$main-den*100%;
-        height: 50/$main-den*100%;
+        top: 520em;
+        left: 570em;
+        width: 114em;
+        height: 50em;
         background-image: url("../img/brand_visual_cloud2.svg");
         animation: 10s linear 0s infinite reverse cloud;
       }
@@ -403,6 +526,7 @@
 
 .intro-request {
   background: linear-gradient(to top, $color-accent-light-60 1.851851%, #fff 1.851851%);
+  overflow: hidden;
 
   &__inner {
     position: relative;
@@ -426,8 +550,16 @@
     font-size: 30*$unit;
     font-weight: $bold;
     word-break: keep-all;
+
     @include content-area_media {
       font-size: 2.77777770vw;
+    }
+
+    @include mobile-area_media {
+      top: 0;
+      left: -50vw;
+      font-size: 5.33333vw;
+      padding-left: 30*$unit;
     }
   }
 
@@ -437,8 +569,12 @@
     font-size: 20*$unit;
     color: $gray-60;
     text-align: right;
+
     @include content-area_media {
       font-size: 1.851851vw;
+    }
+
+    @include mobile-area_media {
     }
 
     em {
@@ -449,6 +585,7 @@
       border-radius: 0.555555em;
       font-size: 18*$unit;
       color: $color-primary-dark-10;
+
       @include content-area_media {
         font-size: 1.666666vw;
       }
@@ -462,6 +599,14 @@
 
     & > * + * {
       margin-left: 11.111111%;
+    }
+
+    @include mobile-area_media {
+      display: block;
+
+      & > * + * {
+        margin-left: 0;
+      }
     }
   }
 
@@ -480,6 +625,16 @@
     &:last-child {
       margin-top: 25%;
     }
+
+    @include mobile-area_media {
+      width: 50vw;
+      max-width: none;
+      margin-left: auto;
+
+      &:before {
+        padding-top: 194.7368421% * 2;
+      }
+    }
   }
 
   &__img {
@@ -487,9 +642,13 @@
     width: 152.631578%;
     transform: translate(0, 0);
 
-    &.on {
+    @at-root .on & {
       transform: translate(-8.620689%, -2.659574%);
       transition: transform 1s;
+    }
+
+    @include mobile-area_media {
+      width: 152.631578% * 2;
     }
   }
 
@@ -503,10 +662,15 @@
       margin-bottom: 6.25%;
     }
 
-    &.on {
+    @at-root .on & {
       padding-top: 29.605263%;
       opacity: 1;
       transition: padding-top 1s, opacity 1s;
+    }
+
+    @include mobile-area_media {
+      left: -100%;
+      width: 105.263157% * 2;
     }
   }
 }
@@ -783,6 +947,7 @@
     @include position(absolute, 50%, null, 0);
     width: 490*$unit;
     transform: translate(0, -50%);
+
     @include content-area_media {
       width: 45.370370vw;
     }
@@ -824,6 +989,11 @@
       width: auto;
       height: 2.857142em;
       padding: 0 1.428571em;
+    }
+
+    @include mobile-area_media {
+      display: block;
+      background-color: transparent;
     }
   }
 

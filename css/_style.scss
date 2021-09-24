@@ -2,7 +2,7 @@
 
 %content-area {
   max-width: 1080px;
-  min-width: 320px;
+  min-width: 240px;
   margin: 0 auto;
 }
 
@@ -93,26 +93,57 @@ input {
 }
 
 .select {
-  $select-border-default: 2px;
   position: relative;
   height: 48*$unit;
   border-radius: 10*$unit;
   background-color: #fff;
 
   &.default {
-    box-shadow: inset 0 0 0 $select-border-default $color-primary-light-20;
+    box-shadow: inset 0 0 0 2px $color-primary-light-20;
     font-size: 20*$unit;
     font-weight: $medium;
 
     &.on {
       ul {
-        box-shadow: inset 0 0 0 $select-border-default $color-primary;
-
-        &:before {
-          left: $select-border-default;
-          right: $select-border-default;
-        }
+        box-shadow: inset 0 0 0 2px $color-primary;
       }
+    }
+  }
+
+  &.head {
+    height: 40*$unit;
+    border-radius: 40*$unit;
+    box-shadow: none;
+    background-color: $color-primary;
+    font-weight: $bold;
+    color: #fff;
+
+    &.on {
+      border-radius: 20*$unit;
+    }
+
+    &:before {
+      right: 4*$unit;
+      background-image: url("../img/i_select_a_cl_down.svg");
+    }
+
+    input {
+      padding: 0 14*$unit;
+    }
+
+    &.on input {
+      border-color: $color-primary-light-10;
+      mix-blend-mode: hard-light;
+    }
+
+    ul {
+      padding-top: 50*$unit;
+    }
+
+    li {
+      height: 40*$unit;
+      padding: 4*$unit;
+      border-radius: 4*$unit;
     }
   }
 
@@ -135,7 +166,6 @@ input {
   input {
     @include position(absolute, 0, 0, 0, 0);
     border: 0;
-    border-radius: inherit;
     background-color: transparent;
     font-size: inherit;
     font-weight: inherit;
@@ -144,6 +174,8 @@ input {
 
   &.on input {
     z-index: 2;
+    border-bottom: 1px solid $color-primary-light-40;
+    mix-blend-mode: darken;
   }
 
   ul {
@@ -151,7 +183,7 @@ input {
     @include position(absolute);
     width: 100%;
     padding: 58*$unit 10*$unit 10*$unit;
-    background-color: #fff;
+    background-color: inherit;
     opacity: 0;
 
   }
@@ -161,13 +193,6 @@ input {
     border-radius: inherit;
     opacity: 1;
     transition: opacity 0.2s;
-
-    &:before {
-      content: "";
-      @include position(absolute, 48*$unit);
-      height: 1px;
-      background-color: $color-primary-light-40;
-    }
   }
 
   li {
