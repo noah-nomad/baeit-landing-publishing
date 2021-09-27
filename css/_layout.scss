@@ -65,10 +65,20 @@
         color: $color-primary;
       }
 
+      @include mobile-area_media {
+        padding: 0 10*$unit;
+        font-size: 16*$unit;
+      }
+      
+      @media (max-width: 360px) {
+        font-size: 4.444444vw;
+      }
     }
 
     @include mobile-area_media {
-      display: none;
+      //display: none;
+      justify-content: left;
+      padding: 0 10*$unit;
     }
   }
 
@@ -89,11 +99,23 @@
         margin-left: 16*$unit;
       }
 
+      i {
+        width: 1.33333em;
+        height: 1.33333em;
+      }
+
       @include hover_effect {
         border-color: $color-primary;
         color: $color-primary;
       }
+
       @include click_btn_bg();
+
+      @include mobile-area_media {
+        height: 40*$unit;
+        padding: 0 10*$unit;
+        font-size: 12*$unit;
+      }
     }
 
     .cta {
@@ -116,7 +138,7 @@
     }
 
     @include mobile-area_media {
-      display: none;
+      //display: none;
     }
   }
 
@@ -658,7 +680,8 @@
       margin-left: 25%;
 
       &:before {
-        padding-top: 194.7368421% * 2;
+        //padding-top: 194.7368421% * 2;
+        padding-top: 345%;
       }
 
       &.on:last-child {
@@ -698,7 +721,8 @@
     }
 
     @include mobile-area_media {
-      width: 152.631578% * 2;
+      //width: 152.631578% * 2;
+      width: 270%;
 
       @at-root .intro-request__item:last-child & {
         width: 152.631578%;
@@ -853,7 +877,7 @@
   }
 
   .mo_only {
-    padding-top: 55.555555%;
+    padding-top: 31.111111%;
   }
 }
 
@@ -866,15 +890,21 @@
   &__txt-box {
     @include position(absolute, 32%, 70*$unit);
 
-    @include mobile-area_media {
-      position: static;
-      padding: 16.666666% 30*$unit 8%;
-    }
-
     &.on {
       top: 27.777777%;
       left: 54*$unit;
       transition: 1s;
+    }
+
+    @include mobile-area_media {
+      z-index: 2;
+      position: relative;
+      left: unset;
+      padding: 16.666666% 30*$unit 8%;
+
+      &.on {
+        left: unset;
+      }
     }
   }
 
@@ -1022,6 +1052,7 @@
     }
 
     @include mobile-area_media {
+      z-index: 1;
       display: flex;
       width: 100%;
       height: 3.375em;
@@ -1057,6 +1088,8 @@
         @include hover_effect {
           background-color: #fff;
         }
+
+        @include click-btn_bg();
 
         i {
           width: 1.5em;
@@ -1131,6 +1164,8 @@
           @include hover_effect {
             background-color: #fff;
           }
+
+          @include click-btn_bg();
         }
 
         &:first-child {
@@ -1175,11 +1210,19 @@
 
   &__txt {
     color: $color-primary-light-30;
+
+    @include mobile-area_media {
+      line-height: 1.2;
+    }
   }
 
   .logo {
     display: inline-block;
     width: 1.733333em;
+
+    @include mobile-area_media {
+      display: none;
+    }
   }
 
   img {
@@ -1240,12 +1283,12 @@
 
       @include hover_effect {
         font-weight: $bold;
-        color: $color-primary;
+        color: $gray-80;
       }
 
-      &:focus {
+      &:active {
         font-weight: $bold;
-        color: $color-primary;
+        color: $gray-80;
       }
     }
 

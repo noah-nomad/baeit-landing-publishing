@@ -337,7 +337,7 @@ input {
   height: 4.8rem;
   cursor: pointer;
 }
-.select li:focus {
+.select li:active {
   background-color: #F2F9F7;
   color: #009377;
 }
@@ -496,8 +496,20 @@ input {
   }
 }
 @media (max-width: 767px) {
+  .header__gnb button {
+    padding: 0 1rem;
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 360px) {
+  .header__gnb button {
+    font-size: 4.444444vw;
+  }
+}
+@media (max-width: 767px) {
   .header__gnb {
-    display: none;
+    justify-content: left;
+    padding: 0 1rem;
   }
 }
 .header__snb {
@@ -516,14 +528,25 @@ input {
 .header__snb button + * {
   margin-left: 1.6rem;
 }
+.header__snb button i {
+  width: 1.33333em;
+  height: 1.33333em;
+}
 @media (hover: hover) {
   .header__snb button:hover {
     border-color: #00B28F;
     color: #00B28F;
   }
 }
-.header__snb button:focus {
+.header__snb button:active {
   background-color: #fafafa;
+}
+@media (max-width: 767px) {
+  .header__snb button {
+    height: 4rem;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+  }
 }
 .header__snb .cta {
   display: flex;
@@ -538,16 +561,11 @@ input {
     background-color: #5873DC;
   }
 }
-.header__snb .cta:focus {
+.header__snb .cta:active {
   background-color: #506cda;
 }
 .header__snb .cta .i_download:after {
   background-image: url("../img/i_download_w.svg");
-}
-@media (max-width: 767px) {
-  .header__snb {
-    display: none;
-  }
 }
 .header__m-gnb {
   flex: 1;
@@ -581,7 +599,7 @@ input {
     background-color: #FAFAFA;
   }
 }
-.header__m-snb .cta:focus {
+.header__m-snb .cta:active {
   background-color: whitesmoke;
 }
 .header__m-snb .cta .i_download {
@@ -1063,7 +1081,7 @@ input {
     margin-left: 25%;
   }
   .intro-request__item:before {
-    padding-top: 389.4736842%;
+    padding-top: 345%;
   }
   .intro-request__item.on:last-child {
     margin-top: 3rem;
@@ -1102,7 +1120,7 @@ input {
 
 @media (max-width: 767px) {
   .intro-request__img {
-    width: 305.263156%;
+    width: 270%;
   }
   .intro-request__item:last-child .intro-request__img {
     width: 152.631578%;
@@ -1260,7 +1278,7 @@ input {
   background-position: center;
 }
 .strip-banner .mo_only {
-  padding-top: 55.555555%;
+  padding-top: 31.111111%;
 }
 
 .intro-setting__inner {
@@ -1271,16 +1289,21 @@ input {
   top: 32%;
   left: 7rem;
 }
-@media (max-width: 767px) {
-  .intro-setting__txt-box {
-    position: static;
-    padding: 16.666666% 3rem 8%;
-  }
-}
 .intro-setting__txt-box.on {
   top: 27.777777%;
   left: 5.4rem;
   transition: 1s;
+}
+@media (max-width: 767px) {
+  .intro-setting__txt-box {
+    z-index: 2;
+    position: relative;
+    left: unset;
+    padding: 16.666666% 3rem 8%;
+  }
+  .intro-setting__txt-box.on {
+    left: unset;
+  }
 }
 .intro-setting__ttl {
   padding-bottom: 1.5em;
@@ -1427,6 +1450,7 @@ input {
 }
 @media (max-width: 767px) {
   .intro-setting__toggle {
+    z-index: 1;
     display: flex;
     width: 100%;
     height: 3.375em;
@@ -1467,6 +1491,11 @@ input {
 @media (max-width: 767px) and (hover: hover) {
   .intro-setting__toggle button:hover {
     background-color: #fff;
+  }
+}
+@media (max-width: 767px) {
+  .intro-setting__toggle button:active {
+    background-color: #fafafa;
   }
 }
 @media (max-width: 767px) {
@@ -1532,6 +1561,11 @@ input {
     background-color: #fff;
   }
 }
+@media (max-width: 767px) {
+  .intro-setting__toggle.on button:active {
+    background-color: #fafafa;
+  }
+}
 .intro-setting__toggle.on button:first-child {
   z-index: 2;
 }
@@ -1569,9 +1603,19 @@ input {
 .market-banner__txt {
   color: #9AE2C7;
 }
+@media (max-width: 767px) {
+  .market-banner__txt {
+    line-height: 1.2;
+  }
+}
 .market-banner .logo {
   display: inline-block;
   width: 1.733333em;
+}
+@media (max-width: 767px) {
+  .market-banner .logo {
+    display: none;
+  }
 }
 .market-banner img {
   position: absolute;
@@ -1605,7 +1649,7 @@ input {
     background-color: #fff;
   }
 }
-.market-banner .cta:focus {
+.market-banner .cta:active {
   background-color: #fafafa;
 }
 
@@ -1634,12 +1678,12 @@ input {
 @media (hover: hover) {
   .footer__fnb button:hover {
     font-weight: 700;
-    color: #00B28F;
+    color: #424242;
   }
 }
-.footer__fnb button:focus {
+.footer__fnb button:active {
   font-weight: 700;
-  color: #00B28F;
+  color: #424242;
 }
 @media (max-width: 767px) {
   .footer__fnb {

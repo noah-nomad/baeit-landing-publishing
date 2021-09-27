@@ -22,17 +22,15 @@
             <button onclick="setToggle(this)">쌤 지원하기</button>
         </nav>
         <div class="header__snb">
-            <button>회사소개</button>
             <button class="cta" tabindex="1">앱 다운로드<i class="i_download"></i></button>
         </div>
-        <nav class="header__m-gnb">
+        <!--<nav class="header__m-gnb">
             <div id="select_gnb_wrap" class="select head">
                 <label class="blind" for="select_gnb">동네 선택</label>
                 <input type="text" role="combobox" id="select_gnb" value="홈" readonly>
                 <ul role="listbox" id="popup_gnb">
                     <li role="option" id="selected_gnb">홈</li>
                     <li role="option">쌤 지원하기</li>
-                    <li role="option">회사소개</li>
                 </ul>
             </div>
             <script>
@@ -45,7 +43,7 @@
         </nav>
         <div class="header__m-snb">
             <button class="cta" tabindex="1">앱 다운로드<i class="i_download"></i></button>
-        </div>
+        </div>-->
     </div>
 </header>
 <main class="main">
@@ -105,7 +103,7 @@
                             <img src="img/moc_request_data08.png" alt="스크린 골프 입문자 레슨 해주실 분">
                         </div>
                     </div>
-                    <div class="intro-request__item">
+                    <div class="intro-request__item pc_only">
                         <p class="intro-request__txt"><em>너무 사소해서</em><br><em>기존에 나온 커리큘럼과 너무 달라서</em><br>배우지 못했던 배움을<br>가까이에서 만날 수 있어요</p>
                         <img class="intro-request__img" src="img/img_mockup2.png" alt="클래스요청 상세내용 예시입니다">
                         <p class="blind">
@@ -168,12 +166,12 @@
                         <div class="line">
                             <div id="select_meter_wrap" class="select default">
                                 <label class="blind" for="select_meter">거리 선택</label>
-                                <input type="text" role="combobox" id="select_meter" value="도보 10분(700m)" readonly>
+                                <input type="text" role="combobox" id="select_meter" value="차량 20분(8km)" readonly>
                                 <ul role="listbox" id="popup_meter">
-                                    <li role="option" id="selected_meter">도보 10분(700m)</li>
+                                    <li role="option">도보 10분(700m)</li>
                                     <li role="option">도보 20분(1.4km)</li>
                                     <li role="option">자전거 10분(3km)</li>
-                                    <li role="option">차량 20분(8km)</li>
+                                    <li role="option" id="selected_meter">차량 20분(8km)</li>
                                 </ul>
                             </div>
                             <b>거리에 있는</b>
@@ -316,8 +314,12 @@
         </div>
         <div class="footer__copyright">
             <dl>
-                <dt>제휴문의</dt>
-                <dd><a href="mailto:admin@noah-nomad.com">admin@noah-nomad.com</a></dd>
+                <dt>제휴 및 파트너 문의</dt>
+                <dd><a href="mailto:partner@noah-nomad.com">partner@noah-nomad.com</a></dd>
+            </dl>
+            <dl>
+                <dt>고객 관련 문의</dt>
+                <dd><a href="mailto:help@noah-nomad.com">help@noah-nomad.com</a></dd>
             </dl>
             <dl>
                 <dt>대표</dt>
