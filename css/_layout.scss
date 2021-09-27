@@ -534,6 +534,7 @@
     padding: 8.333333% 0 calc(11.111111% + 1.851851%);
 
     &:before {
+      z-index: 1;
       @include position(absolute, null, 7.407407%, null, 0);
       content: "";
       display: block;
@@ -541,6 +542,11 @@
       padding-top: 14.814814%;
       background-image: url("../img/img_bicycle.svg");
       background-size: cover;
+
+      @include mobile-area_media {
+        width: 27.777777%;
+        padding-top: 17.814814%;
+      }
     }
   }
 
@@ -556,8 +562,8 @@
     }
 
     @include mobile-area_media {
-      top: 0;
-      left: -50vw;
+      top: -20vw;
+      left: -50%;
       font-size: 5.33333vw;
       padding-left: 30*$unit;
     }
@@ -575,6 +581,9 @@
     }
 
     @include mobile-area_media {
+      z-index: 1;
+      right: 0;
+      font-size: 4.444444vw;
     }
 
     em {
@@ -588,6 +597,10 @@
 
       @include content-area_media {
         font-size: 1.666666vw;
+      }
+
+      @include mobile-area_media {
+        font-size: 4.444444vw;
       }
     }
   }
@@ -629,10 +642,35 @@
     @include mobile-area_media {
       width: 50vw;
       max-width: none;
-      margin-left: auto;
+      margin-top: 24vw;
+      margin-left: 25%;
 
       &:before {
         padding-top: 194.7368421% * 2;
+      }
+
+      &.on:last-child {
+        margin-top: 30*$unit;
+        transition: margin-top 1s;
+      }
+
+      &:last-child {
+        width: 87.222222vw;
+        margin-top: 60*$unit;
+        margin-left: 2.777777%;
+        transition: margin-top 1s;
+
+
+        &:before {
+          padding-top: 133.121019%;
+        }
+
+        &:after {
+          content: "";
+          @include position(absolute, 0, 0, null, 0);
+          width: 100vw;
+          background: linear-gradient(to top, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 50%);
+        }
       }
     }
   }
@@ -649,6 +687,13 @@
 
     @include mobile-area_media {
       width: 152.631578% * 2;
+
+      @at-root .intro-request__item:last-child & {
+        width: 152.631578%;
+        height: 116.111111vw;
+        object-fit: cover;
+        object-position: top;
+      }
     }
   }
 
@@ -669,8 +714,13 @@
     }
 
     @include mobile-area_media {
-      left: -100%;
-      width: 105.263157% * 2;
+      left: -50% + 16.666666%;
+      width: 175%;
+      padding-top: 80%;
+
+      @at-root .on & {
+        padding-top: 60%;
+      }
     }
   }
 }
@@ -687,8 +737,14 @@
     padding: 0 54*$unit 2.1875em;
     font-size: 32*$unit;
     font-weight: $bold;
+
     @include content-area_media {
       font-size: 2.9vw;
+    }
+
+    @include mobile-area_media {
+      padding: 0 30*$unit 1.818181em;
+      font-size: 6.111111vw;
     }
   }
 
@@ -696,12 +752,20 @@
     padding: 0 54*$unit;
     overflow: auto;
 
+    @include mobile-area_media {
+      padding: 0 30*$unit;
+    }
+
     &__ul {
       display: flex;
       justify-content: space-between;
       min-width: 100%;
       width: max-content;
       margin-right: 54*$unit;
+
+      @include mobile-area_media {
+        margin-right: 40*$unit;
+      }
     }
 
     &__li {
@@ -710,6 +774,10 @@
       @media (max-width: 936px) {
         margin-right: 54*$unit;
       }
+
+      @include mobile-area_media {
+        margin-right: 40*$unit;
+      }
     }
 
     h3 {
@@ -717,8 +785,14 @@
       font-size: 24*$unit;
       font-weight: $medium;
       word-break: keep-all;
+
       @include content-area_media {
         font-size: 2.4vw;
+      }
+
+      @include mobile-area_media {
+        padding-bottom: 5*$unit;
+        font-size: 4.444444vw;
       }
     }
 
@@ -726,8 +800,14 @@
       font-size: 16*$unit;
       color: $gray-60;
       word-break: keep-all;
+
       @include content-area_media {
         font-size: 1.8vw;
+      }
+
+      @include mobile-area_media {
+        font-size: 3.888888vw;
+        color: $gray-50;
       }
     }
   }
