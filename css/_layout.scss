@@ -16,6 +16,7 @@
   &__inner {
     display: flex;
     align-items: center;
+    min-width: 240px;
     height: 94*$unit;
     padding: 0 24*$unit 0 36*$unit;
     border-radius: 94*$unit;
@@ -174,6 +175,8 @@
 }
 
 .main {
+  min-width: 240px;
+
   &__inner {
   }
 }
@@ -533,6 +536,10 @@
     @extend %content-area;
     padding: 8.333333% 0 calc(11.111111% + 1.851851%);
 
+    @include mobile-area_media {
+      padding-bottom: calc(18.666666% + 1.851851%);
+    }
+
     &:before {
       z-index: 1;
       @include position(absolute, null, 7.407407%, null, 0);
@@ -601,6 +608,7 @@
 
       @include mobile-area_media {
         font-size: 4.444444vw;
+        font-weight: $medium;
       }
     }
   }
@@ -830,16 +838,18 @@
   &__inner {
     @extend %content-area;
     padding: 0 54*$unit;
-    background-image: url("../img/bnr_mid-strap_bg.png");
     background-size: contain;
     background-position: center;
   }
 
   &__txt-img {
     padding-top: 11.111111%;
-    background-image: url("../img/bnr_mid-strap_txt.png");
     background-size: contain;
     background-position: center;
+  }
+
+  .mo_only {
+    padding-top: 55.555555%;
   }
 }
 
@@ -852,6 +862,11 @@
   &__txt-box {
     @include position(absolute, 32%, 70*$unit);
 
+    @include mobile-area_media {
+      position: static;
+      padding: 16.666666% 30*$unit 8%;
+    }
+
     &.on {
       top: 27.777777%;
       left: 54*$unit;
@@ -863,15 +878,26 @@
     padding-bottom: 1.5em;
     font-size: 30*$unit;
     font-weight: $bold;
+
     @include content-area_media {
       font-size: 2.9vw;
+    }
+
+    @include mobile-area_media {
+      padding-bottom: 1em;
+      font-size: 6.111111vw;
     }
   }
 
   &__txt {
     font-size: 20*$unit;
+
     @include content-area_media {
       font-size: 1.8vw;
+    }
+
+    @include mobile-area_media {
+      font-size: 4.444444vw;
     }
 
     .line {
@@ -893,6 +919,18 @@
     .select {
       width: 11em;
       font-size: inherit;
+
+      @include mobile-area_media {
+        height: 13.333333vw;
+
+        &.on ul {
+          padding-top: calc(13.333333vw + 1rem);
+        }
+
+        li {
+          height: 13.333333vw;
+        }
+      }
     }
   }
 
@@ -903,10 +941,25 @@
     margin: 0 54*$unit 0 auto;
     padding: 14.814814% 0 17.592592%;
 
+    @include mobile-area_media {
+      flex-direction: column-reverse;
+      margin: 0 auto;
+      padding-top: 0;
+    }
+
     .mockup {
       z-index: -1;
       transform: translate(0, 0);
       transition: transform 0.5s;
+
+      @include content-area_media {
+        font-size: 0.092596vw;
+      }
+
+      @include mobile-area_media {
+        display: none;
+        font-size: 0.24692vw;
+      }
 
       &:before {
         z-index: 5;
@@ -926,8 +979,16 @@
         @include position(absolute, null, null);
         transform: translate(-40%, 30*$unit);
         transition: transform 0.5s;
+
         @include content-area_media {
           transform: translate(-30%, 30*$unit);
+        }
+
+        @include mobile-area_media {
+          display: block;
+          z-index: unset;
+          position: static;
+          transform: translate(0, 0);
         }
 
         &:before {
@@ -949,47 +1010,123 @@
     height: 8.5em;
     margin: 40% 0 0 -3.5em;
     border-radius: 50%;
-    background-color: $color-primary;
-    background-image: url("../img/img_mouse_click.svg");
-    background-size: 3.75em auto;
-    background-position: top center;
     font-size: 16*$unit;
-    color: #fff;
     overflow: hidden;
-    transition: background-color 0.2s;
+
     @include content-area_media {
       font-size: 1.481481vw;
     }
 
-    @include hover_effect {
-      background-color: darken($color-primary, 6%);
+    @include mobile-area_media {
+      display: flex;
+      width: 100%;
+      height: 3.375em;
+      margin: 0 0 20*$unit;
+      border-radius: 0;
+      font-size: 4.444444vw;
     }
 
-    &.on {
-      background-color: $color-accent;
+    button {
+      @include position(absolute);
+      width: inherit;
+      height: inherit;
+      border-radius: inherit;
+      background-color: $color-primary;
+      background-image: url("../img/img_mouse_click.svg");
+      background-size: 3.75em auto;
+      background-position: top center;
+      color: #fff;
       transition: background-color 0.2s;
 
       @include hover_effect {
-        background-color: darken($color-accent, 6%);
+        background-color: darken($color-primary, 6%);
+      }
+
+      @include mobile-area_media {
+        position: static;
+        border: 0;
+        border-bottom: 3px solid $gray-10;
+        background-color: #fff;
+        font-weight: $bold;
+        color: $green-gray-20;
+
+        i {
+          width: 24*$unit;
+          height: 24*$unit;
+          margin-left: 0;
+          margin-right: 0.25em;
+        }
+
+        &:first-child {
+          i {
+            &:after {
+              background-image: url("../img/i_nav_find_off.svg");
+            }
+          }
+        }
+
+        &:last-child {
+          i {
+            &:after {
+              background-image: url("../img/i_nav_request_off.svg");
+            }
+          }
+        }
+
+        &.on {
+          color: $color-primary;
+          border-color: $color-primary;
+
+
+          &:first-child {
+            i {
+              &:after {
+                background-image: url("../img/i_nav_find_on.svg");
+              }
+            }
+          }
+
+          &:last-child {
+            i {
+              &:after {
+                background-image: url("../img/i_nav_request_on.svg");
+              }
+            }
+          }
+        }
+      }
+
+      span {
+        @include position(absolute, 64%, 0, 0);
+        text-align: center;
+
+        @include mobile-area_media {
+          display: flex;
+          justify-content: center;
+          position: static;
+        }
       }
     }
 
-    &:before {
-      content: "클래스요청";
-      @include position-center(x, absolute);
-      top: 64%;
-      width: max-content;
+    &.on {
+      button {
+        background-color: $color-accent;
+        transition: background-color 0.2s;
+
+        @include hover_effect {
+          background-color: darken($color-accent, 6%);
+        }
+
+        @include mobile-area_media {
+          background-color: #fff;
+        }
+
+        &:first-child {
+          z-index: 2;
+        }
+      }
     }
 
-    &.on:before {
-      content: "동네클래스";
-    }
-  }
-
-  .mockup {
-    @include content-area_media {
-      font-size: 0.092596vw;
-    }
   }
 }
 
@@ -1000,12 +1137,22 @@
     position: relative;
     @extend %content-area;
     padding: 60*$unit 54*$unit;
+
+    @include mobile-area_media {
+      padding: 50*$unit 30*$unit;
+      overflow: hidden;
+    }
   }
 
   &__txt-box {
     font-size: 30*$unit;
+
     @include content-area_media {
       font-size: 2.777777vw;
+    }
+
+    @include mobile-area_media {
+      font-size: 5.555555vw;
     }
   }
 
@@ -1031,6 +1178,11 @@
     @include content-area_media {
       width: 45.370370vw;
     }
+
+    @include mobile-area_media {
+      width: 64vw;
+      transform: translate(24%, -50%);
+    }
   }
 
   .cta {
@@ -1054,6 +1206,10 @@
   &__inner {
     @extend %content-area;
     padding: 2.777777% 20*$unit 8.33333%;
+
+    @include mobile-area_media {
+      padding: 30*$unit 30*$unit 90*$unit;
+    }
   }
 
   &__fnb {
@@ -1069,11 +1225,27 @@
       width: auto;
       height: 2.857142em;
       padding: 0 1.428571em;
+
+      @include hover_effect {
+        font-weight: $bold;
+        color: $color-primary;
+      }
+
+      &:active {
+        font-weight: $bold;
+        color: $color-primary;
+      }
     }
 
     @include mobile-area_media {
       display: block;
       background-color: transparent;
+
+      button {
+        height: auto;
+        margin-bottom: 10*$unit;
+        padding: 0;
+      }
     }
   }
 
@@ -1084,8 +1256,19 @@
     padding: 0 4*$unit;
     font-size: 14*$unit;
 
+    @include mobile-area_media {
+      display: block;
+      font-size: 12*$unit;
+      margin-top: 30*$unit;
+      padding: 0;
+    }
+
     a {
       text-decoration: underline;
+
+      @include hover_effect {
+        text-decoration: none;
+      }
     }
 
     dl {
@@ -1101,10 +1284,20 @@
         width: 1px;
         height: 0.8em;
         background-color: $gray-20;
+
+      }
+
+      @include mobile-area_media {
+        padding-right: 0;
+
+        &:not(:last-child):before {
+          display: none;
+        }
       }
     }
 
     dt {
+      flex: 0 0 auto;
       padding-right: 0.5em;
       color: $gray-40;
     }

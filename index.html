@@ -120,7 +120,7 @@
         </article>
         <article class="supplier-activity">
             <div class="supplier-activity__inner">
-                <h2 class="supplier-activity__ttl">동네에서 언제든지 쌤이 되어 <br class="break-mo">활동해볼까요?</h2>
+                <h2 class="supplier-activity__ttl">동네에서 언제든지 쌤이 되어 <br class="mo_only">활동해볼까요?</h2>
                 <div class="supplier-activity__list">
                     <ul class="supplier-activity__list__ul">
                         <li class="supplier-activity__list__li">
@@ -143,9 +143,10 @@
             </div>
         </article>
         <article class="strip-banner" style="--strip-banner-bg: #5873DC;">
-            <div class="strip-banner__inner">
-                <div class="strip-banner__txt-img"></div>
+            <div class="strip-banner__inner pc_only" style="background-image: url('img/bnr_mid-strap_bg.png');">
+                <div class="strip-banner__txt-img" style="background-image: url('img/bnr_mid-strap_txt.png');"></div>
             </div>
+            <div class="strip-banner__inner mo_only" style="background-image: url('img/bnr_mid-strap_mo.png');"></div>
         </article>
         <article class="intro-setting">
             <div class="intro-setting__inner">
@@ -282,15 +283,22 @@
                         </div>
                         <div class="mockup__nav"></div>
                     </div>
-                    <button class="intro-setting__toggle" onclick="mockupToggle(mockupDongNE, mockupRequest);setToggle(this)"></button>
+                    <div class="intro-setting__toggle" onclick="setToggle(this);">
+                        <button class="on" onclick="mockupToggle(mockupDongNE, mockupRequest);">
+                            <span><i class="i_nav_find mo_only"></i>동네클래스</span>
+                        </button>
+                        <button class="" onclick="mockupToggle(mockupRequest, mockupDongNE);">
+                            <span><i class="i_nav_request mo_only"></i>클래스요청</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </article>
         <article class="market-banner">
             <div class="market-banner__inner">
                 <div class="market-banner__txt-box">
-                    <p class="market-banner__txt">가까운 이웃과 배움을 주고받는</p>
-                    <h2 class="market-banner__ttl">동네 배움 앱 <span class="logo on-primary"><span><span class="blind">배잇</span></span></span></h2>
+                    <p class="market-banner__txt">가까운 이웃과<br class="mo_only">배움을 주고받는</p>
+                    <h2 class="market-banner__ttl">동네 배움 앱 <span class="logo on-primary pc_only"><span><span class="blind">배잇</span></span></span></h2>
                     <button class="cta">다운로드</button>
                 </div>
                 <img src="img/img_splash_mockup.png" alt="인트로 화면 이미지">
@@ -340,8 +348,8 @@
     const mockupDongNE = document.getElementById('mockup-dong-ne');
     const mockupRequest = document.getElementById('mockup-request');
     function mockupToggle($el1, $el2) {
-        $el1.classList.toggle('on');
-        $el2.classList.toggle('on');
+        $el1.classList.add('on');
+        $el2.classList.remove('on');
     }
 
     // options 설정
