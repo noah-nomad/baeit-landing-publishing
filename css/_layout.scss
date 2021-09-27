@@ -69,7 +69,7 @@
         padding: 0 10*$unit;
         font-size: 16*$unit;
       }
-      
+
       @media (max-width: 360px) {
         font-size: 4.444444vw;
       }
@@ -860,6 +860,7 @@
 
 .strip-banner {
   --strip-banner-bg: null;
+  --strip-banner-bg: #5873DC;
   background-color: var(--strip-banner-bg);
   cursor: pointer;
 
@@ -874,10 +875,16 @@
     padding-top: 11.111111%;
     background-size: contain;
     background-position: center;
+    background-image: url('../img/bnr_mid-strap_txt.png');
+  }
+
+  .pc_only {
+    background-image: url('../img/bnr_mid-strap_bg.png');
   }
 
   .mo_only {
     padding-top: 31.111111%;
+    background-image: url('../img/bnr_mid-strap_mo.png');
   }
 }
 
