@@ -23,11 +23,11 @@
 //@include click_btn_bg(원래 배경색, 어두워지는 정도값, light: 배경색 밝아짐);
 @mixin click-btn_bg($color: #fff, $amount: 2%, $if: null) {
   @if $if == null {
-    &:active {
+    &:focus {
       background-color: darken($color, $amount);
     }
   } @else {
-    &:active {
+    &:focus {
       background-color: lighten($color, $amount);
     }
   }
@@ -210,7 +210,7 @@ input {
     height: 48*$unit;
     cursor: pointer;
 
-    &:active {
+    &:focus {
       background-color: $color-primary-light-60;
       color: $color-primary-dark-10;
     }

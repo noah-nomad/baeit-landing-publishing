@@ -1050,6 +1050,10 @@
         font-weight: $bold;
         color: $green-gray-20;
 
+        @include hover_effect {
+          background-color: #fff;
+        }
+
         i {
           width: 24*$unit;
           height: 24*$unit;
@@ -1119,6 +1123,10 @@
 
         @include mobile-area_media {
           background-color: #fff;
+
+          @include hover_effect {
+            background-color: #fff;
+          }
         }
 
         &:first-child {
@@ -1231,7 +1239,7 @@
         color: $color-primary;
       }
 
-      &:active {
+      &:focus {
         font-weight: $bold;
         color: $color-primary;
       }
