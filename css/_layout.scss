@@ -97,6 +97,8 @@
     }
 
     .cta {
+      display: flex;
+      align-items: center;
       border: 0;
       background-color: $color-primary;
       font-weight: $bold;
@@ -135,6 +137,8 @@
     }
 
     .cta {
+      display: flex;
+      align-items: center;
       height: 40*$unit;
       padding: 0 10*$unit;
       border-radius: 40*$unit;
@@ -1055,8 +1059,8 @@
         }
 
         i {
-          width: 24*$unit;
-          height: 24*$unit;
+          width: 1.5em;
+          height: 1.5em;
           margin-left: 0;
           margin-right: 0.25em;
         }

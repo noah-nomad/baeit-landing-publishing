@@ -526,6 +526,8 @@ input {
   background-color: #fafafa;
 }
 .header__snb .cta {
+  display: flex;
+  align-items: center;
   border: 0;
   background-color: #00B28F;
   font-weight: 700;
@@ -565,6 +567,8 @@ input {
   }
 }
 .header__m-snb .cta {
+  display: flex;
+  align-items: center;
   height: 4rem;
   padding: 0 1rem;
   border-radius: 4rem;
@@ -1467,8 +1471,8 @@ input {
 }
 @media (max-width: 767px) {
   .intro-setting__toggle button i {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.5em;
+    height: 1.5em;
     margin-left: 0;
     margin-right: 0.25em;
   }
