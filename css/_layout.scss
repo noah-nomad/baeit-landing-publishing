@@ -563,7 +563,7 @@
     padding: 8.333333% 0 calc(11.111111% + 1.851851%);
 
     @include mobile-area_media {
-      padding-bottom: calc(18.666666% + 1.851851%);
+      padding-bottom: calc(30% + 1.851851%);
     }
 
     &:before {
@@ -859,7 +859,6 @@
 }
 
 .strip-banner {
-  --strip-banner-bg: null;
   --strip-banner-bg: #5873DC;
   background-color: var(--strip-banner-bg);
   cursor: pointer;
@@ -927,6 +926,13 @@
     @include mobile-area_media {
       padding-bottom: 1em;
       font-size: 6.111111vw;
+    }
+
+    small {
+      display: block;
+      font-size: 12*$unit;
+      font-weight: $regular;
+      color: $color-secondary-dark-30;
     }
   }
 
