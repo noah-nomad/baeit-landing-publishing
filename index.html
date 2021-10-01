@@ -14,6 +14,9 @@
     <title>배움을 잇다, 배잇</title>
 </head>
 <body>
+<div class="modal-load">
+    <script>loadHTML("app-download.html");</script>
+</div>
 <header class="header">
     <div class="header__inner">
         <h1 class="logo"><a href="#" tabindex="1"><span class="blind">배잇</span></a></h1>
@@ -378,5 +381,24 @@
     introSettingTxt.forEach((el) => {
         io.observe(el);
     })
+
+    // load HTML
+    function loadHTML(file)
+    {
+        const rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    const allText = rawFile.responseText;
+                    document.write(allText);
+                }
+            }
+        }
+        rawFile.send(null);
+    }
 </script>
 </html>

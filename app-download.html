@@ -15,29 +15,83 @@
 </head>
 <body>
 <div class="modal_wrap on"><!--'on 추가'-->
-    <div class="modal_inner">
+    <div class="modal__inner">
         <div class="modal">
-            <div class="modal_head">
+            <div class="modal__head">
                 <!--<h1 class="h1"></h1>-->
             </div>
-            <div class="modal_con">
+            <div class="modal__con">
                 <img src="img/img_install-baeit.png" alt="">
-                <img src="img/img_install-baeit.png" alt="">
-                <img src="img/img_install-baeit.png" alt="">
-                <div class="modal_txt">
-                    <div class="center">
-                        아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+                <div class="form_wrap">
+                    <div class="form">
+                        <ul class="form_ul">
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>휴대폰 번호</span>
+                                </div>
+                                <div class="form_in">
+                                    <div class="inline">
+                                        <label class="input">
+                                            <input type="number" placeholder="‘-’없이 숫자만 입력해주세요">
+                                        </label>
+                                        <button class="btn bo">보내기</button>
+                                    </div>
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>인증번호</span>
+                                </div>
+                                <div class="form_in">
+                                    <div class="inline">
+                                        <label class="time_count">
+                                            <input type="number" placeholder="입력 시간 5:00" disabled>
+                                            <span class="time">5:00</span><!--'on 추가'-->
+                                        </label>
+                                        <button class="btn bo" disabled>인증완료</button>
+                                    </div>
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="modal_btn">
+            <div class="modal__btn">
+                <p class="hint">[보내기] 버튼을 누름으로써 <button class="line_btn on" onclick="setToggle(document.getElementById('info_terms'));setToggle(this)">개인정보 수집/이용<i class="i_cv_down"></i></button>에 동의하는 것으로 간주됩니다.</p>
+                <div id="info_terms" class="terms on">
+                    <div class="terms__inner">
+                        <p>하나의 휴대폰 번호로 하루 최대 10번까지 전송이 가능합니다.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>항목</th>
+                                    <th>수집목적</th>
+                                    <th>보유기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>휴대폰 번호</td>
+                                    <td>SMS발송 및 부정이용방지</td>
+                                    <td>목적달성 1일 후 파기</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <div class="btn_wrap">
-                    <button class="btn bo grey">비동의</button>
-                    <button class="btn">동의</button>
+                    <button class="btn">닫기</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </body>
+<script>
+    function setToggle($el) {
+        $el.classList.toggle('on');
+    }
+</script>
 </html>
