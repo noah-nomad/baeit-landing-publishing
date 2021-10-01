@@ -212,10 +212,6 @@ $form-box-height: 60*$unit;
         }
       }
     }
-    .prof {
-      margin: 0 auto 16*$unit;
-      width: 128*$unit;
-    }
   }
 
   &_ttl {
@@ -225,9 +221,29 @@ $form-box-height: 60*$unit;
     width: 100%;
     font-size: 16*$unit;
     font-weight: $medium;
+
+    small {
+      color: $gray-40;
+    }
+
+    b {
+      flex: 1;
+      font-size: 12*$unit;
+      font-weight: $bold;
+      color: $color-primary;
+      text-align: right;
+    }
+  }
+
+  &_attach_txt {
+    flex: 1;
+    font-size: 12*$unit;
+    color: $color-primary-light-10;
+    text-align: right;
   }
 
   &_in {
+    width: 100%;
     min-height: $form-box-height;
 
     & > * {
@@ -235,6 +251,15 @@ $form-box-height: 60*$unit;
 
       &:first-child {
         margin-top: 0;
+      }
+    }
+
+    .select {
+      width: 100%;
+
+      &:before {
+        right: 1em;
+        background-size: 1.333333em;
       }
     }
   }
@@ -350,11 +375,12 @@ $form-box-height: 60*$unit;
   font-weight: $medium;
 
   &::placeholder {
+    font-weight: $regular;
     color: $gray-40;
   }
 
   &:focus {
-    border: 2px solid $color-primary-light-20; //포커스 보더색
+    border: 2px solid $color-primary; //포커스 보더색
     outline: none;
   }
 
@@ -364,7 +390,7 @@ $form-box-height: 60*$unit;
   }
 }
 
-input, select {
+input:not([type="checkbox"], [type="radio"]) {
   @extend %input-common;
   padding: 0 1em; //인풋 내부여백
   min-height: 40*$unit; //인풋 높이
@@ -373,7 +399,7 @@ input, select {
 textarea {
   @extend %input-common;
   padding: 8*$unit 10*$unit;
-  height: 100*$unit;
+  height: 228*$unit;
   white-space: pre-line;
 }
 
@@ -422,18 +448,17 @@ textarea {
   }
 }
 
-$check-size: 24*$unit;
-.checkbox {
+.checkbox, .radio {
   font-size: 14*$unit;
 
   input {
-    width: $check-size;
-    height: $check-size;
-    background-image: url("../images/i_ch.svg");
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("../img/i_ch.svg");
     background-size: contain;
 
     &:checked {
-      background-image: url("../images/i_ched.svg");
+      background-image: url("../img/i_ched.svg");
 
       & + * {
         font-weight: $bold;
@@ -443,7 +468,8 @@ $check-size: 24*$unit;
   }
 
   label {
-    padding-left: $check-size + 8*$unit;
+    line-height: 1.2;
+    padding: 0.15em 0 0.15em 1.8em;
   }
 
   &.right {
@@ -458,7 +484,17 @@ $check-size: 24*$unit;
     label {
       position: relative;
       padding-left: 0;
-      padding-right: $check-size + 8*$unit;
+      padding-right: 2.1em;
+    }
+  }
+}
+
+.radio {
+  input {
+    background-image: url("../img/i_rd.svg");
+
+    &:checked {
+      background-image: url("../img/i_rded.svg");
     }
   }
 }
@@ -506,10 +542,6 @@ $check-size: 24*$unit;
   }
 }
 
-input {
-  padding: 0 10*$unit;
-}
-
 .select {
   position: relative;
   height: 48*$unit;
@@ -521,10 +553,22 @@ input {
     font-size: 20*$unit;
     font-weight: $medium;
 
-    &.on {
-      ul {
-        box-shadow: inset 0 0 0 2px $color-primary;
-      }
+    input {
+      padding: 0 10*$unit;
+    }
+
+    &.on ul {
+      box-shadow: inset 0 0 0 2px $color-primary;
+    }
+  }
+
+  &.in-form {
+    height: 60*$unit;
+    box-shadow: inset 0 0 0 1px $gray-20;
+
+    &.on ul {
+      padding-top: 70*$unit;
+      box-shadow: inset 0 0 0 2px $color-primary;
     }
   }
 
@@ -584,6 +628,7 @@ input {
   input {
     @include position(absolute, 0, 0, 0, 0);
     border: 0;
+    border-radius: 0;
     background-color: transparent;
     font-size: inherit;
     font-weight: inherit;
@@ -774,7 +819,7 @@ input {
     max-height: 70%; //모달 최대높이
     border-radius: 30*$unit;
     background-color: #fff; //모달 배경색
-    overflow: hidden;
+    overflow: auto;
 
     & > * {
       flex: 0 0 auto;

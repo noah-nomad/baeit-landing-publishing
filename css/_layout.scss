@@ -1375,3 +1375,39 @@
     }
   }
 }
+
+.template-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10*$unit;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+    }
+
+    .checkbox, .radio {
+      width: max-content;
+      margin: 10*$unit;
+    }
+  }
+}
+
+.ssam-visual {
+  &__inner {
+    @extend %content-area;
+    position: relative;
+    padding-top: 72.222222%;
+  }
+  &__ttl {
+    @extend .brand-visual__ttl;
+    font-size: 40*$unit;
+    font-weight: $bold;
+  }
+  &__txt {
+    @extend .brand-visual__txt;
+  }
+}

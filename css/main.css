@@ -177,7 +177,7 @@ i:after {
   background-position: center;
 }
 
-.footer__inner, .market-banner__inner, .intro-setting__inner, .strip-banner__inner, .supplier-activity__inner, .intro-request__inner, .brand-visual__inner, .header, .modal__inner {
+.ssam-visual__inner, .footer__inner, .market-banner__inner, .intro-setting__inner, .strip-banner__inner, .supplier-activity__inner, .intro-request__inner, .brand-visual__inner, .header, .modal__inner {
   max-width: 1080px;
   margin: 0 auto;
 }
@@ -323,10 +323,6 @@ button i {
   min-height: 6rem;
 }
 
-.form_li .prof {
-  margin: 0 auto 1.6rem;
-  width: 12.8rem;
-}
 .form_ttl {
   display: flex;
   align-items: center;
@@ -335,7 +331,24 @@ button i {
   font-size: 1.6rem;
   font-weight: 500;
 }
+.form_ttl small {
+  color: #BDBDBD;
+}
+.form_ttl b {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00B28F;
+  text-align: right;
+}
+.form_attach_txt {
+  flex: 1;
+  font-size: 1.2rem;
+  color: #28C99E;
+  text-align: right;
+}
 .form_in {
+  width: 100%;
   min-height: 6rem;
 }
 .form_in > * {
@@ -343,6 +356,13 @@ button i {
 }
 .form_in > *:first-child {
   margin-top: 0;
+}
+.form_in .select {
+  width: 100%;
+}
+.form_in .select:before {
+  right: 1em;
+  background-size: 1.333333em;
 }
 .form .inline {
   display: flex;
@@ -427,7 +447,7 @@ button i {
   background-image: url("../img/i_warning_ce.svg");
 }
 
-textarea, input, .datepicker, select {
+textarea, input:not([type=checkbox], [type=radio]), .datepicker:not([type=checkbox], [type=radio]) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -437,26 +457,27 @@ textarea, input, .datepicker, select {
   background-color: #fff;
   font-weight: 500;
 }
-textarea::placeholder, input::placeholder, .datepicker::placeholder, select::placeholder {
+textarea::placeholder, input:not([type=checkbox], [type=radio])::placeholder, .datepicker:not([type=checkbox], [type=radio])::placeholder {
+  font-weight: 400;
   color: #BDBDBD;
 }
-textarea:focus, input:focus, .datepicker:focus, select:focus {
-  border: 2px solid #4CD8AE;
+textarea:focus, input:focus:not([type=checkbox], [type=radio]), .datepicker:focus:not([type=checkbox], [type=radio]) {
+  border: 2px solid #00B28F;
   outline: none;
 }
-textarea:disabled, input:disabled, .datepicker:disabled, select:disabled {
+textarea:disabled, input:disabled:not([type=checkbox], [type=radio]), .datepicker:disabled:not([type=checkbox], [type=radio]) {
   color: #BDBDBD;
   background-color: #F5F5F5;
 }
 
-input, .datepicker, select {
+input:not([type=checkbox], [type=radio]), .datepicker:not([type=checkbox], [type=radio]) {
   padding: 0 1em;
   min-height: 4rem;
 }
 
 textarea {
   padding: 0.8rem 1rem;
-  height: 10rem;
+  height: 22.8rem;
   white-space: pre-line;
 }
 
@@ -503,40 +524,48 @@ textarea {
   height: 2.4rem;
 }
 
-.checkbox {
+.checkbox, .radio {
   font-size: 1.4rem;
 }
-.checkbox input, .checkbox .datepicker {
-  width: 2.4rem;
-  height: 2.4rem;
-  background-image: url("../images/i_ch.svg");
+.checkbox input, .checkbox .datepicker, .radio input, .radio .datepicker {
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("../img/i_ch.svg");
   background-size: contain;
 }
-.checkbox input:checked, .checkbox .datepicker:checked {
-  background-image: url("../images/i_ched.svg");
+.checkbox input:checked, .checkbox .datepicker:checked, .radio input:checked, .radio .datepicker:checked {
+  background-image: url("../img/i_ched.svg");
 }
-.checkbox input:checked + *, .checkbox .datepicker:checked + * {
+.checkbox input:checked + *, .checkbox .datepicker:checked + *, .radio input:checked + *, .radio .datepicker:checked + * {
   font-weight: 700;
   color: #00B28F;
 }
-.checkbox label {
-  padding-left: 3.2rem;
+.checkbox label, .radio label {
+  line-height: 1.2;
+  padding: 0.15em 0 0.15em 1.8em;
 }
-.checkbox.right {
+.checkbox.right, .radio.right {
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
-.checkbox.right input, .checkbox.right .datepicker {
+.checkbox.right input, .checkbox.right .datepicker, .radio.right input, .radio.right .datepicker {
   position: absolute;
   top: 0;
   left: unset;
   right: 0;
 }
-.checkbox.right label {
+.checkbox.right label, .radio.right label {
   position: relative;
   padding-left: 0;
-  padding-right: 3.2rem;
+  padding-right: 2.1em;
+}
+
+.radio input, .radio .datepicker {
+  background-image: url("../img/i_rd.svg");
+}
+.radio input:checked, .radio .datepicker:checked {
+  background-image: url("../img/i_rded.svg");
 }
 
 .toggle {
@@ -581,10 +610,6 @@ textarea {
   transition: 0.2s;
 }
 
-input, .datepicker {
-  padding: 0 1rem;
-}
-
 .select {
   position: relative;
   height: 4.8rem;
@@ -596,7 +621,18 @@ input, .datepicker {
   font-size: 2rem;
   font-weight: 500;
 }
+.select.default input, .select.default .datepicker {
+  padding: 0 1rem;
+}
 .select.default.on ul {
+  box-shadow: inset 0 0 0 2px #00B28F;
+}
+.select.in-form {
+  height: 6rem;
+  box-shadow: inset 0 0 0 1px #EEEEEE;
+}
+.select.in-form.on ul {
+  padding-top: 7rem;
   box-shadow: inset 0 0 0 2px #00B28F;
 }
 .select.head {
@@ -652,6 +688,7 @@ input, .datepicker {
   right: 0;
   bottom: 0;
   border: 0;
+  border-radius: 0;
   background-color: transparent;
   font-size: inherit;
   font-weight: inherit;
@@ -836,7 +873,7 @@ input, .datepicker {
   max-height: 70%;
   border-radius: 3rem;
   background-color: #fff;
-  overflow: hidden;
+  overflow: auto;
 }
 .modal > * {
   flex: 0 0 auto;
@@ -1176,7 +1213,7 @@ input, .datepicker {
 .brand-visual__inner {
   position: relative;
 }
-.brand-visual__ttl {
+.brand-visual__ttl, .ssam-visual__ttl {
   z-index: 2;
   position: absolute;
   top: 0;
@@ -1185,24 +1222,24 @@ input, .datepicker {
   padding: 19.814814% 5.4rem 0;
   font-size: 1vw;
 }
-.brand-visual__ttl img {
+.brand-visual__ttl img, .ssam-visual__ttl img {
   width: auto;
   height: 8em;
   max-height: 7.6rem;
 }
 @media (max-width: 767px) {
-  .brand-visual__ttl img {
+  .brand-visual__ttl img, .ssam-visual__ttl img {
     height: 16.67em;
     max-height: 11.2rem;
     margin: 0 auto;
   }
 }
 @media (max-width: 767px) {
-  .brand-visual__ttl {
+  .brand-visual__ttl, .ssam-visual__ttl {
     padding: 16.666666% 3rem 0;
   }
 }
-.brand-visual__txt {
+.brand-visual__txt, .ssam-visual__txt {
   z-index: 1;
   position: absolute;
   top: 0;
@@ -1214,22 +1251,22 @@ input, .datepicker {
   font-size: 1.8rem;
   color: #757575;
 }
-.brand-visual__txt img {
+.brand-visual__txt img, .ssam-visual__txt img {
   width: 2.8888888889em;
   height: 2.8888888889em;
   margin-left: 0.6666666667em;
 }
-.brand-visual__txt em {
+.brand-visual__txt em, .ssam-visual__txt em {
   font-weight: 700;
   color: #00B28F;
 }
 @media (max-width: 1080px) {
-  .brand-visual__txt {
+  .brand-visual__txt, .ssam-visual__txt {
     font-size: 1.666666vw;
   }
 }
 @media (max-width: 767px) {
-  .brand-visual__txt {
+  .brand-visual__txt, .ssam-visual__txt {
     padding: 58% 3rem 0;
     justify-content: center;
     font-size: 3.888888vw;
@@ -2307,6 +2344,29 @@ input, .datepicker {
   color: #9E9E9E;
 }
 
+.template-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+.template-checklist__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.template-checklist__item .checkbox, .template-checklist__item .radio {
+  width: max-content;
+  margin: 1rem;
+}
+
+.ssam-visual__inner {
+  position: relative;
+  padding-top: 72.222222%;
+}
+.ssam-visual__ttl {
+  font-size: 4rem;
+  font-weight: 700;
+}
 /*----------유튜브--------------------------------------------------------------------------------*/
 .video-wrap {
   position: relative;

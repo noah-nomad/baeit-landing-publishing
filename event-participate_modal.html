@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="css/main.css">
+<div id="event-participate" class="modal_wrap on"><!--'on 추가'-->
+    <div class="modal__inner">
+        <div class="modal">
+            <div class="modal__head">
+                <div>
+                    <h1 class="h1">얼리버드 이벤트 참여하기</h1>
+                    <button class="close_btn"><i class="i_x"></i></button>
+                </div>
+            </div>
+            <div class="modal__con">
+                <div class="form_wrap">
+                    <div class="form">
+                        <ul class="form_ul">
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>성함</span>
+                                </div>
+                                <div class="form_in">
+                                    <input type="text">
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>휴대폰 번호</span>
+                                </div>
+                                <div class="form_in">
+                                    <div class="inline">
+                                        <label class="input">
+                                            <input type="number" placeholder="‘-’없이 숫자만 입력해주세요">
+                                        </label>
+                                        <button class="btn bo">보내기</button>
+                                    </div>
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>활동 카테고리</span>
+                                </div>
+                                <div class="form_in">
+                                    <div id="select_cate_wrap" class="select in-form">
+                                        <label class="blind" for="select_cate">동네 선택</label>
+                                        <input type="text" role="combobox" id="select_cate" value="선택해주세요" readonly>
+                                        <ul role="listbox" id="popup_cate">
+                                            <li role="option" id="selected_cate">커리어(직무)</li>
+                                            <li role="option">취미</li>
+                                            <li role="option">재택·부업</li>
+                                            <li role="option">건강·스포츠</li>
+                                            <li role="option">어학</li>
+                                            <li role="option">자격증·시험</li>
+                                            <li role="option">학생과외</li>
+                                            <li role="option">생활</li>
+                                            <li role="option">기타</li>
+                                        </ul>
+                                    </div>
+                                    <script>
+                                        function selectDongClick() {
+                                            setToggle(document.getElementById('select_cate_wrap'));
+                                        }
+                                        document.getElementById('select_cate').onclick = selectDongClick;
+                                        document.getElementById('popup_cate').onclick = selectDongClick;
+                                    </script>
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>카카오톡 아이디</span>
+                                    <span class="form_attach_txt">※ 확인방법: 카카오 프로필 클릭 → <br>우측 상단 설정 클릭 → 카카오톡 ID 확인</span>
+                                </div>
+                                <div class="form_in">
+                                    <input type="text">
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>클래스 간단 소개 <small>(선택)</small></span>
+                                    <b>최대 2,000자</b>
+                                </div>
+                                <div class="form_in">
+                                    <textarea></textarea>
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                            <li class="form_li">
+                                <div class="form_ttl">
+                                    <span>템플릿 <small>(선택)</small></span>
+                                </div>
+                                <div class="form_in">
+                                    <div class="template-checklist">
+                                        <div class="template-checklist__item">
+                                            <img src="img/img_event_template1.jpg" alt="클래스 상세소개형 예시이미지">
+                                            <div class="radio"><label><input type="radio" name="template-type">
+                                                <span>클래스 상세소개형</span>
+                                            </label></div>
+                                        </div>
+                                        <div class="template-checklist__item">
+                                            <img src="img/img_event_template2.jpg" alt="리뷰형 예시이미지">
+                                            <div class="radio"><label><input type="radio" name="template-type">
+                                                <span>리뷰형</span>
+                                            </label></div>
+                                        </div>
+                                        <div class="template-checklist__item">
+                                            <img src="img/img_event_template3.jpg" alt="구인공고형 예시이미지">
+                                            <div class="radio"><label><input type="radio" name="template-type">
+                                                <span>구인공고형</span>
+                                            </label></div>
+                                        </div>
+                                        <div class="template-checklist__item">
+                                            <img src="img/img_event_template4.jpg" alt="이력강조형 예시이미지">
+                                            <div class="radio"><label><input type="radio" name="template-type">
+                                                <span>이력강조형</span>
+                                            </label></div>
+                                        </div>
+                                    </div>
+                                    <p class="valid"><i class="i_valid"></i>유효성 체크 문구</p><!--'on 추가'-->
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__btn">
+                <p class="hint">[보내기] 버튼을 누름으로써 <button class="line_btn" onclick="setToggle(document.getElementById('info_terms'));setToggle(this)">개인정보 수집/이용<i class="i_cv_down"></i></button>에 동의하는 것으로 간주됩니다.</p>
+                <div id="info_terms" class="terms">
+                    <div class="terms__inner">
+                        <p>하나의 휴대폰 번호로 하루 최대 10번까지 전송이 가능합니다.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>항목</th>
+                                    <th>수집목적</th>
+                                    <th>보유기간</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>이름, 휴대폰 번호, 카카오톡 아이디</td>
+                                    <td>프로모션 안내</td>
+                                    <td>목적달성 1년 후 파기(추후 프로모션 안내)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="btn_wrap">
+                    <button class="btn" onclick="setToggle(document.getElementById('modal_wrap'))">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function setToggle($el) {
+        $el.classList.toggle('on');
+    }
+</script>

@@ -15,16 +15,16 @@
     <title>배움을 잇다, 배잇</title>
 </head>
 <body include-html="app-download.html">
-<script>loadHTML("app-download.html");</script>
+<script>loadHTML("app-download_modal.html");</script>
 <header class="header">
     <div class="header__inner">
         <h1 class="logo"><a href="#" tabindex="1"><span class="blind">배잇</span></a></h1>
         <nav class="header__gnb">
-            <button class="on" onclick="setToggle(this)">홈</button>
-            <button onclick="setToggle(this)">쌤 지원하기</button>
+            <button class="on" onclick="setToggle(this);location.href='index.html'">홈</button>
+            <button onclick="setToggle(this);location.href='ssam.html'">쌤 지원하기</button>
         </nav>
         <div class="header__snb">
-            <button class="cta" tabindex="1" onclick="setToggle(document.getElementById('modal_wrap'))">앱 다운로드<i class="i_download"></i></button>
+            <button class="cta" tabindex="1" onclick="setToggle(document.getElementById('app-download'));scrollPrevent();">앱 다운로드<i class="i_download"></i></button>
         </div>
         <!--<nav class="header__m-gnb">
             <div id="select_gnb_wrap" class="select head">
@@ -345,6 +345,7 @@
 </body>
 
 <script>
+    // on 토글
     function setToggle($el) {
         $el.classList.toggle('on');
     }
@@ -354,6 +355,12 @@
     function mockupToggle($el1, $el2) {
         $el1.classList.add('on');
         $el2.classList.remove('on');
+    }
+
+    // 스크롤 방지
+    function scrollPrevent() {
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100vh";
     }
 
     // options 설정
