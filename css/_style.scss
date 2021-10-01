@@ -71,6 +71,11 @@
   }
 }
 
+.scroll-prevent {
+  overflow: hidden;
+  height: 100vh;
+}
+
 i {
   display: inline-block;
 }
