@@ -14,8 +14,13 @@
     <link rel="icon" href="img/favicon-128.png" sizes="128x128">
     <title>배움을 잇다, 배잇</title>
 </head>
-<body include-html="app-download.html">
-<script>loadHTML("app-download_modal.html");</script>
+<body>
+<div include-html="app-download_modal.html">
+    <script>loadHTML("app-download_modal.html");</script>
+</div>
+<div include-html="event-participate_modal.html">
+    <script>loadHTML("event-participate_modal.html");</script>
+</div>
 <header class="header">
     <div class="header__inner">
         <h1 class="logo"><a href="#" tabindex="1"><span class="blind">배잇</span></a></h1>
@@ -247,7 +252,7 @@
                 <div class="market-banner__txt-box">
                     <p class="market-banner__txt">가까운 이웃과 <br class="mo_only">배움을 주고받는</p>
                     <h2 class="market-banner__ttl">동네 배움 앱 <span class="logo on-primary pc_only"><span><span class="blind">배잇</span></span></span></h2>
-                    <button class="cta">다운로드</button>
+                    <button class="cta" onclick="setToggle(document.getElementById('event-participate'));scrollPrevent();">다운로드</button>
                 </div>
                 <img src="img/img_splash_mockup.png" alt="인트로 화면 이미지">
             </div>
