@@ -1239,6 +1239,7 @@
   }
 
   img {
+    z-index: 1;
     @include position(absolute, 50%, null, 0);
     width: 490*$unit;
     transform: translate(0, -50%);
@@ -1574,6 +1575,7 @@
     &__controls {
       .control_btn {
         @include position-center(y, absolute);
+        z-index: 1;
         left: unset;
         right: 2em;
         width: 1em;
