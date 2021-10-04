@@ -71,6 +71,10 @@
   }
 }
 
+html {
+  overflow: hidden;
+}
+
 .scroll-prevent {
   overflow: hidden;
   height: 100vh;
@@ -846,6 +850,7 @@ textarea {
       margin: 0;
       height: 100%;
       max-height: unset;
+      border-radius: 0;
     }
   }
 
