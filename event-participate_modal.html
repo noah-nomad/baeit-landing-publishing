@@ -148,14 +148,9 @@
                     </div>
                 </div>
                 <div class="btn_wrap">
-                    <button class="btn" onclick="setToggle(document.getElementById('event-participate'))">닫기</button>
+                    <button class="btn" onclick="setToggle(document.getElementById('event-participate'));scrollPrevent();">닫기</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script>
-    function setToggle($el) {
-        $el.classList.toggle('on');
-    }
-</script>

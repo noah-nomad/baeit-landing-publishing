@@ -66,14 +66,9 @@
                     </div>
                 </div>
                 <div class="btn_wrap">
-                    <button class="btn" onclick="setToggle(document.getElementById('app-download'))">닫기</button>
+                    <button class="btn" onclick="setToggle(document.getElementById('app-download'));scrollPrevent();">닫기</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script>
-    function setToggle($el) {
-        $el.classList.toggle('on');
-    }
-</script>
