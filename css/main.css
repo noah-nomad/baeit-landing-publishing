@@ -210,10 +210,6 @@ i:after {
   }
 }
 
-html {
-  overflow: hidden;
-}
-
 .scroll-prevent {
   overflow: hidden;
   height: 100vh;
