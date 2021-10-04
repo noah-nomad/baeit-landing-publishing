@@ -395,7 +395,7 @@ $form-box-height: 60*$unit;
   }
 }
 
-input:not([type="checkbox"], [type="radio"]) {
+input {
   @extend %input-common;
   padding: 0 1em; //인풋 내부여백
   min-height: 40*$unit; //인풋 높이
@@ -403,7 +403,7 @@ input:not([type="checkbox"], [type="radio"]) {
 
 textarea {
   @extend %input-common;
-  padding: 8*$unit 10*$unit;
+  padding: 0.8em 1em;
   height: 228*$unit;
   white-space: pre-line;
 }
@@ -459,10 +459,13 @@ textarea {
   input {
     width: 1.5em;
     height: 1.5em;
+    min-height: unset;
+    padding: 0;
     background-image: url("../img/i_ch.svg");
     background-size: contain;
 
     &:checked {
+      border: 0;
       background-image: url("../img/i_ched.svg");
 
       & + * {
@@ -687,7 +690,7 @@ textarea {
   height: 640em/$mockup-size;
   border: 2px solid $gray-20;
   border-radius: 10*$unit;
-  font-size: 1*$unit/$mockup-size;
+  font-size: 1px/$mockup-size;
   overflow: hidden;
 
   img {
@@ -837,6 +840,12 @@ textarea {
     .form_wrap {
       margin: 0;
       padding: 0 30*$unit 30*$unit;
+    }
+
+    @include mobile-area_media {
+      margin: 0;
+      height: 100%;
+      max-height: unset;
     }
   }
 

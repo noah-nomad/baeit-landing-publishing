@@ -274,7 +274,7 @@
     $main-den: 1080;
     position: relative;
     padding-top: 960/$main-den*100%;
-    font-size: 1*$unit;
+    font-size: 1px;
 
     @include content-area_media {
       font-size: 0.092596vw;
@@ -1383,16 +1383,9 @@
   grid-gap: 10*$unit;
 
   &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    img {
-    }
-
     .checkbox, .radio {
       width: max-content;
-      margin: 10*$unit;
+      margin: 10*$unit auto;
     }
   }
 }
@@ -1409,6 +1402,7 @@
 
   &__ttl {
     @extend .brand-visual__ttl;
+    padding-top: 29.075%;
     font-size: 40*$unit;
     font-weight: $bold;
 
@@ -1417,17 +1411,20 @@
     }
 
     @include mobile-area_media {
+      padding-top: 16%;
       font-size: 8.333333vw;
+      line-height: 1.4;
+      letter-spacing: -0.04em;
       text-align: center;
     }
   }
 
   &__txt {
     @extend .brand-visual__txt;
-    padding-top: 36.204%;
+    padding-top: 43.242%;
 
     @include mobile-area_media {
-      padding-top: 51.572%;
+      padding-top: 45.555555%;
     }
   }
 
@@ -1444,8 +1441,8 @@
 
     @include mobile-area_media {
       padding-top: 160%;
-      background-size: 88vw;
-      background-position: bottom right 10vw;
+      background-size: 100vw;
+      background-position: bottom right 3.5vw;
     }
   }
 }
@@ -1454,6 +1451,10 @@
   &__inner {
     @extend %content-area;
     padding: 9.259259% 0 8.333333%;
+
+    @include mobile-area_media {
+      padding: 15% 0 15%;
+    }
   }
 
   &__ttl {

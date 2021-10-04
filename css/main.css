@@ -452,7 +452,7 @@ button i {
   background-image: url("../img/i_warning_ce.svg");
 }
 
-textarea, input:not([type=checkbox], [type=radio]), .datepicker:not([type=checkbox], [type=radio]) {
+textarea, input, .datepicker {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -462,26 +462,26 @@ textarea, input:not([type=checkbox], [type=radio]), .datepicker:not([type=checkb
   background-color: #fff;
   font-weight: 500;
 }
-textarea::placeholder, input:not([type=checkbox], [type=radio])::placeholder, .datepicker:not([type=checkbox], [type=radio])::placeholder {
+textarea::placeholder, input::placeholder, .datepicker::placeholder {
   font-weight: 400;
   color: #BDBDBD;
 }
-textarea:focus, input:focus:not([type=checkbox], [type=radio]), .datepicker:focus:not([type=checkbox], [type=radio]) {
+textarea:focus, input:focus, .datepicker:focus {
   border: 2px solid #00B28F;
   outline: none;
 }
-textarea:disabled, input:disabled:not([type=checkbox], [type=radio]), .datepicker:disabled:not([type=checkbox], [type=radio]) {
+textarea:disabled, input:disabled, .datepicker:disabled {
   color: #BDBDBD;
   background-color: #F5F5F5;
 }
 
-input:not([type=checkbox], [type=radio]), .datepicker:not([type=checkbox], [type=radio]) {
+input, .datepicker {
   padding: 0 1em;
   min-height: 4rem;
 }
 
 textarea {
-  padding: 0.8rem 1rem;
+  padding: 0.8em 1em;
   height: 22.8rem;
   white-space: pre-line;
 }
@@ -535,10 +535,13 @@ textarea {
 .checkbox input, .checkbox .datepicker, .radio input, .radio .datepicker {
   width: 1.5em;
   height: 1.5em;
+  min-height: unset;
+  padding: 0;
   background-image: url("../img/i_ch.svg");
   background-size: contain;
 }
 .checkbox input:checked, .checkbox .datepicker:checked, .radio input:checked, .radio .datepicker:checked {
+  border: 0;
   background-image: url("../img/i_ched.svg");
 }
 .checkbox input:checked + *, .checkbox .datepicker:checked + *, .radio input:checked + *, .radio .datepicker:checked + * {
@@ -742,7 +745,7 @@ textarea {
   height: 640em;
   border: 2px solid #EEEEEE;
   border-radius: 1rem;
-  font-size: 0.1rem;
+  font-size: 1px;
   overflow: hidden;
 }
 .mockup img {
@@ -889,6 +892,13 @@ textarea {
 .modal .form_wrap {
   margin: 0;
   padding: 0 3rem 3rem;
+}
+@media (max-width: 767px) {
+  .modal {
+    margin: 0;
+    height: 100%;
+    max-height: unset;
+  }
 }
 .modal__head {
   display: flex;
@@ -1280,7 +1290,7 @@ textarea {
 .brand-visual__img-box {
   position: relative;
   padding-top: 88.8888888889%;
-  font-size: 0.1rem;
+  font-size: 1px;
 }
 @media (max-width: 1080px) {
   .brand-visual__img-box {
@@ -2213,6 +2223,7 @@ textarea {
   }
 }
 .market-banner img {
+  z-index: 1;
   position: absolute;
   top: 50%;
   right: 0;
@@ -2354,14 +2365,9 @@ textarea {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
 }
-.template-checklist__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .template-checklist__item .checkbox, .template-checklist__item .radio {
   width: max-content;
-  margin: 1rem;
+  margin: 1rem auto;
 }
 
 .ssam-visual {
@@ -2373,6 +2379,7 @@ textarea {
   position: relative;
 }
 .ssam-visual__ttl {
+  padding-top: 29.075%;
   font-size: 4rem;
   font-weight: 700;
 }
@@ -2383,16 +2390,19 @@ textarea {
 }
 @media (max-width: 767px) {
   .ssam-visual__ttl {
+    padding-top: 16%;
     font-size: 8.333333vw;
+    line-height: 1.4;
+    letter-spacing: -0.04em;
     text-align: center;
   }
 }
 .ssam-visual__txt {
-  padding-top: 36.204%;
+  padding-top: 43.242%;
 }
 @media (max-width: 767px) {
   .ssam-visual__txt {
-    padding-top: 51.572%;
+    padding-top: 45.555555%;
   }
 }
 .ssam-visual__img-box {
@@ -2410,13 +2420,18 @@ textarea {
 @media (max-width: 767px) {
   .ssam-visual__img-box {
     padding-top: 160%;
-    background-size: 88vw;
-    background-position: bottom right 10vw;
+    background-size: 100vw;
+    background-position: bottom right 3.5vw;
   }
 }
 
 .ssam-qna__inner {
   padding: 9.259259% 0 8.333333%;
+}
+@media (max-width: 767px) {
+  .ssam-qna__inner {
+    padding: 15% 0 15%;
+  }
 }
 .ssam-qna__ttl, .write-class__ttl {
   position: relative;
@@ -2522,6 +2537,7 @@ textarea {
   position: absolute;
   transform: translate(0, -50%);
   top: 50%;
+  z-index: 1;
   left: unset;
   right: 2em;
   width: 1em;
