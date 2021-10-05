@@ -176,6 +176,7 @@ button {
 }
 
 $form-box-height: 60*$unit;
+$form-box-m-height: 48*$unit;
 .form {
   &_wrap {
     margin: 20*$unit 0;
@@ -204,6 +205,10 @@ $form-box-height: 60*$unit;
 
     input {
       height: $form-box-height;
+
+      @include mobile-area_media {
+        height: $form-box-m-height;
+      }
     }
 
     @at-root .nowrap {
@@ -214,6 +219,10 @@ $form-box-height: 60*$unit;
           margin-bottom: 0;
           width: 100*$unit; //타이틀 너비
           min-height: $form-box-height;
+
+          @include mobile-area_media {
+            min-height: $form-box-m-height;
+          }
         }
       }
     }
@@ -226,6 +235,10 @@ $form-box-height: 60*$unit;
     width: 100%;
     font-size: 16*$unit;
     font-weight: $medium;
+
+    @include mobile-area_media {
+      font-size: 14*$unit;
+    }
 
     small {
       color: $gray-40;
@@ -251,6 +264,10 @@ $form-box-height: 60*$unit;
     width: 100%;
     min-height: $form-box-height;
 
+    @include mobile-area_media {
+      min-height: $form-box-m-height;
+    }
+
     & > * {
       margin-top: 4*$unit; //폼 인풋 사이간격
 
@@ -273,6 +290,10 @@ $form-box-height: 60*$unit;
     display: flex;
     align-items: center;
     min-height: $form-box-height;
+
+    @include mobile-area_media {
+      min-height: $form-box-m-height;
+    }
 
     & > * {
       flex: 1 1 auto;
@@ -298,6 +319,10 @@ $form-box-height: 60*$unit;
 
   .btn {
     height: $form-box-height;
+
+    @include mobile-area_media {
+      height: $form-box-m-height;
+    }
   }
 }
 
@@ -574,9 +599,17 @@ textarea {
     height: 60*$unit;
     box-shadow: inset 0 0 0 1px $gray-20;
 
+    @include mobile-area_media {
+      height: 48*$unit;
+    }
+
     &.on ul {
       padding-top: 70*$unit;
       box-shadow: inset 0 0 0 2px $color-primary;
+
+      @include mobile-area_media {
+        padding-top: 58*$unit;
+      }
     }
   }
 
@@ -851,6 +884,7 @@ textarea {
   }
 
   &__head {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -864,6 +898,10 @@ textarea {
       align-items: center;
       min-height: 60*$unit;
       font-weight: $bold;
+
+      @include mobile-area_media {
+        min-height: 40*$unit;
+      }
     }
   }
 
@@ -905,6 +943,27 @@ textarea {
       &:last-child {
         margin-right: 0;
         width: 100%;
+      }
+    }
+  }
+
+  .close_btn {
+    @include position-center(y, absolute);
+    left: unset;
+    right: 15*$unit;
+    width: auto;
+
+    i {
+      width: 54*$unit;
+      height: 54*$unit;
+      margin-left: 0;
+    }
+
+    @at-root .i_x {
+      &:after {
+        background-image: url("../img/i_x.svg");
+        background-size: 55.555555%;
+        background-position: center;
       }
     }
   }
