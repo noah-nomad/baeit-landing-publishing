@@ -262,7 +262,7 @@ $form-box-height: 60*$unit;
     .select {
       width: 100%;
 
-      &:before {
+      &::before {
         right: 1em;
         background-size: 1.333333em;
       }
@@ -341,7 +341,7 @@ $form-box-height: 60*$unit;
 }
 
 .i_cv_down {
-  &:after {
+  &::after {
     background-image: url("../img/i_select_a_c_down.svg");
   }
 }
@@ -367,7 +367,7 @@ $form-box-height: 60*$unit;
 }
 
 .i_valid {
-  &:after {
+  &::after {
     background-image: url("../img/i_warning_ce.svg");
   }
 }
@@ -592,7 +592,7 @@ textarea {
       border-radius: 20*$unit;
     }
 
-    &:before {
+    &::before {
       right: 4*$unit;
       background-image: url("../img/i_select_a_cl_down.svg");
     }
@@ -617,7 +617,7 @@ textarea {
     }
   }
 
-  &:before {
+  &::before {
     content: "";
     @include position(absolute, 0, null, 0);
     width: 1.8em;
@@ -628,7 +628,7 @@ textarea {
     background-repeat: no-repeat;
   }
 
-  &.on:before {
+  &.on::before {
     z-index: 3;
     transform: rotate(180deg);
   }

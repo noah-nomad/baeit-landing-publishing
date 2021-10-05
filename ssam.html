@@ -101,14 +101,38 @@
             <div class="write-class__inner">
                 <h2 class="write-class__ttl">간단하게 클래스 만들고 <br>나만의 재능을 드러내보세요!</h2>
                 <div class="write-class__slide">
-                    <div><img src="img/img_class_step1.png" alt="첫번째, 배움을 나누기 '편한 동네'와 자신 있는 '카테고리'를 설정해보세요!"></div>
-                    <!--<div><img src="img/img_class_step2.png" alt="두번째, 만들고 싶은 '클래스'에 대해 구체적으로 작성하면, 학생과 연결이 더 빨라져요!"></div>-->
-                    <!--<div><img src="img/img_class_step3.png" alt="마지막으로 관련 경험, 수업 스타일 등을 소개하며 신뢰도를 높여보세요!"></div>-->
+                    <div>
+                        <img class="pc_only" src="img/img_class_step1.png" alt="첫번째, 배움을 나누기 '편한 동네'와 자신 있는 '카테고리'를 설정해보세요!">
+                        <img class="mo_only" src="img/img_class_mo_step1.png" alt="첫번째, 배움을 나누기 '편한 동네'와 자신 있는 '카테고리'를 설정해보세요!">
+                    </div>
+                    <!--<div>
+                        <img class="pc_only" src="img/img_class_step2.png" alt="두번째, 만들고 싶은 '클래스'에 대해 구체적으로 작성하면, 학생과 연결이 더 빨라져요!">
+                        <img class="mo_only" src="img/img_class_mo_step2.png" alt="두번째, 만들고 싶은 '클래스'에 대해 구체적으로 작성하면, 학생과 연결이 더 빨라져요!">
+                    </div>-->
+                    <!--<div>
+                        <img class="pc_only" src="img/img_class_step3.png" alt="마지막으로 관련 경험, 수업 스타일 등을 소개하며 신뢰도를 높여보세요!">
+                        <img class="mo_only" src="img/img_class_mo_step3.png" alt="마지막으로 관련 경험, 수업 스타일 등을 소개하며 신뢰도를 높여보세요!">
+                        </div>-->
                     <div class="write-class__slide__controls">
                         <button class="control_btn prev"></button>
                         <button class="control_btn next"></button>
                     </div>
                 </div>
+            </div>
+        </article>
+        <article class="ssam-event">
+            <div class="ssam-event__inner">
+                <h2 class="ssam-event__ttl">쌤에게만 드리는 <br class="mo_only"><em>홍보 패키지 혜택</em></h2>
+                <p class="ssam-event__tags editor"><span>#얼리버드 이벤트</span><span>#선착순100분</span><span>#클래스를 만들기만 하면</span></p>
+                <div class="ssam-event__con">
+                    <div class="ssam-event__img"></div>
+                    <ol>
+                        <li><span class="editor">개인 SNS에도 활용 가능한 클래스 <b>홍보이미지 제작 지원</b></span></li>
+                        <li><span class="editor">팔로워 N명 페이스북 페이지 <b>&#60;이거배워볼까?부산&#62;에 업로드 지원</b></span></li>
+                        <li><span class="editor"><b>35,000명 이상</b>의 학생에게 클래스 노출 지원</span></li>
+                    </ol>
+                </div>
+                <button class="cta">얼리버드 이벤트 참여하기</button>
             </div>
         </article>
         <article class="market-banner">
@@ -176,8 +200,7 @@
 
     // 스크롤 방지
     function scrollPrevent() {
-        document.body.style.overflow = "hidden";
-        document.body.style.height = "100vh";
+        document.documentElement.classList.toggle('scroll-prevent');
     }
 
     // options 설정
