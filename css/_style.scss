@@ -127,6 +127,7 @@ button {
   line-height: 1.2;
 
   @include mobile-area_media {
+    height: 48*$unit;
     border-width: 1px;
     font-size: 14*$unit;
     font-weight: $medium;
