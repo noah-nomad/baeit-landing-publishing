@@ -1626,6 +1626,10 @@
     letter-spacing: -0.04em;
     line-height: 1.35;
 
+    @include content-area_media {
+      font-size: 3.703703vw;
+    }
+
     @include mobile-area_media {
       font-size: 7vw;
     }

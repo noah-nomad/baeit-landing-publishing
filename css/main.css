@@ -258,6 +258,13 @@ button i {
 .btn:active {
   background-color: #00a887;
 }
+@media (max-width: 767px) {
+  .btn {
+    border-width: 1px;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
 .btn:disabled {
   border-color: #BDBDBD;
   background-color: #BDBDBD;
@@ -389,6 +396,12 @@ button i {
   right: 1em;
   background-size: 1.333333em;
 }
+@media (max-width: 767px) {
+  .form_in .select::before {
+    right: 0.6em;
+    background-size: 1em;
+  }
+}
 .form .inline {
   display: flex;
   align-items: center;
@@ -438,6 +451,7 @@ button i {
   font-size: 1.2rem;
   font-weight: 500;
   color: #BDBDBD;
+  word-break: keep-all;
 }
 .hint em {
   color: #00B28F;
@@ -490,6 +504,7 @@ textarea, input, .datepicker {
   border: 1px solid #E0E0E0;
   border-radius: 1rem;
   background-color: #fff;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 textarea::placeholder, input::placeholder, .datepicker::placeholder {
@@ -2675,6 +2690,11 @@ textarea {
   text-align: center;
   letter-spacing: -0.04em;
   line-height: 1.35;
+}
+@media (max-width: 1080px) {
+  .ssam-event__ttl {
+    font-size: 3.703703vw;
+  }
 }
 @media (max-width: 767px) {
   .ssam-event__ttl {

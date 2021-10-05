@@ -126,6 +126,12 @@ button {
   word-break: keep-all;
   line-height: 1.2;
 
+  @include mobile-area_media {
+    border-width: 1px;
+    font-size: 14*$unit;
+    font-weight: $medium;
+  }
+
   //비활성화
   &:disabled {
     border-color: $gray-40;
@@ -282,6 +288,11 @@ $form-box-m-height: 48*$unit;
       &::before {
         right: 1em;
         background-size: 1.333333em;
+
+        @include mobile-area_media {
+          right: 0.6em;
+          background-size: 1em;
+        }
       }
     }
   }
@@ -341,6 +352,7 @@ $form-box-m-height: 48*$unit;
   font-size: 12*$unit;
   font-weight: $medium;
   color: $gray-40;
+  word-break: keep-all;
 
   em {
     color: $color-primary;
@@ -402,6 +414,7 @@ $form-box-m-height: 48*$unit;
   border: 1px solid $gray-30; //인풋 보더
   border-radius: $form-box-height/6;
   background-color: #fff;
+  font-size: 15*$unit;
   font-weight: $medium;
 
   &::placeholder {
