@@ -934,6 +934,11 @@ textarea {
   padding: 0 3rem 3rem;
 }
 @media (max-width: 767px) {
+  .modal .form_wrap {
+    padding: 0 2rem 2rem;
+  }
+}
+@media (max-width: 767px) {
   .modal {
     margin: 0;
     height: 100%;
@@ -969,6 +974,11 @@ textarea {
   width: 100%;
   padding: 0 3rem;
 }
+@media (max-width: 767px) {
+  .modal__txt {
+    padding: 0 2rem;
+  }
+}
 .modal__txt > * {
   display: table-cell;
   vertical-align: middle;
@@ -978,6 +988,11 @@ textarea {
 }
 .modal__btn {
   padding: 0 3rem 3rem;
+}
+@media (max-width: 767px) {
+  .modal__btn {
+    padding: 0 2rem 2rem;
+  }
 }
 .modal__btn .btn_wrap {
   display: flex;
@@ -998,13 +1013,17 @@ textarea {
   position: absolute;
   transform: translate(0, -50%);
   top: 50%;
-  left: unset;
   right: 1.5rem;
   width: auto;
 }
+@media (max-width: 767px) {
+  .modal .close_btn {
+    right: 0.5em;
+  }
+}
 .modal .close_btn i {
-  width: 5.4rem;
-  height: 5.4rem;
+  width: 3em;
+  height: 3em;
   margin-left: 0;
 }
 .i_x:after {
@@ -1058,6 +1077,11 @@ textarea {
   margin-bottom: 1rem;
   font-size: 1.4rem;
   color: #616161;
+}
+@media (max-width: 767px) {
+  .terms {
+    font-size: 1.2rem;
+  }
 }
 .terms.on {
   display: block;

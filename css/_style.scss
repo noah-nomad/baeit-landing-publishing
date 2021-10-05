@@ -873,6 +873,10 @@ textarea {
     .form_wrap {
       margin: 0;
       padding: 0 30*$unit 30*$unit;
+
+      @include mobile-area_media {
+        padding: 0 20*$unit 20*$unit;
+      }
     }
 
     @include mobile-area_media {
@@ -914,6 +918,10 @@ textarea {
     width: 100%;
     padding: 0 30*$unit;
 
+    @include mobile-area_media {
+      padding: 0 20*$unit;
+    }
+
     & > * {
       display: table-cell;
       vertical-align: middle;
@@ -926,6 +934,10 @@ textarea {
 
   &__btn {
     padding: 0 30*$unit 30*$unit;
+
+    @include mobile-area_media {
+      padding: 0 20*$unit 20*$unit;
+    }
 
     .btn_wrap {
       display: flex;
@@ -949,13 +961,16 @@ textarea {
 
   .close_btn {
     @include position-center(y, absolute);
-    left: unset;
     right: 15*$unit;
     width: auto;
 
+    @include mobile-area_media {
+      right: 0.5em;
+    }
+
     i {
-      width: 54*$unit;
-      height: 54*$unit;
+      width: 3em;
+      height: 3em;
       margin-left: 0;
     }
 
@@ -1021,6 +1036,10 @@ textarea {
   margin-bottom: 10*$unit;
   font-size: 14*$unit;
   color: $gray-70;
+
+  @include mobile-area_media {
+    font-size: 12*$unit;
+  }
 
   &.on {
     display: block;
