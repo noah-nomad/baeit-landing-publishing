@@ -2549,9 +2549,9 @@ textarea {
 }
 @media (max-width: 767px) {
   .ssam-visual__ttl {
-    padding-top: 13%;
-    font-size: 8.333333vw;
-    line-height: 1.4;
+    padding-top: 14%;
+    font-size: 8.6vw;
+    line-height: 1.3;
     letter-spacing: -0.04em;
   }
 }
