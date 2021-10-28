@@ -1333,7 +1333,7 @@ textarea {
 }
 @media (max-width: 767px) {
   .brand-visual {
-    background: linear-gradient(to bottom, #C4F0E0 90%, #FFF0B0 90%);
+    background: linear-gradient(to bottom, #C4F0E0 90%, #9AE2C7 90%);
   }
 }
 .brand-visual__inner {
@@ -1409,7 +1409,7 @@ textarea {
 @media (max-width: 767px) {
   .brand-visual__img-box {
     font-size: 0.25vw;
-    padding-top: 160%;
+    padding-top: 150%;
   }
 }
 .brand-visual__img-box * {
@@ -2578,9 +2578,9 @@ textarea {
 }
 @media (max-width: 767px) {
   .ssam-visual__img-box {
-    padding-top: 160%;
-    background-size: 100vw;
-    background-position: bottom right 3.5vw;
+    padding-top: 150%;
+    background-size: 90vw;
+    background-position: bottom right 8.5vw;
   }
 }
 
@@ -2589,7 +2589,7 @@ textarea {
 }
 @media (max-width: 767px) {
   .ssam-qna__inner {
-    padding: 15% 0 15%;
+    padding: 12% 0 12%;
   }
 }
 .ssam-qna__ttl, .write-class__ttl {

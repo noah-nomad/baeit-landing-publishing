@@ -212,7 +212,7 @@
   overflow: hidden;
 
   @include mobile-area_media {
-    background: linear-gradient(to bottom, $color-primary-light-40 90%, $color-secondary-light-20 90%);
+    background: linear-gradient(to bottom, $color-primary-light-40 90%, $color-primary-light-30 90%);
   }
 
   &__inner {
@@ -284,7 +284,7 @@
 
     @include mobile-area_media {
       font-size: 0.25vw;
-      padding-top: 160%;
+      padding-top: 150%;
     }
 
     & * {
@@ -1489,9 +1489,9 @@
     }
 
     @include mobile-area_media {
-      padding-top: 160%;
-      background-size: 100vw;
-      background-position: bottom right 3.5vw;
+      padding-top: 150%;
+      background-size: 90vw;
+      background-position: bottom right 8.5vw;
     }
   }
 }
@@ -1502,7 +1502,7 @@
     padding: 9.259259% 0 8.333333%;
 
     @include mobile-area_media {
-      padding: 15% 0 15%;
+      padding: 12% 0 12%;
     }
   }
 
