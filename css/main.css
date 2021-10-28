@@ -2056,7 +2056,7 @@ textarea {
     z-index: 2;
     position: relative;
     left: unset;
-    padding: 12% 3rem 6%;
+    padding: 12% 3rem;
   }
   .intro-setting__txt-box.on {
     left: unset;
@@ -2077,6 +2077,14 @@ textarea {
     padding-bottom: 0.5em;
     font-size: 6.4vw;
     line-height: 1.3;
+  }
+}
+.intro-setting__ttl .pc_only {
+  display: inline;
+}
+@media (max-width: 767px) {
+  .intro-setting__ttl .pc_only {
+    display: none;
   }
 }
 .intro-setting__ttl small {
@@ -2102,7 +2110,11 @@ textarea {
 .intro-setting__txt .line {
   display: flex;
   align-items: center;
-  padding-top: 0.8em;
+  padding-top: 0.4em;
+}
+.intro-setting__txt .line > *:first-child {
+  width: 9em;
+  margin-right: 0.8em;
 }
 .intro-setting__txt .line b {
   padding-left: 0.5em;
@@ -2132,11 +2144,11 @@ textarea {
   display: flex;
   width: max-content;
   margin: 0 5.4rem 0 auto;
-  padding: 14.814814% 0 17.592592%;
+  padding: 14.814814% 0 12%;
 }
 @media (max-width: 767px) {
   .intro-setting__mockup {
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0 auto;
     padding-top: 0;
   }
@@ -2217,9 +2229,9 @@ textarea {
   .intro-setting__toggle {
     z-index: 1;
     display: flex;
-    width: 115.384615%;
+    width: 100%;
     height: 3.375em;
-    margin: 0 0 2rem -7.692307%;
+    margin: 2rem 0 0;
     border-radius: 0;
     font-size: 4.444444vw;
   }
@@ -2247,7 +2259,7 @@ textarea {
   .intro-setting__toggle button {
     position: static;
     border: 0;
-    border-bottom: 3px solid #F5F5F5;
+    border-top: 3px solid #F5F5F5;
     background-color: #fff;
     font-weight: 700;
     color: #C1C9C5;
@@ -2689,11 +2701,18 @@ textarea {
   }
 }
 .write-class__ttl {
+  margin: 0 auto 1.6875em;
   font-weight: 700;
-  margin: 0 3rem 1.6875em;
+  text-align: center;
 }
 .write-class__ttl::before {
   display: none;
+}
+@media (max-width: 767px) {
+  .write-class__ttl {
+    margin: 0 3rem 1.6875em;
+    text-align: left;
+  }
 }
 .write-class__slide {
   position: relative;
