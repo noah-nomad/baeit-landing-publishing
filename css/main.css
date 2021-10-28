@@ -1333,7 +1333,7 @@ textarea {
 }
 @media (max-width: 767px) {
   .brand-visual {
-    background: linear-gradient(to bottom, #E2F9F0 90%, #FFF5D9 90%);
+    background: linear-gradient(to bottom, #C4F0E0 90%, #FFF0B0 90%);
   }
 }
 .brand-visual__inner {
@@ -1961,6 +1961,7 @@ textarea {
 }
 @media (max-width: 767px) {
   .supplier-activity__list__li {
+    width: 50vw;
     margin-right: 4rem;
   }
 }
