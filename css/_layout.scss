@@ -1002,21 +1002,31 @@
     }
 
     @include mobile-area_media {
+      display: flex;
       font-size: 4vw;
     }
 
     .line {
       display: flex;
       align-items: center;
-      padding-top: 0.4em;
-
-      & > *:first-child {
-        width: 9em;
-        margin-right: 0.8em;
-      }
+      padding-top: 0.8em;
 
       b {
         padding-left: 0.5em;
+      }
+
+      @include mobile-area_media {
+        padding-top: 0.4em;
+
+
+        &:first-child .select {
+          width: 9em;
+          margin-right: 0.8em;
+        }
+
+        b {
+          display: none;
+        }
       }
     }
 

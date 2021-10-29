@@ -2104,20 +2104,29 @@ textarea {
 }
 @media (max-width: 767px) {
   .intro-setting__txt {
+    display: flex;
     font-size: 4vw;
   }
 }
 .intro-setting__txt .line {
   display: flex;
   align-items: center;
-  padding-top: 0.4em;
-}
-.intro-setting__txt .line > *:first-child {
-  width: 9em;
-  margin-right: 0.8em;
+  padding-top: 0.8em;
 }
 .intro-setting__txt .line b {
   padding-left: 0.5em;
+}
+@media (max-width: 767px) {
+  .intro-setting__txt .line {
+    padding-top: 0.4em;
+  }
+  .intro-setting__txt .line:first-child .select {
+    width: 9em;
+    margin-right: 0.8em;
+  }
+  .intro-setting__txt .line b {
+    display: none;
+  }
 }
 .intro-setting__txt b {
   font-weight: 500;
