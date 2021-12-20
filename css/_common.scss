@@ -150,6 +150,8 @@ fieldset {
 
 /*아이콘*/
 i {
+    font-style: normal;
+    
     &::after {
         content: "";
         display: block;
