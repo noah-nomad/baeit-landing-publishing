@@ -1584,23 +1584,13 @@
       }
     }
 
-    @at-root .ani & {
-      &.type1 {
-        animation: intro-find 3s infinite;
-      }
-
-      &.type2 {
-        animation: intro-find 3s 1s infinite;
-      }
-
-      &.type3 {
-        animation: intro-find 3s 2s infinite;
-      }
-    }
-
     &.type1 {
       left: 44/380*100%;
       top: 174/780*100%;
+
+      &.ani {
+        animation: intro-find 3s infinite;
+      }
 
       input {
         &:checked {
@@ -1612,6 +1602,10 @@
     &.type2 {
       left: 227/380*100%;
       top: 158/780*100%;
+
+      &.ani {
+        animation: intro-find 3s 1s infinite;
+      }
 
       input {
         background-position: 2/5*100% 0;
@@ -1625,6 +1619,10 @@
     &.type3 {
       left: 266/380*100%;
       top: 312/780*100%;
+
+      &.ani {
+        animation: intro-find 3s 2s infinite;
+      }
 
       input {
         background-position: 4/5*100% 0;
