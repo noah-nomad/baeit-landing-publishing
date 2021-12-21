@@ -2512,6 +2512,11 @@ textarea {
 .intro-find {
   background: linear-gradient(to top, #F2F5F9 1.851851%, #fff 1.851851%);
 }
+@media (max-width: 767px) {
+  .intro-find {
+    background: white;
+  }
+}
 .intro-find__inner {
   position: relative;
   padding: 8.333333% 0;
@@ -2623,13 +2628,14 @@ textarea {
   position: absolute;
   width: 15.7894736842%;
   height: 10.8974358974%;
-  background-size: contain;
 }
 .intro-find__btn input, .intro-find__btn .datepicker {
   min-height: unset;
   height: 100%;
+  border-radius: 0;
+  background-image: url("../img/img_mockup3_btn.png");
+  background-size: 600% 100%;
   background-color: transparent;
-  background-size: contain;
 }
 .intro-find__btn input:focus, .intro-find__btn .datepicker:focus {
   border: 0;
@@ -2638,31 +2644,28 @@ textarea {
   left: 11.5789473684%;
   top: 22.3076923077%;
 }
-.intro-find__btn.type1 input, .intro-find__btn.type1 .datepicker {
-  background-image: url("../img/img_mockup3_btn1.png");
-}
 .intro-find__btn.type1 input:checked, .intro-find__btn.type1 .datepicker:checked {
-  background-image: url("../img/img_mockup3_btn1_on.png");
+  background-position: 20% 0;
 }
 .intro-find__btn.type2 {
   left: 59.7368421053%;
   top: 20.2564102564%;
 }
 .intro-find__btn.type2 input, .intro-find__btn.type2 .datepicker {
-  background-image: url("../img/img_mockup3_btn2.png");
+  background-position: 40% 0;
 }
 .intro-find__btn.type2 input:checked, .intro-find__btn.type2 .datepicker:checked {
-  background-image: url("../img/img_mockup3_btn2_on.png");
+  background-position: 60% 0;
 }
 .intro-find__btn.type3 {
   left: 70%;
   top: 40%;
 }
 .intro-find__btn.type3 input, .intro-find__btn.type3 .datepicker {
-  background-image: url("../img/img_mockup3_btn3.png");
+  background-position: 80% 0;
 }
 .intro-find__btn.type3 input:checked, .intro-find__btn.type3 .datepicker:checked {
-  background-image: url("../img/img_mockup3_btn3_on.png");
+  background-position: 100% 0;
 }
 .intro-find__scroll {
   position: absolute;
