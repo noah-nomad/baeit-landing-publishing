@@ -2640,6 +2640,16 @@ textarea {
 .intro-find__btn input:focus, .intro-find__btn .datepicker:focus {
   border: 0;
 }
+.ani .intro-find__btn.type1 {
+  animation: intro-find 3s infinite;
+}
+.ani .intro-find__btn.type2 {
+  animation: intro-find 3s 1s infinite;
+}
+.ani .intro-find__btn.type3 {
+  animation: intro-find 3s 2s infinite;
+}
+
 .intro-find__btn.type1 {
   left: 11.5789473684%;
   top: 22.3076923077%;
@@ -2677,6 +2687,17 @@ textarea {
   overflow: auto;
 }
 
+@keyframes intro-find {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*----------유튜브--------------------------------------------------------------------------------*/
 .video-wrap {
   position: relative;
