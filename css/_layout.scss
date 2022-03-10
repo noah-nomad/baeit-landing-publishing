@@ -1464,6 +1464,35 @@
     background: white;
   }
 
+  &.community {
+    background: transparent;
+
+    .intro-find {
+      &__inner {
+        &::before {
+          display: none;
+        }
+      }
+
+      &__txt-box {
+        left: unset;
+        right: 70*$unit;
+      }
+
+      &__item {
+        margin: 0 auto 0 15%;
+      }
+
+      &__img {
+        transform: translate(-40/540*300%, -20/940*100%);
+      }
+
+      &__scroll {
+        top: 196/780*100%;
+      }
+    }
+  }
+
   &__inner {
     position: relative;
     @extend %content-area;

@@ -2517,6 +2517,25 @@ textarea {
     background: white;
   }
 }
+.intro-find.community {
+  background: transparent;
+}
+.intro-find.community .intro-find__inner::before {
+  display: none;
+}
+.intro-find.community .intro-find__txt-box {
+  left: unset;
+  right: 7rem;
+}
+.intro-find.community .intro-find__item {
+  margin: 0 auto 0 15%;
+}
+.intro-find.community .intro-find__img {
+  transform: translate(-22.2222222222%, -2.1276595745%);
+}
+.intro-find.community .intro-find__scroll {
+  top: 25.1282051282%;
+}
 .intro-find__inner {
   position: relative;
   padding: 8.333333% 0;
@@ -2640,19 +2659,12 @@ textarea {
 .intro-find__btn input:focus, .intro-find__btn .datepicker:focus {
   border: 0;
 }
-.ani .intro-find__btn.type1 {
-  animation: intro-find 3s infinite;
-}
-.ani .intro-find__btn.type2 {
-  animation: intro-find 3s 1s infinite;
-}
-.ani .intro-find__btn.type3 {
-  animation: intro-find 3s 2s infinite;
-}
-
 .intro-find__btn.type1 {
   left: 11.5789473684%;
   top: 22.3076923077%;
+}
+.intro-find__btn.type1.ani {
+  animation: intro-find 3s infinite;
 }
 .intro-find__btn.type1 input:checked, .intro-find__btn.type1 .datepicker:checked {
   background-position: 20% 0;
@@ -2660,6 +2672,9 @@ textarea {
 .intro-find__btn.type2 {
   left: 59.7368421053%;
   top: 20.2564102564%;
+}
+.intro-find__btn.type2.ani {
+  animation: intro-find 3s 1s infinite;
 }
 .intro-find__btn.type2 input, .intro-find__btn.type2 .datepicker {
   background-position: 40% 0;
@@ -2670,6 +2685,9 @@ textarea {
 .intro-find__btn.type3 {
   left: 70%;
   top: 40%;
+}
+.intro-find__btn.type3.ani {
+  animation: intro-find 3s 2s infinite;
 }
 .intro-find__btn.type3 input, .intro-find__btn.type3 .datepicker {
   background-position: 80% 0;
