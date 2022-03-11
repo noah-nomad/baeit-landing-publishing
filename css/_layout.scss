@@ -778,10 +778,10 @@
 
   &__list {
     padding: 0 54*$unit;
-    overflow: auto;
 
     @include mobile-area_media {
       padding: 0 30*$unit;
+      overflow: auto;
     }
 
     &__ul {
@@ -1475,8 +1475,18 @@
       }
 
       &__txt-box {
+        top: 18%;
         left: unset;
         right: 70*$unit;
+
+        @include content-area_media {
+          right: 5vw;
+        }
+
+        @include mobile-area_media {
+          right: unset;
+          left: inherit;
+        }
       }
 
       &__item {
@@ -1488,7 +1498,74 @@
       }
 
       &__scroll {
-        top: 196/780*100%;
+        top: 184/780*100%;
+      }
+
+      &__cate-img {
+        margin-bottom: 10*$unit;
+        width: 72%;
+
+        &::before {
+          content: "";
+          display: block;
+          padding-top: 111.25%;
+          width: 100%;
+          background: url("../img/img_mockup4_category.png") no-repeat;
+          background-size: 100% auto;
+        }
+      }
+
+      &__menu {
+        @include position(absolute, 92/780*100%, 8/380*100%, 12/380*100%);
+        height: 36/780*100%;
+        overflow: auto;
+
+        &__inner {
+          display: flex;
+          padding: 0 5/360*100%;
+          width: max-content;
+          height: 100%;
+          background: white;
+          overflow: hidden;
+        }
+      }
+
+      &__btn2 {
+        position: relative;
+
+        input {
+          z-index: 1;
+          min-height: unset;
+          height: 100%;
+          border-radius: 0;
+          background: transparent;
+
+          &:focus {
+            border: 0;
+          }
+
+          &:checked {
+            & + img {
+              transform: translate(0, -50%);
+            }
+          }
+        }
+
+        img {
+          width: auto;
+          height: 200%;
+        }
+      }
+
+      &__sort {
+        @include position(absolute, 128/780*100%, 8/380*100%, 12/380*100%);
+        height: 56/780*100%;
+        background: url("../img/img_mockup4_sort.png") no-repeat;
+        background-size: 100% auto;
+
+        &.on {
+          background-position: 0 bottom;
+        }
       }
     }
   }
@@ -1551,6 +1628,15 @@
       font-size: 12*$unit;
       font-weight: $regular;
       color: $color-secondary-dark-30;
+    }
+  }
+
+  &__txt {
+    font-size: 17*$unit;
+
+    em {
+      font-weight: $bold;
+      color: $gray-50;
     }
   }
 

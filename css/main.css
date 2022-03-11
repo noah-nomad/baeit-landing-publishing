@@ -1855,11 +1855,11 @@ textarea {
 }
 .supplier-activity__list {
   padding: 0 5.4rem;
-  overflow: auto;
 }
 @media (max-width: 767px) {
   .supplier-activity__list {
     padding: 0 3rem;
+    overflow: auto;
   }
 }
 .supplier-activity__list__ul {
@@ -2524,8 +2524,20 @@ textarea {
   display: none;
 }
 .intro-find.community .intro-find__txt-box {
+  top: 18%;
   left: unset;
   right: 7rem;
+}
+@media (max-width: 1080px) {
+  .intro-find.community .intro-find__txt-box {
+    right: 5vw;
+  }
+}
+@media (max-width: 767px) {
+  .intro-find.community .intro-find__txt-box {
+    right: unset;
+    left: inherit;
+  }
 }
 .intro-find.community .intro-find__item {
   margin: 0 auto 0 15%;
@@ -2534,7 +2546,67 @@ textarea {
   transform: translate(-22.2222222222%, -2.1276595745%);
 }
 .intro-find.community .intro-find__scroll {
-  top: 25.1282051282%;
+  top: 23.5897435897%;
+}
+.intro-find.community .intro-find__cate-img {
+  margin-bottom: 1rem;
+  width: 72%;
+}
+.intro-find.community .intro-find__cate-img::before {
+  content: "";
+  display: block;
+  padding-top: 111.25%;
+  width: 100%;
+  background: url("../img/img_mockup4_category.png") no-repeat;
+  background-size: 100% auto;
+}
+.intro-find.community .intro-find__menu {
+  position: absolute;
+  top: 11.7948717949%;
+  left: 2.1052631579%;
+  right: 3.1578947368%;
+  height: 4.6153846154%;
+  overflow: auto;
+}
+.intro-find.community .intro-find__menu__inner {
+  display: flex;
+  padding: 0 1.3888888889%;
+  width: max-content;
+  height: 100%;
+  background: white;
+  overflow: hidden;
+}
+.intro-find.community .intro-find__btn2 {
+  position: relative;
+}
+.intro-find.community .intro-find__btn2 input, .intro-find.community .intro-find__btn2 .datepicker {
+  z-index: 1;
+  min-height: unset;
+  height: 100%;
+  border-radius: 0;
+  background: transparent;
+}
+.intro-find.community .intro-find__btn2 input:focus, .intro-find.community .intro-find__btn2 .datepicker:focus {
+  border: 0;
+}
+.intro-find.community .intro-find__btn2 input:checked + img, .intro-find.community .intro-find__btn2 .datepicker:checked + img {
+  transform: translate(0, -50%);
+}
+.intro-find.community .intro-find__btn2 img {
+  width: auto;
+  height: 200%;
+}
+.intro-find.community .intro-find__sort {
+  position: absolute;
+  top: 16.4102564103%;
+  left: 2.1052631579%;
+  right: 3.1578947368%;
+  height: 7.1794871795%;
+  background: url("../img/img_mockup4_sort.png") no-repeat;
+  background-size: 100% auto;
+}
+.intro-find.community .intro-find__sort.on {
+  background-position: 0 bottom;
 }
 .intro-find__inner {
   position: relative;
@@ -2598,6 +2670,13 @@ textarea {
   font-size: 1.2rem;
   font-weight: 400;
   color: #F3A100;
+}
+.intro-find__txt {
+  font-size: 1.7rem;
+}
+.intro-find__txt em {
+  font-weight: 700;
+  color: #9E9E9E;
 }
 .intro-find__item {
   z-index: 2;
