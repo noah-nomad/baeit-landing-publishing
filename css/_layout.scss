@@ -1514,7 +1514,7 @@
       }
 
       &__scroll {
-        top: 184/780*100%;
+        top: 196/780*100%;
       }
 
       &__cate-img {
@@ -1533,7 +1533,7 @@
 
       &__menu {
         @include position(absolute, 92/780*100%, 8/380*100%, 12/380*100%);
-        height: 36/780*100%;
+        height: 48/780*100%;
         background: white;
         overflow: auto;
 
@@ -1574,7 +1574,7 @@
       }
 
       &__sort {
-        @include position(absolute, 128/780*100%, 8/380*100%, 12/380*100%);
+        @include position(absolute, 140/780*100%, 8/380*100%, 12/380*100%);
         height: 56/780*100%;
         background: url("../img/img_mockup4_sort.png") no-repeat;
         background-size: 100% auto;
