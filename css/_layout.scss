@@ -1489,8 +1489,22 @@
         }
       }
 
+      &__txt {
+        .pc_only {
+          display: inline;
+
+          @include mobile-area_media {
+            display: none;
+          }
+        }
+      }
+
       &__item {
         margin: 0 auto 0 15%;
+
+        &.on {
+          margin: 0 auto;
+        }
       }
 
       &__img {
@@ -1518,6 +1532,7 @@
       &__menu {
         @include position(absolute, 92/780*100%, 8/380*100%, 12/380*100%);
         height: 36/780*100%;
+        background: white;
         overflow: auto;
 
         &__inner {
@@ -1525,13 +1540,13 @@
           padding: 0 5/360*100%;
           width: max-content;
           height: 100%;
-          background: white;
           overflow: hidden;
         }
       }
 
       &__btn2 {
         position: relative;
+        width: auto;
 
         input {
           z-index: 1;

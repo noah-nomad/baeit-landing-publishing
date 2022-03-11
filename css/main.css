@@ -2539,8 +2539,19 @@ textarea {
     left: inherit;
   }
 }
+.intro-find.community .intro-find__txt .pc_only {
+  display: inline;
+}
+@media (max-width: 767px) {
+  .intro-find.community .intro-find__txt .pc_only {
+    display: none;
+  }
+}
 .intro-find.community .intro-find__item {
   margin: 0 auto 0 15%;
+}
+.intro-find.community .intro-find__item.on {
+  margin: 0 auto;
 }
 .intro-find.community .intro-find__img {
   transform: translate(-22.2222222222%, -2.1276595745%);
@@ -2566,6 +2577,7 @@ textarea {
   left: 2.1052631579%;
   right: 3.1578947368%;
   height: 4.6153846154%;
+  background: white;
   overflow: auto;
 }
 .intro-find.community .intro-find__menu__inner {
@@ -2573,11 +2585,11 @@ textarea {
   padding: 0 1.3888888889%;
   width: max-content;
   height: 100%;
-  background: white;
   overflow: hidden;
 }
 .intro-find.community .intro-find__btn2 {
   position: relative;
+  width: auto;
 }
 .intro-find.community .intro-find__btn2 input, .intro-find.community .intro-find__btn2 .datepicker {
   z-index: 1;
