@@ -2605,10 +2605,6 @@ textarea {
 .intro-find.community .intro-find__btn2 input:checked + img, .intro-find.community .intro-find__btn2 .datepicker:checked + img {
   transform: translate(0, -50%);
 }
-.intro-find.community .intro-find__btn2 img {
-  width: auto;
-  height: 200%;
-}
 .intro-find.community .intro-find__sort {
   position: absolute;
   top: 17.9487179487%;
