@@ -2550,8 +2550,10 @@ textarea {
 .intro-find.community .intro-find__item {
   margin: 0 auto 0 15%;
 }
-.intro-find.community .intro-find__item.on {
-  margin: 0 auto;
+@media (max-width: 767px) {
+  .intro-find.community .intro-find__item.on {
+    margin: 0 auto;
+  }
 }
 .intro-find.community .intro-find__img {
   transform: translate(-22.2222222222%, -2.1276595745%);
@@ -2589,7 +2591,7 @@ textarea {
 }
 .intro-find.community .intro-find__btn2 {
   position: relative;
-  width: auto;
+  display: contents;
 }
 .intro-find.community .intro-find__btn2 input, .intro-find.community .intro-find__btn2 .datepicker {
   z-index: 1;

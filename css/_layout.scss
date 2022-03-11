@@ -1502,8 +1502,10 @@
       &__item {
         margin: 0 auto 0 15%;
 
-        &.on {
-          margin: 0 auto;
+        @include mobile-area_media {
+          &.on {
+            margin: 0 auto;
+          }
         }
       }
 
@@ -1546,7 +1548,7 @@
 
       &__btn2 {
         position: relative;
-        width: auto;
+        display: contents;
 
         input {
           z-index: 1;
