@@ -1540,29 +1540,85 @@
         &__inner {
           display: flex;
           padding: 0 5/360*100%;
-          width: max-content;
+          width: 433/360*100%;
           height: 100%;
           overflow: hidden;
         }
       }
 
       &__btn2 {
-        position: relative;
+        position: absolute;
+        width: 88/360*100%;
+        height: 100%;
 
         input {
           z-index: 1;
           min-height: unset;
           height: 100%;
           border-radius: 0;
-          background: transparent;
+          background-image: url("../img/img_mockup4_menu.svg");
+          background-repeat: no-repeat;
+          background-position: center top;
+          background-size: auto 1000%;
 
           &:focus {
             border: 0;
           }
+        }
 
-          &:checked {
-            & + img {
-              transform: translate(0, -50%);
+        &.type1 {
+          width: 66/360*100%;
+
+          input:checked {
+            background-position: center 11.111111%;
+          }
+        }
+
+        &.type2 {
+          left: 66/360*100%;
+          width: 103/360*100%;
+
+          input {
+            background-position: center 22.222222%;
+
+            &:checked {
+              background-position: center 33.333333%;
+            }
+          }
+        }
+
+        &.type3 {
+          left: (66 + 103)/360*100%;
+
+          input {
+            background-position: center 44.444444%;
+
+            &:checked {
+              background-position: center 55.555555%;
+            }
+          }
+        }
+
+        &.type4 {
+          left: (66 + 103 + 88)/360*100%;
+
+          input {
+            background-position: center 66.666666%;
+
+            &:checked {
+              background-position: center 77.777777%;
+            }
+          }
+        }
+
+        &.type5 {
+          left: (66 + 103 + 88 + 88)/360*100%;
+
+          input {
+            background-position: center 88.88888%;
+
+            &:checked {
+              background-position: center 99.999999%;
             }
           }
         }

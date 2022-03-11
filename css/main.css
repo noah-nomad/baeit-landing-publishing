@@ -2585,25 +2585,70 @@ textarea {
 .intro-find.community .intro-find__menu__inner {
   display: flex;
   padding: 0 1.3888888889%;
-  width: max-content;
+  width: 120.2777777778%;
   height: 100%;
   overflow: hidden;
 }
 .intro-find.community .intro-find__btn2 {
-  position: relative;
+  position: absolute;
+  width: 24.4444444444%;
+  height: 100%;
 }
 .intro-find.community .intro-find__btn2 input, .intro-find.community .intro-find__btn2 .datepicker {
   z-index: 1;
   min-height: unset;
   height: 100%;
   border-radius: 0;
-  background: transparent;
+  background-image: url("../img/img_mockup4_menu.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: auto 1000%;
 }
 .intro-find.community .intro-find__btn2 input:focus, .intro-find.community .intro-find__btn2 .datepicker:focus {
   border: 0;
 }
-.intro-find.community .intro-find__btn2 input:checked + img, .intro-find.community .intro-find__btn2 .datepicker:checked + img {
-  transform: translate(0, -50%);
+.intro-find.community .intro-find__btn2.type1 {
+  width: 18.3333333333%;
+}
+.intro-find.community .intro-find__btn2.type1 input:checked, .intro-find.community .intro-find__btn2.type1 .datepicker:checked {
+  background-position: center 11.111111%;
+}
+.intro-find.community .intro-find__btn2.type2 {
+  left: 18.3333333333%;
+  width: 28.6111111111%;
+}
+.intro-find.community .intro-find__btn2.type2 input, .intro-find.community .intro-find__btn2.type2 .datepicker {
+  background-position: center 22.222222%;
+}
+.intro-find.community .intro-find__btn2.type2 input:checked, .intro-find.community .intro-find__btn2.type2 .datepicker:checked {
+  background-position: center 33.333333%;
+}
+.intro-find.community .intro-find__btn2.type3 {
+  left: 46.9444444444%;
+}
+.intro-find.community .intro-find__btn2.type3 input, .intro-find.community .intro-find__btn2.type3 .datepicker {
+  background-position: center 44.444444%;
+}
+.intro-find.community .intro-find__btn2.type3 input:checked, .intro-find.community .intro-find__btn2.type3 .datepicker:checked {
+  background-position: center 55.555555%;
+}
+.intro-find.community .intro-find__btn2.type4 {
+  left: 71.3888888889%;
+}
+.intro-find.community .intro-find__btn2.type4 input, .intro-find.community .intro-find__btn2.type4 .datepicker {
+  background-position: center 66.666666%;
+}
+.intro-find.community .intro-find__btn2.type4 input:checked, .intro-find.community .intro-find__btn2.type4 .datepicker:checked {
+  background-position: center 77.777777%;
+}
+.intro-find.community .intro-find__btn2.type5 {
+  left: 95.8333333333%;
+}
+.intro-find.community .intro-find__btn2.type5 input, .intro-find.community .intro-find__btn2.type5 .datepicker {
+  background-position: center 88.88888%;
+}
+.intro-find.community .intro-find__btn2.type5 input:checked, .intro-find.community .intro-find__btn2.type5 .datepicker:checked {
+  background-position: center 99.999999%;
 }
 .intro-find.community .intro-find__sort {
   position: absolute;
