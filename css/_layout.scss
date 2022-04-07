@@ -1514,7 +1514,7 @@
       }
 
       &__scroll {
-        top: 196/780*100%;
+        top: 202/780*100%;
       }
 
       &__cate-img {
@@ -1524,7 +1524,7 @@
         &::before {
           content: "";
           display: block;
-          padding-top: 111.25%;
+          padding-top: 53.75%;
           width: 100%;
           background: url("../img/img_mockup4_category.png") no-repeat;
           background-size: 100% auto;
@@ -1533,23 +1533,14 @@
 
       &__menu {
         @include position(absolute, 92/780*100%, 8/380*100%, 12/380*100%);
-        height: 48/780*100%;
+        height: 54/780*100%;
         background: white;
-        overflow: auto;
-
-        &__inner {
-          display: flex;
-          padding: 0 5/360*100%;
-          width: 433/360*100%;
-          height: 100%;
-          overflow: hidden;
-        }
       }
 
       &__btn2 {
         position: absolute;
-        width: 88/360*100%;
-        height: 100%;
+        width: 87/360*100%;
+        height: 40/54*100%;
 
         input {
           z-index: 1;
@@ -1559,7 +1550,7 @@
           background-image: url("../img/img_mockup4_menu.png");
           background-repeat: no-repeat;
           background-position: center top;
-          background-size: auto 1000%;
+          background-size: auto 400%;
 
           &:focus {
             border: 0;
@@ -1567,55 +1558,17 @@
         }
 
         &.type1 {
-          width: 66/360*100%;
-
+          left: 20/360*100%;
           input:checked {
-            background-position: center 11.111111%;
+            background-position: center 33.333333%;
           }
         }
 
         &.type2 {
-          left: 66/360*100%;
-          width: 103/360*100%;
-
-          input {
-            background-position: center 22.222222%;
-
-            &:checked {
-              background-position: center 33.333333%;
-            }
-          }
-        }
-
-        &.type3 {
-          left: (66 + 103)/360*100%;
-
-          input {
-            background-position: center 44.444444%;
-
-            &:checked {
-              background-position: center 55.555555%;
-            }
-          }
-        }
-
-        &.type4 {
-          left: (66 + 103 + 88)/360*100%;
+          left: 117/360*100%;
 
           input {
             background-position: center 66.666666%;
-
-            &:checked {
-              background-position: center 77.777777%;
-            }
-          }
-        }
-
-        &.type5 {
-          left: (66 + 103 + 88 + 88)/360*100%;
-
-          input {
-            background-position: center 88.88888%;
 
             &:checked {
               background-position: center 99.999999%;
@@ -1625,7 +1578,7 @@
       }
 
       &__sort {
-        @include position(absolute, 140/780*100%, 8/380*100%, 12/380*100%);
+        @include position(absolute, 146/780*100%, 8/380*100%, 12/380*100%);
         height: 56/780*100%;
         background: url("../img/img_mockup4_sort.png") no-repeat;
         background-size: 100% auto;

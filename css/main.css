@@ -2559,7 +2559,7 @@ textarea {
   transform: translate(-22.2222222222%, -2.1276595745%);
 }
 .intro-find.community .intro-find__scroll {
-  top: 25.1282051282%;
+  top: 25.8974358974%;
 }
 .intro-find.community .intro-find__cate-img {
   margin-bottom: 1rem;
@@ -2568,7 +2568,7 @@ textarea {
 .intro-find.community .intro-find__cate-img::before {
   content: "";
   display: block;
-  padding-top: 111.25%;
+  padding-top: 53.75%;
   width: 100%;
   background: url("../img/img_mockup4_category.png") no-repeat;
   background-size: 100% auto;
@@ -2578,21 +2578,13 @@ textarea {
   top: 11.7948717949%;
   left: 2.1052631579%;
   right: 3.1578947368%;
-  height: 6.1538461538%;
+  height: 6.9230769231%;
   background: white;
-  overflow: auto;
-}
-.intro-find.community .intro-find__menu__inner {
-  display: flex;
-  padding: 0 1.3888888889%;
-  width: 120.2777777778%;
-  height: 100%;
-  overflow: hidden;
 }
 .intro-find.community .intro-find__btn2 {
   position: absolute;
-  width: 24.4444444444%;
-  height: 100%;
+  width: 24.1666666667%;
+  height: 74.0740740741%;
 }
 .intro-find.community .intro-find__btn2 input, .intro-find.community .intro-find__btn2 .datepicker {
   z-index: 1;
@@ -2602,57 +2594,29 @@ textarea {
   background-image: url("../img/img_mockup4_menu.png");
   background-repeat: no-repeat;
   background-position: center top;
-  background-size: auto 1000%;
+  background-size: auto 400%;
 }
 .intro-find.community .intro-find__btn2 input:focus, .intro-find.community .intro-find__btn2 .datepicker:focus {
   border: 0;
 }
 .intro-find.community .intro-find__btn2.type1 {
-  width: 18.3333333333%;
+  left: 5.5555555556%;
 }
 .intro-find.community .intro-find__btn2.type1 input:checked, .intro-find.community .intro-find__btn2.type1 .datepicker:checked {
-  background-position: center 11.111111%;
-}
-.intro-find.community .intro-find__btn2.type2 {
-  left: 18.3333333333%;
-  width: 28.6111111111%;
-}
-.intro-find.community .intro-find__btn2.type2 input, .intro-find.community .intro-find__btn2.type2 .datepicker {
-  background-position: center 22.222222%;
-}
-.intro-find.community .intro-find__btn2.type2 input:checked, .intro-find.community .intro-find__btn2.type2 .datepicker:checked {
   background-position: center 33.333333%;
 }
-.intro-find.community .intro-find__btn2.type3 {
-  left: 46.9444444444%;
+.intro-find.community .intro-find__btn2.type2 {
+  left: 32.5%;
 }
-.intro-find.community .intro-find__btn2.type3 input, .intro-find.community .intro-find__btn2.type3 .datepicker {
-  background-position: center 44.444444%;
-}
-.intro-find.community .intro-find__btn2.type3 input:checked, .intro-find.community .intro-find__btn2.type3 .datepicker:checked {
-  background-position: center 55.555555%;
-}
-.intro-find.community .intro-find__btn2.type4 {
-  left: 71.3888888889%;
-}
-.intro-find.community .intro-find__btn2.type4 input, .intro-find.community .intro-find__btn2.type4 .datepicker {
+.intro-find.community .intro-find__btn2.type2 input, .intro-find.community .intro-find__btn2.type2 .datepicker {
   background-position: center 66.666666%;
 }
-.intro-find.community .intro-find__btn2.type4 input:checked, .intro-find.community .intro-find__btn2.type4 .datepicker:checked {
-  background-position: center 77.777777%;
-}
-.intro-find.community .intro-find__btn2.type5 {
-  left: 95.8333333333%;
-}
-.intro-find.community .intro-find__btn2.type5 input, .intro-find.community .intro-find__btn2.type5 .datepicker {
-  background-position: center 88.88888%;
-}
-.intro-find.community .intro-find__btn2.type5 input:checked, .intro-find.community .intro-find__btn2.type5 .datepicker:checked {
+.intro-find.community .intro-find__btn2.type2 input:checked, .intro-find.community .intro-find__btn2.type2 .datepicker:checked {
   background-position: center 99.999999%;
 }
 .intro-find.community .intro-find__sort {
   position: absolute;
-  top: 17.9487179487%;
+  top: 18.7179487179%;
   left: 2.1052631579%;
   right: 3.1578947368%;
   height: 7.1794871795%;
